@@ -1,4 +1,4 @@
-import runLinting from "./lib/runLinting";
+const runLinting = require('./lib/runLinting');
 const defaultFormatter = require('stylelint').formatters.json;
 
 class StylesheetCodeQualityWebpackPlugin {
@@ -33,4 +33,4 @@ class StylesheetCodeQualityWebpackPlugin {
   }
 }
 
-export default StylesheetCodeQualityWebpackPlugin;
+module.exports = StylesheetCodeQualityWebpackPlugin;
