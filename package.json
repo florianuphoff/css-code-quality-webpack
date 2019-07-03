@@ -15,6 +15,9 @@
     "index.js"
   ],
   "keywords": [
+    "css",
+    "scss",
+    "sass",
     "stylelint",
     "lint",
     "linter",
@@ -24,6 +27,8 @@
     "webpack-plugin"
   ],
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "stylelint": "^10.1.0"
+  },
   "devDependencies": {}
 }
