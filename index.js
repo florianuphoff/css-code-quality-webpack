@@ -1,5 +1,6 @@
 const runLinting = require('./lib/linter');
 const defaultFormatter = require('stylelint').formatters.json;
+const arrify = require('arrify');
 
 class StylesheetCodeQualityWebpackPlugin {
   constructor(options) {
