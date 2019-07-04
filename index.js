@@ -8,9 +8,9 @@ class StylesheetCodeQualityWebpackPlugin {
     this.options = options;
   }
 
-  apply(options, compiler) {
-    options = options || {};
-    const context = options.context || compiler.context;
+  apply(compiler) {
+    let options = this.options || {};
+    const context = this.options.context || compiler.context;
     const formatter = this.options.formatter || defaultFormatter;
 
     // build config object for stylelint
