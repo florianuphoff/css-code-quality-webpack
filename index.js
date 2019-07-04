@@ -1,4 +1,4 @@
-const runLinting = require('./lib/runLinting');
+const runLinting = require('./lib/linter');
 const defaultFormatter = require('stylelint').formatters.json;
 
 class StylesheetCodeQualityWebpackPlugin {
