@@ -1,6 +1,6 @@
 {
   "name": "stylesheet-code-quality-webpack-plugin",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A (s)css analysis plugin for webpack",
   "license": "MIT",
   "repository": "florianuphoff/stylesheet-code-quality-webpack-plugin",
@@ -29,6 +29,7 @@
   "peerDependencies": {},
   "dependencies": {
     "arrify": "^2.0.1",
+    "path": "^0.12.7",
     "stylelint": "^10.1.0"
   },
   "devDependencies": {}
