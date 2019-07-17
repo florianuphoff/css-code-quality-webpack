@@ -13,4 +13,6 @@ Webpack is used to hook into the bundling of an app. There is no reporting of er
 npm install stylesheet-code-quality-webpack-plugin  --save-dev
 ```
 
+SCSS sourcemaps required.
+
 More content will be added soon.
