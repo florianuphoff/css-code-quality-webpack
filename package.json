@@ -29,6 +29,8 @@
   "peerDependencies": {},
   "dependencies": {
     "arrify": "^2.0.1",
+    "fs": "0.0.1-security",
+    "mkdirp": "^0.5.1",
     "neo-async": "^2.6.1",
     "path": "^0.12.7",
     "postcss": "^7.0.17",

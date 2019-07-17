@@ -1,9 +1,11 @@
-const path = require('path');
 const styleLinter = require('./lib/stylelintLinter');
-const postcssLinter = require('./lib/postcssLinter').default;
+const postcssLinter = require('./lib/postcssLinter');
 const defaultFormatter = require('stylelint').formatters.json;
 const arrify = require('arrify');
 const async = require('neo-async');
+const path = require('path');
+const fs = require('fs');
+const mkdirp = require('mkdirp');
 
 class StylesheetCodeQualityWebpackPlugin {
   constructor(stylelintOptions) {
@@ -33,67 +35,39 @@ class StylesheetCodeQualityWebpackPlugin {
       }
     );
 
-    console.log(stylelintOptions);
-
     const sLinter = styleLinter.bind(this, stylelintOptions);
-    const postcssLinter = postcssLinter.bind(this);
+    const pLinter = postcssLinter.bind(this);
 
-    compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', compilation => {
+    compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', (compilation, callback) => {
       // save css / css.map files
-      let outputPath = compilation.getPath(this.outputPath);
 
       async.forEach(
         compilation.assets,
 				(source, file, callback) => {
-          if(!source.includes('css/')) {
-            return;
-          }
+          const outputPath = `${path.dirname(require.resolve("stylesheet-code-quality-webpack-plugin/package.json"))/data}`
           let targetFile = file;
           
-					const queryStringIdx = targetFile.indexOf("?");
-					if (queryStringIdx >= 0) {
-						targetFile = targetFile.substr(0, queryStringIdx);
+          if(!targetFile.includes('css/')) {
+            return;
           }
+
+					const writeOut = err => {
+						if (err) return callback(err);
+            let content = source.source();
+
+            if (!Buffer.isBuffer(content)) {
+              content = Buffer.from(content, "utf8");
+            }
+
+            // write css to outputPath
+            fs.writeFile(outputPath, content, err => {
+						  if (err) return callback(err);              
+            });
+          };
+
+          const targetPath = targetFile.match(/\/|\\/) ? path.join(outputPath, dir) : outputPath;
           
-          const targetPath = this.outputFileSystem.join(
-            outputPath,
-            targetFile
-          );
-
-          console.log(targetPath);
-          console.log(outputPath);
-
-					// const writeOut = err => {
-					// 	if (err) return callback(err);
-					// 	const targetPath = this.outputFileSystem.join(
-					// 		outputPath,
-					// 		targetFile
-					// 	);
-					// 	if (source.existsAt === targetPath) {
-					// 		source.emitted = false;
-					// 		return callback();
-					// 	}
-					// 	let content = source.source();
-
-					// 	if (!Buffer.isBuffer(content)) {
-					// 		content = Buffer.from(content, "utf8");
-					// 	}
-
-					// 	source.existsAt = targetPath;
-					// 	source.emitted = true;
-					// 	this.outputFileSystem.writeFile(targetPath, content, callback);
-					// };
-
-					// if (targetFile.match(/\/|\\/)) {
-          //   const dir = path.dirname(targetFile);
-            
-					// 	this.outputFileSystem.mkdirp(
-					// 		this.outputFileSystem.join(outputPath, dir),
-					// 		writeOut
-					// 	);
-					// } else {
-					// 	writeOut();
-					// }
+          mkdirp(targetPath, writeOut);
 				},
 				err => {
           console.error(err);
@@ -101,16 +75,8 @@ class StylesheetCodeQualityWebpackPlugin {
 				}
       );
 
-      // Object.entries(compilation.assets).forEach((entry, index) => {
-      //   if(entry[0].includes('css/')) {
-      //     // parse entry to utf8 files and save it to /data
-      //     console.log(entry[1]);
-      //     let 
-      //   }
-      // });
-
-      // sLinter(compilation);
-      // postcssLinter(compilation);
+      sLinter(compilation);
+      postcssLinter(compilation);
     });
   }
 }
