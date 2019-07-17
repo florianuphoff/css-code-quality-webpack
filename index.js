@@ -5,7 +5,6 @@ const arrify = require('arrify');
 const async = require('neo-async');
 const path = require('path');
 const fs = require('fs');
-const mkdirp = require('mkdirp');
 
 class StylesheetCodeQualityWebpackPlugin {
   constructor(stylelintOptions) {
@@ -41,42 +40,92 @@ class StylesheetCodeQualityWebpackPlugin {
     compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', (compilation, callback) => {
       // save css / css.map files
 
-      async.forEach(
-        compilation.assets,
-				(source, file, callback) => {
-          const outputPath = `${path.dirname(require.resolve("stylesheet-code-quality-webpack-plugin/package.json"))/data}`
-          let targetFile = file;
-          
-          if(!targetFile.includes('css/')) {
-            return;
+      Object.entries(compilation.assets).forEach((entry, index) => {
+        let targetFile = entry[0];
+        
+        if(!targetFile.includes('css/')) {
+          return;
+        }
+        
+        const source = entry[1];
+        const outputPath = `${path.dirname(require.resolve("stylesheet-code-quality-webpack-plugin/package.json"))}/data`;      
+        const targetPath = `${outputPath}/${targetFile.replace('css/', '')}`;
+
+        const writeOut = err => {
+          if (err) {
+            console.error(err)              
+            return callback(err);
           }
 
-					const writeOut = err => {
-						if (err) return callback(err);
-            let content = source.source();
+          let content = source.source();        
 
-            if (!Buffer.isBuffer(content)) {
-              content = Buffer.from(content, "utf8");
+          if (!Buffer.isBuffer(content)) {
+            content = Buffer.from(content, "utf8");
+          }
+
+          fs.writeFile(targetPath, content, err => {
+            if (err) {
+              console.error(err)
+              return callback(err);
             }
+            
+            console.log()
+            console.log('File created ----')
+          });
+          console.log()          
+          console.log('run finished')          
+        };
+        
 
-            // write css to outputPath
-            fs.writeFile(outputPath, content, err => {
-						  if (err) return callback(err);              
-            });
-          };
+        fs.mkdir(outputPath, { recursive: true }, writeOut);
+      });
 
-          const targetPath = targetFile.match(/\/|\\/) ? path.join(outputPath, dir) : outputPath;
+      // async.forEach(
+      //   compilation.assets,
+			// 	(source, file, callback) => {
+      //     const targetFile = file;
+      //     const outputPath = `${path.dirname(require.resolve("stylesheet-code-quality-webpack-plugin/package.json"))}/data`;
+      //     const dir = path.dirname(targetFile);
+      //     const targetPath = targetFile.match(/\/|\\/) ? path.join(outputPath, dir) : outputPath;
           
-          mkdirp(targetPath, writeOut);
-				},
-				err => {
-          console.error(err);
-					return;
-				}
-      );
+      //     if(!targetFile.includes('css/')) {
+      //       return;
+      //     }
 
-      sLinter(compilation);
-      postcssLinter(compilation);
+			// 		const writeOut = err => {
+			// 			if (err) {
+      //         console.error(err)              
+      //         return callback(err);
+      //       }
+      //       let content = source.source();
+
+      //       if (!Buffer.isBuffer(content)) {
+      //         content = Buffer.from(content, "utf8");
+      //       }
+
+      //       // write css to outputPath
+      //       fs.writeFile(outputPath, content, err => {
+      //         if (err) {
+      //           console.error(err)
+      //           return callback(err);
+      //         }
+              
+      //         console.log()
+      //         console.log('File created ----')
+      //         console.log()
+      //       });
+      //     };
+          
+      //     mkdirp(targetPath, writeOut);
+			// 	},
+			// 	err => {
+      //     console.error(err);
+			// 		return;
+			// 	}
+      // );
+
+      // sLinter(compilation);
+      // postcssLinter(compilation);
     });
   }
 }
