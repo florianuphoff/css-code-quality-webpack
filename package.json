@@ -1,6 +1,6 @@
 {
   "name": "stylesheet-code-quality-webpack-plugin",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A (s)css analysis plugin for webpack",
   "license": "MIT",
   "repository": "florianuphoff/stylesheet-code-quality-webpack-plugin",
