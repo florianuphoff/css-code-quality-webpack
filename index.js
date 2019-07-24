@@ -1,6 +1,6 @@
+const getDataPath = require('./lib/utils').getDataPath
 const styleLinter = require('./lib/stylelintLinter')
 const postcssLinter = require('./lib/postcssLinter')
-const { dataPath } = require('./lib/utils')
 const defaultFormatter = require('stylelint').formatters.json
 const arrify = require('arrify')
 const async = require('neo-async')
@@ -42,7 +42,7 @@ class StylesheetCodeQualityWebpackPlugin {
         }
         
         const source = entry[1]
-        const outputPath = dataPath()
+        const outputPath = getDataPath()
         const targetPath = `${outputPath}/${targetFile.replace('css/', '')}`
 
         const writeOut = err => {
