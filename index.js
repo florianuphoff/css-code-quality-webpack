@@ -57,19 +57,12 @@ class StylesheetCodeQualityWebpackPlugin {
             content = Buffer.from(content, "utf8")
           }
 
-          fs.writeFile(targetPath, content, err => {
-            if (err) {
-              console.error(err)
-              return callback(err);
-            }
-          });   
-        };
+          fs.writeFileSync(targetPath, content);   
+        }
         
-
-        fs.mkdir(outputPath, { recursive: true }, writeOut)
+        fs.mkdirSync(outputPath, { recursive: true })
+        writeOut()
       })
-      console.info('- Saved bundled files to /data - ')
-      console.info('- Starting analysis process - ')
       
       sLinter(compilation)
       postcssLinter(compilation)
