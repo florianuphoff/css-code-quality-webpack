@@ -12,7 +12,8 @@
   },
   "files": [
     "lib/",
-    "index.js"
+    "index.js",
+    "results/"
   ],
   "keywords": [
     "css",
@@ -36,6 +37,7 @@
     "path": "^0.12.7",
     "postcss": "^7.0.17",
     "postcss-code-duplication": "^1.1.0",
+    "postcss-resolve-nested-selector": "^0.1.1",
     "stylelint": "^10.1.0",
     "winston": "^3.2.1"
   },
