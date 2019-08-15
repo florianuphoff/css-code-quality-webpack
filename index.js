@@ -1,7 +1,8 @@
+const defaultFormatter = require('stylelint').formatters.json
+const Saver = require('./lib/saver')
 const getDataPath = require('./lib/utils').getDataPath
 const styleLinter = require('./lib/stylelintLinter')
 const postcssLinter = require('./lib/postcssLinter')
-const defaultFormatter = require('stylelint').formatters.json
 const arrify = require('arrify')
 const async = require('neo-async')
 const path = require('path')
@@ -32,6 +33,7 @@ class StylesheetCodeQualityWebpackPlugin {
 
     const sLinter = styleLinter.bind(this, stylelintOptions)
     const pLinter = postcssLinter.bind(this)
+    const saver = new Saver()
 
     compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', (compilation, callback) => {
       Object.entries(compilation.assets).forEach((entry, index) => {
@@ -64,8 +66,10 @@ class StylesheetCodeQualityWebpackPlugin {
         writeOut()
       })
       
-      sLinter(compilation)
-      postcssLinter(compilation)
+      const timestamp = + new Date()      
+
+      sLinter(compilation, saver, timestamp)
+      postcssLinter(compilation, saver, timestamp)
     })
   }
 }
