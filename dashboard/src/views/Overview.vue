@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div class="content">
-      <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
+      <SpiderChart v-bind:spiderChartData=spiderChartData />
+
 
       <p>Welche Elemente?</p>
       <p>Statistische Diagramme, etc</p>
@@ -13,20 +14,24 @@
 
 <script lang="ts">
 import Vue from 'vue';
-// import HelloWorld from '@/components/HelloWord.vue'; // @ is an alias to /src
+import SpiderChart from '@/components/SpiderChart.vue'; // @ is an alias to /src
 // import json from '@/results/data.json'; // @ is an alias to /src
 
 export default Vue.extend({
   name: 'home',
+  components: {
+    SpiderChart
+  },
   data() {
     return {
       results: {},
-      spiderChartData: {},
+      spiderChartData: [],
       barChartData: {}
     };
   },
-  created() {
-    fetch('/results/data.json')
+  methods: {
+    async fetchSpiderChartData() {
+      fetch('/results/data.json')
       .then(response => response.json())
       .then(data => {
         this.results = data
@@ -42,7 +47,8 @@ export default Vue.extend({
         percentageOfValidNestings = Math.round(((lN / nestingMap.size) * 100)*100)/100
 
         // unique selectors
-        let uSelectors = [...new Set(this.results.stats[0].selectors.values)].length
+        const uSelectors = [...new Set(this.results.stats[0].selectors.values)].length
+        const percentageOfUniqueSelectors = Math.round(((uSelectors / this.results.stats[0].selectors.values.length) * 100)*100)/100
 
         // specificity
         let percentageOfUnspecificSelectors = 0
@@ -64,45 +70,57 @@ export default Vue.extend({
         percentageOfUnspecificSelectors = Math.round((((this.results.stats[0].selectors.getSpecificityGraph.length - tHS) / this.results.stats[0].selectors.getSpecificityGraph.length) * 100)*100)/100
 
         // clean properties
+        const declarationsCount = this.results.stats[0].declarations.total
 
-        // vielleicht die SpiderChart um drei erweitern? Es wird schwierig, gleiche Properties bei duplikate, undone und ignored zu filtern
-        // Lösung: alle findings in ein Array packen, distinct() und dann hab ich die Anzahl an "dirty props"
-
-        let dDecl = [];
-
-
-        // duplikate
-        // undoing
+        let dDecl = []
+        let cleanProps = 0
+        let ignoredCount = 0
         let undoneCount = 0
+
+        
+        // duplikate
+        const uniqueDeclsCount = this.results.stats[0].declarations.unique
+        console.log(uniqueDeclsCount)
+        for (let [key, value] of Object.entries(this.results.stats[0].declarations.properties)) {
+          value.forEach(element => {
+            dDecl.push(`${key}:${element}`)
+          });
+        }
+
+        let duplicates = dDecl.reduce(function(acc, el, i, arr) {
+          if (arr.indexOf(el) !== i && acc.indexOf(el) < 0) acc.push(el); return acc;
+        }, []);
+
+        let faultyDecl = [...new Set(duplicates)]
+
+        // undoing
         this.results.warnings.forEach(warning => {
           if(warning.rule === 'plugin/no-undoing-styles') {
-            dDecl.push(warning.word)
-            undoneCount++
+            if(faultyDecl.indexOf(warning.word) === -1) {
+              faultyDecl.push(warning.word)
+              undoneCount++
+            }
           }
         });
 
         // ignored
-        let ignoredCount = 0
-
         this.results.warnings.forEach(warning => {
           if(warning.rule === 'plugin/declaration-block-no-ignored-properties') {
-            dDecl.push(warning.word)
-            ignoredCount++
+            if(faultyDecl.indexOf(warning.word) === -1) {
+              faultyDecl.push(warning.word)
+              ignoredCount++
+            }
           }
         });
-
-        console.log(dDecl);
-        dDecl = [...new Set(dDecl)]
-        console.log(dDecl);
-
         
+        cleanProps = Math.round((((declarationsCount - faultyDecl.length) / declarationsCount) * 100)*100)/100
 
-        // welche daten werden für spiderChart genutzt? 
-
+        this.spiderChartData = [cleanProps, percentageOfValidNestings, percentageOfUnspecificSelectors, percentageOfUniqueSelectors]
       });
-    // load the results
-    // maybe call a service for that? dl = new Dataloader('overview')
-    // check that later
+    }
+  },
+  mounted() {
+    this.fetchSpiderChartData();
   },
 });
 </script>

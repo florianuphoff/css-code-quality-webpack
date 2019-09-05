@@ -3,10 +3,6 @@
     "dataType": "Map",
     "value": [
       [
-        "%tool",
-        0
-      ],
-      [
         ".alert",
         0
       ],
@@ -67,6 +63,10 @@
         0
       ],
       [
+        "%tool",
+        0
+      ],
+      [
         ".duplication-type-1",
         0
       ],
@@ -124,6 +124,34 @@
       ],
       [
         ".red-border",
+        0
+      ],
+      [
+        ".wrong-value",
+        0
+      ],
+      [
+        ".slider",
+        0
+      ],
+      [
+        ".unknown-prop",
+        0
+      ],
+      [
+        "a",
+        0
+      ],
+      [
+        "a:UNKNOWN",
+        0
+      ],
+      [
+        "a:hoverr",
+        0
+      ],
+      [
+        "unknown",
         0
       ],
       [
@@ -347,34 +375,6 @@
         0
       ],
       [
-        ".wrong-value",
-        0
-      ],
-      [
-        ".slider",
-        0
-      ],
-      [
-        ".unknown-prop",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "a:UNKNOWN",
-        0
-      ],
-      [
-        "a:hoverr",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
         ".undoing-styles-1",
         0
       ],
@@ -479,6 +479,68 @@
       "line": 83,
       "column": 1,
       "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "resolvedSelector": "",
+      "line": 43,
+      "column": 24,
+      "rule": "block-no-empty"
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-descending-specificity",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-descending-specificity",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 41,
+      "column": 19,
+      "rule": "no-unknown-animations",
+      "word": "animation-name:fancccy-slide"
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "resolvedSelector": "a:UNKNOWN",
+      "line": 25,
+      "column": 2,
+      "rule": "selector-pseudo-class-no-unknown",
+      "word": null
+    },
+    {
+      "selector": "a:hoverr",
+      "resolvedSelector": "a:hoverr",
+      "line": 29,
+      "column": 2,
+      "rule": "selector-pseudo-class-no-unknown",
+      "word": null
+    },
+    {
+      "selector": "unknown",
+      "resolvedSelector": "unknown",
+      "line": 35,
+      "column": 1,
+      "rule": "selector-type-no-unknown",
       "word": null
     },
     {
@@ -591,7 +653,7 @@
       "line": 52,
       "column": 5,
       "rule": "plugin/no-undoing-styles",
-      "word": ".c5"
+      "word": "border:0"
     },
     {
       "selector": "&:after",
@@ -599,7 +661,7 @@
       "line": 62,
       "column": 11,
       "rule": "plugin/no-undoing-styles",
-      "word": "&:after"
+      "word": "margin:0"
     },
     {
       "selector": "kbd",
@@ -607,7 +669,7 @@
       "line": 113,
       "column": 1,
       "rule": "plugin/no-undoing-styles",
-      "word": "kbd"
+      "word": "box-shadow:none"
     },
     {
       "selector": "&:hover,\n  &:focus",
@@ -615,7 +677,7 @@
       "line": 145,
       "column": 3,
       "rule": "plugin/no-undoing-styles",
-      "word": "&:hover,\n  &:focus"
+      "word": "text-decoration:none"
     },
     {
       "selector": ".list__link",
@@ -690,65 +752,19 @@
       "word": null
     },
     {
-      "resolvedSelector": "",
-      "line": 43,
-      "column": 24,
-      "rule": "block-no-empty"
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 40,
+      "selector": "#id2#id3",
+      "resolvedSelector": "#id2#id3",
+      "line": 13,
       "column": 1,
-      "rule": "no-descending-specificity",
+      "rule": "selector-max-id",
       "word": null
     },
     {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 40,
-      "column": 1,
-      "rule": "no-descending-specificity",
-      "word": null
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 40,
-      "column": 1,
-      "rule": "no-duplicate-selectors",
-      "word": null
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 41,
-      "column": 19,
-      "rule": "no-unknown-animations",
-      "word": "animation-name:fancccy-slide"
-    },
-    {
-      "selector": "a:UNKNOWN",
-      "resolvedSelector": "a:UNKNOWN",
-      "line": 25,
-      "column": 2,
-      "rule": "selector-pseudo-class-no-unknown",
-      "word": null
-    },
-    {
-      "selector": "a:hoverr",
-      "resolvedSelector": "a:hoverr",
-      "line": 29,
-      "column": 2,
-      "rule": "selector-pseudo-class-no-unknown",
-      "word": null
-    },
-    {
-      "selector": "unknown",
-      "resolvedSelector": "unknown",
-      "line": 35,
-      "column": 1,
-      "rule": "selector-type-no-unknown",
+      "selector": "&#id5",
+      "resolvedSelector": "#id4#id5",
+      "line": 32,
+      "column": 3,
+      "rule": "selector-max-id",
       "word": null
     },
     {
@@ -757,7 +773,7 @@
       "line": 10,
       "column": 1,
       "rule": "plugin/no-undoing-styles",
-      "word": ".undoing-styles-1"
+      "word": "padding-bottom:0"
     },
     {
       "selector": ".undoing-styles-1",
@@ -769,6 +785,13 @@
     }
   ],
   "mixins": [
+    {
+      "type": "include",
+      "line": 2,
+      "column": 12,
+      "resolvedSelector": ".button",
+      "value": "button-border(1px, $brand-danger)"
+    },
     {
       "type": "mixin",
       "line": 1,
@@ -858,13 +881,6 @@
     },
     {
       "type": "include",
-      "line": 2,
-      "column": 12,
-      "resolvedSelector": ".button",
-      "value": "button-border(1px, $brand-danger)"
-    },
-    {
-      "type": "include",
       "line": 11,
       "column": 12,
       "resolvedSelector": ".fancy-item",
@@ -921,17 +937,17 @@
     },
     {
       "type": "include",
-      "line": 45,
-      "column": 12,
-      "resolvedSelector": ".js-styled",
-      "value": "dimensions($width: 1rem, $height: 10rem)"
-    },
-    {
-      "type": "include",
       "line": 12,
       "column": 12,
       "resolvedSelector": ".red-border",
       "value": "clearfix()"
+    },
+    {
+      "type": "include",
+      "line": 45,
+      "column": 12,
+      "resolvedSelector": ".js-styled",
+      "value": "dimensions($width: 1rem, $height: 10rem)"
     }
   ],
   "duplications": [
@@ -3302,7 +3318,59 @@
           "bottom": [
             "12%"
           ]
-        }
+        },
+        "getPropertyResets": {
+          "padding": 2,
+          "padding-bottom": 1,
+          "margin": 1
+        },
+        "getUniquePropertyCount": 0,
+        "getPropertyValueCount": 0,
+        "getVendorPrefixed": [
+          {
+            "property": "-webkit-animation-name",
+            "value": "fancccy-slide"
+          }
+        ],
+        "getAllFontSizes": [
+          "1px",
+          "1px",
+          "14px",
+          "14px",
+          "12px",
+          "18px",
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "18px",
+          "8rem",
+          "18px",
+          "100%",
+          "inherit",
+          "12px",
+          "14px",
+          "10rem",
+          "10px",
+          "13px",
+          "15rem",
+          "20px",
+          "23rem",
+          "14px",
+          "12px",
+          "18px"
+        ],
+        "getAllFontFamilies": [
+          "'Courier New', Courier, monospace",
+          "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+          "Arial, Helvetica, sans-serif",
+          "'Times New Roman', Times, serif",
+          "Verdana, Geneva, Tahoma, sans-serif",
+          "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+          "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
+        ]
       },
       "mediaQueries": {
         "total": 0,
