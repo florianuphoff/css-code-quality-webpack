@@ -2,11 +2,6 @@
   <div class="home">
     <div class="content">
       <SpiderChart v-bind:spiderChartData=spiderChartData />
-
-
-      <p>Welche Elemente?</p>
-      <p>Statistische Diagramme, etc</p>
-      <p>Stats</p>
     </div>
 
   </div>
@@ -80,7 +75,7 @@ export default Vue.extend({
         
         // duplikate
         const uniqueDeclsCount = this.results.stats[0].declarations.unique
-        console.log(uniqueDeclsCount)
+
         for (let [key, value] of Object.entries(this.results.stats[0].declarations.properties)) {
           value.forEach(element => {
             dDecl.push(`${key}:${element}`)

@@ -32,6 +32,7 @@ export default Vue.extend({
   flex-flow: row nowrap;
 
 
+  background-color: #ffffff;
   border-bottom: 1px solid #8d8d8d;
 }
 

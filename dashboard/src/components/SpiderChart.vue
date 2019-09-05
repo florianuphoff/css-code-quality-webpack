@@ -1,6 +1,7 @@
 <template>
-  <div class="chart w-1-2">
-    <div id="chart"></div>
+  <div class="v-box w-1-4">
+    <div class="v-box__header">Komplexität</div>
+    <div class="v-box__chart" id="chart"></div>
   </div>
 </template>
 
@@ -26,8 +27,8 @@ export default Vue.extend({
         h: 250,
         maxValue: 100,
         levels: 5,
-        ExtraWidthX: 300,
-        ExtraWidthY: 300
+        ExtraWidthX: 170,
+        ExtraWidthY: 110
       }
     }
   },
@@ -52,9 +53,6 @@ export default Vue.extend({
   },
   methods: {
     drawChart: function(data) {
-
-      console.log(data);
-      
      RadarChart.draw("#chart", data, this.cfg)
     }
   }

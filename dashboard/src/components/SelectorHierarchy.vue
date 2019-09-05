@@ -1,6 +1,7 @@
 <template>
-  <div class="chart w-1-2">
-    <div id="chart"></div>
+  <div class="v-box w-1-2">
+    <div class="v-box__header">Fehlerbehaftete Selektoren</div>
+    <div class="v-box__chart selector-chart" id="selectorChart"></div>
   </div>
 </template>
 
@@ -27,21 +28,35 @@ export default Vue.extend({
   },
   watch: {
     // update data
-    spiderChartData: function (data) {
-      this.spiderChartData = data
-      this.drawChart(this.chartData)
+    selectorData: function (data) {
+      this.selectorData = data
+      this.drawChart(this.selectorData)
     }
   },
   methods: {
     drawChart: function(data) {
-
       let iTree = new IntendedTree();
-      iTree.$onInit(data);
+      iTree.$onInit(data)
     }
   }
 });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+.selector-chart .node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1px;
+}
+
+.selector-chart .node text {
+  font: 14px sans-serif;
+}
+
+.selector-chart .link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+}
 </style>

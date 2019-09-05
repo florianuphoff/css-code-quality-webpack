@@ -1,3 +1,5 @@
+import * as d3 from 'd3';
+
 export default class IntendedTree {
 
   constructor() {
@@ -38,7 +40,7 @@ export default class IntendedTree {
     });
     this.root.x0 = this.root.x;
     this.root.y0 = this.root.y
-    this.svg = select('.hierarchy-container').append('svg')
+    this.svg = select('#selectorChart').append('svg')
       .attr('width', this.width + this.margin.right + this.margin.left)
       .attr('height', this.height + this.margin.top + this.margin.bottom)
       .append('g')
@@ -79,7 +81,6 @@ export default class IntendedTree {
   };
 
   update = (source) => {
-
     this.width=800;
 
     // Compute the new tree layout.
@@ -89,13 +90,15 @@ export default class IntendedTree {
       nodesSort.push(n);
     });
     this.height = Math.max(500, nodesSort.length * this.barHeight + this.margin.top + this.margin.bottom);
+    
     let links = nodesSort.slice(1);
     // Compute the "layout".
     nodesSort.forEach ((n,i)=> {
       n.x = i *this.barHeight;
     });
 
-    d3.select('svg').transition()
+    // update chart/svg height
+    d3.select('#selectorChart svg').transition()
       .duration(this.duration)
       .attr("height", this.height);
 
@@ -128,7 +131,7 @@ export default class IntendedTree {
       return d.children || d._children ? 'start' : 'start';
     })
       .text(function (d: any) {
-      if (d.data.name.length > 20) {
+      if (d.data.name.length > 30) {
         return d.data.name.substring(0, 20) + '...';
       } else {
         return d.data.name;
