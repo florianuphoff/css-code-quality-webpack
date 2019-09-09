@@ -482,12 +482,6 @@
       "word": null
     },
     {
-      "resolvedSelector": "",
-      "line": 43,
-      "column": 24,
-      "rule": "block-no-empty"
-    },
-    {
       "selector": "a",
       "resolvedSelector": "a",
       "line": 40,

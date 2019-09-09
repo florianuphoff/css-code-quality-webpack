@@ -1,6 +1,11 @@
 <template>
-  <div class="v-box w-1-2">
+  <div class="v-box w-1-2 relative">
     <div class="v-box__header">Fehlerbehaftete Selektoren</div>
+    <div class="v-box absolute data-picker">
+      <button class="data-picker__btn" @click="drawChart('gerenal')">General</button>
+      <button class="data-picker__btn" @click="drawChart('duplications')">Duplications</button>
+      <button class="data-picker__btn" @click="drawChart('smelly')">Smelly</button>
+    </div>
     <div class="v-box__chart selector-chart" id="selectorChart"></div>
   </div>
 </template>
@@ -15,30 +20,46 @@ export default Vue.extend({
   
   name: 'SelectorHierarchy',
   props: {
-    selectorData: {
+    chartData: {
       type: Object,
       required: true
-    },
+    }
   },
-  computed: {
-    chartData() {
-      // return formatted data
-      return {}
-    },
-  },
+
   watch: {
-    // update data
-    selectorData: function (data) {
-      this.selectorData = data
-      this.drawChart(this.selectorData)
+    chartData: {
+      handler: function(data) {
+        this.chartData = data
+        this.drawChart('general')
+      },
+      deep: true
     }
   },
   methods: {
-    drawChart: function(data) {
+    drawChart: function(type) {
+      const chart = document.querySelector('#selectorChart')
+      if(chart.childNodes.length) {
+        chart.removeChild(chart.childNodes[0])
+      }
+      let d = {}
+      switch(type) {
+        case 'general':
+          d = this.chartData.general
+          break;
+        case 'duplications':
+          d = this.chartData.duplications
+          break;
+        case 'smelly':
+          d = this.chartData.smelly
+          break;
+        default:
+          // general
+          d = this.chartData.general
+      }
       let iTree = new IntendedTree();
-      iTree.$onInit(data)
+      iTree.$onInit(d)
     }
-  }
+  },
 });
 </script>
 

@@ -17,6 +17,12 @@ body {
   flex-flow: row wrap;
 }
 
+.flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly
+}
+
 .w-1-2 {
   width: 50% !important;
 }
@@ -38,6 +44,14 @@ body {
   width: 75% !important;
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .v-box {
   border: 1px solid #e7e7e7;
   border-radius: 5px;
@@ -52,4 +66,18 @@ body {
   display: flex;
   flex-flow: row norwap;
   justify-content: center;
+}
+
+.data-picker {
+  z-index: 2;
+  top: 50px;
+  right: 10px;
+
+  width: 150px;
+  height: 100px;
+}
+
+.date-picker__btn {
+  width: 90px;
+  height: 20px;
 }
