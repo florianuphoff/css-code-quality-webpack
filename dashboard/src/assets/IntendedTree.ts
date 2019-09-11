@@ -22,12 +22,12 @@ export default class IntendedTree {
     const select = d3.select;
 
     this.margin = {top: 20, right: 10, bottom: 20, left: 10};
-    this.width = 1400 - this.margin.right - this.margin.left;
+    this.width = 1000 - this.margin.right - this.margin.left;
     this.height = 800 - this.margin.top - this.margin.bottom;
     this.barHeight = 20;
     this.barWidth = this.width *.8;
     this.i = 0;
-    this.duration = 750;
+    this.duration = 500;
     this.tree = tree().size([this.width, this.height]);
     // this.tree = tree().nodeSize([0, 30]);
 

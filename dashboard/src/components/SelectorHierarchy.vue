@@ -1,10 +1,11 @@
 <template>
-  <div class="v-box w-1-2 relative">
+  <div class="v-box w-1-3 relative">
     <div class="v-box__header">Fehlerbehaftete Selektoren</div>
     <div class="v-box absolute data-picker">
-      <button class="data-picker__btn" @click="drawChart('gerenal')">General</button>
-      <button class="data-picker__btn" @click="drawChart('duplications')">Duplications</button>
-      <button class="data-picker__btn" @click="drawChart('smelly')">Smelly</button>
+      <h5>Dataset</h5>
+      <button class="data-picker__btn general" @click="drawChart('gerenal')" v-bind:class="{ active: dSet === 'g' }" v-on:click="dSet = 'g'">General</button>
+      <button class="data-picker__btn duplications" @click="drawChart('duplications')" v-bind:class="{ active: dSet === 'd' }" v-on:click="dSet = 'd'">Duplications</button>
+      <button class="data-picker__btn smelly" @click="drawChart('smelly')" v-bind:class="{ active: dSet === 's' }" v-on:click="dSet = 's'">Smelly</button>
     </div>
     <div class="v-box__chart selector-chart" id="selectorChart"></div>
   </div>
@@ -13,7 +14,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import * as d3 from "d3";
 import IntendedTree from '@/assets/IntendedTree'
 
 export default Vue.extend({
@@ -23,9 +23,13 @@ export default Vue.extend({
     chartData: {
       type: Object,
       required: true
+    },
+  },
+  data() {
+    return {
+      dSet: 'g'    
     }
   },
-
   watch: {
     chartData: {
       handler: function(data) {
@@ -80,4 +84,47 @@ export default Vue.extend({
   stroke: #ccc;
   stroke-width: 1px;
 }
+
+h5 {
+  margin: 0;
+  padding: 5px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.active {
+  color: #da1b60;
+}
+
+.data-picker {
+  display: flex;
+  flex-flow: column wrap;
+
+  border-radius: 0;
+  z-index: 2;
+  top: 50px;
+  right: 10px;
+
+  width: 150px;
+}
+
+.data-picker__btn {
+  background-color: #ffffff;
+  width: 100%;
+  height: 20px;
+  border: 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.data-picker__btn:last-of-type {
+  border-bottom: 0;
+}
+
+.data-picker__btn:hover {
+  cursor: pointer;
+}
+
+.data-picker__btn:not(.active):hover {
+  color: #ff8a00;
+}
+
 </style>

@@ -2,6 +2,7 @@
   <div class="selectors">
     <div class="content">
       <SelectorHierarchy v-bind:chartData=chartData />
+      <ButterflyChortChart v-bind:chordData=chordData />
     </div>
 
   </div>
@@ -10,6 +11,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an alias to /src
+import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
 // import json from '@/results/data.json'; // @ is an alias to /src
 
 function log(s){
@@ -19,7 +21,8 @@ function log(s){
 export default Vue.extend({
   name: 'home',
   components: {
-    SelectorHierarchy
+    SelectorHierarchy,
+    ButterflyChortChart
   },
   data() {
     return {
@@ -28,14 +31,40 @@ export default Vue.extend({
         duplications: {},
         general: {},
         smelly: {}
-      }
+      },
+      chordData: [[], []]
     };
   },
   methods: {
+    butterFlyData() {
+      let data = []
+      let mixins = []
+      let includes = []
+      let placeholder = []
+      let extend = []
+
+
+      this.results.mixins.forEach(report => {
+        if(report.type === 'include') {
+          includes.push(report)
+        } else if(report.type === 'mixin') {
+          mixins.push(report)
+        } else if(report.type === 'extend') {
+          extend.push(report)
+        } else if(report.type === 'placeholder') {
+          placeholder.push(report)
+        }
+      });
+      const respondentsMixins = mixins.length + includes.length
+      const respondentsExtends = placeholder.length + extend.length
+
+      log(respondentsMixins)
+      log(respondentsExtends)
+    },
     cData() {
-      this.chartData.general = this.parseSelectors(this.generalData())
-      this.chartData.duplications = this.parseSelectors(this.duplicationData())
-      this.chartData.smelly = this.parseSelectors(this.smellyData())
+      this.chartData.general = this.parseSelectors(this.generalData(), "general")
+      this.chartData.duplications = this.parseSelectors(this.duplicationData(), "duplication")
+      this.chartData.smelly = this.parseSelectors(this.smellyData(), "smelly")
     },
     duplicationData() {
       let dSelectors = []
@@ -61,6 +90,7 @@ export default Vue.extend({
 
       this.results.warnings.forEach(warning => {
         if(warning.rule === 'block-no-empty') {
+          // log(warning)
           sData.push(warning.resolvedSelector)
         } else if (warning.rule === 'no-descending-specificity') {
           sData.push(warning.resolvedSelector)
@@ -87,9 +117,11 @@ export default Vue.extend({
         this.results = data
         this.duplications = this.results.duplications
         this.cData()
+        this.butterFlyData()
       })
     },
-    parseSelectors: function(selectors) {
+    parseSelectors: function(selectors, dType) {
+      const type = dType
       let sList = {"name":"root", "children": []}
       selectors.forEach(selector => {
         const seperatedSelectors = selector.split(' ')
@@ -107,11 +139,14 @@ export default Vue.extend({
           // parent noch nicht da
           if(!sList.children.filter(e => e.name === pS[0]).length) {
             sList.children.push({ "name": pS[0], "children": [] })
+            // todo: packe DATAINFOS hierhin
             sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [] })            
           } else {
             // parent vorhanden, also finden und child hinzufügen
             for(var i = 0; i < sList.children.length; i++) {
               if (sList.children[i].name === pS[0]) {
+                // todo: packe DATAINFOS hierhin - falls !children.length
+                // denn gibts keine children
                 sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [] })
                 break;
               }
@@ -151,6 +186,7 @@ export default Vue.extend({
         if(sList.children[parentIndex].children.length == 0 || subParentIndex <= 0) {
           // bei einem Kind = puhse sofort
           if(children.length === 1) {
+            // todo: packe DATAINFOS hierhin
             sList.children[parentIndex].children.push({ "name": children[0], children: [] })
           } else {
             // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
@@ -179,8 +215,7 @@ export default Vue.extend({
           return this.recursiveAdd(subtree, selector, true)
         }
       })
-    }
-    ,
+    },
     // find selector names recursevly and add children on a no-match
     // findDeepAndCreate: function(data, selector, flag) {
     //   if(flag) {
@@ -246,6 +281,7 @@ export default Vue.extend({
         // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
         for(var i = children.length-1; i >= 0; i--) {
           if(i == children.length-1) {
+            // todo: packe DATAINFOS hierhin
             tmpStruct = { "name": children[i], children: [] }
           } else {
             struct = { "name": children[i], children: [tmpStruct] }
