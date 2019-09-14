@@ -874,6 +874,20 @@
       "value": "dimensions($dimension, $dimension)"
     },
     {
+      "type": "placeholder",
+      "line": 1,
+      "column": 1,
+      "selector": "%tool",
+      "value": "%tool"
+    },
+    {
+      "type": "placeholder",
+      "line": 8,
+      "column": 1,
+      "selector": "%tap",
+      "value": "%tap"
+    },
+    {
       "type": "include",
       "line": 11,
       "column": 12,
@@ -926,8 +940,50 @@
       "type": "extend",
       "line": 166,
       "column": 11,
-      "resolvedSelector": ".oqipw",
+      "resolvedSelector": ".bubble",
       "value": "%tool"
+    },
+    {
+      "type": "extend",
+      "line": 171,
+      "column": 11,
+      "resolvedSelector": ".main-nav",
+      "value": "%tap"
+    },
+    {
+      "type": "extend",
+      "line": 175,
+      "column": 11,
+      "resolvedSelector": ".side-nav",
+      "value": "%tap"
+    },
+    {
+      "type": "extend",
+      "line": 175,
+      "column": 11,
+      "resolvedSelector": "%tool",
+      "value": "%tap"
+    },
+    {
+      "type": "extend",
+      "line": 175,
+      "column": 11,
+      "resolvedSelector": ".aht",
+      "value": "%tap"
+    },
+    {
+      "type": "extend",
+      "line": 179,
+      "column": 11,
+      "resolvedSelector": ".hidden",
+      "value": ".non-placeholder"
+    },
+    {
+      "type": "extend",
+      "line": 179,
+      "column": 11,
+      "resolvedSelector": ".awd",
+      "value": ".non-placeholder"
     },
     {
       "type": "include",

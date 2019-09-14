@@ -6,40 +6,23 @@
 import * as d3 from 'd3';
 // import customChordLayout from './ChordSort';
 // import stretchedChord from './StretchedChord';
+/* eslint-disable */
 
 const ButterflyChord = {
-  draw(id, d, options) {
-    // pseudo options
-    const cfg = {
-      radius: 5,
-      w: 300,
-      h: 300,
-      factor: 1,
-      factorLegend: 0.85,
-      levels: 10,
-      maxValue: 100,
-      radians: 2 * Math.PI,
-      opacityArea: 0.3,
-      ToRight: 5,
-      TranslateX: 80,
-      TranslateY: 30,
-      ExtraWidthX: 100,
-      ExtraWidthY: 100,
-      color: d3.scaleOrdinal().range(['#ff8a00', '#ff8a00']),
-    };
+  draw(id, options) {
 
     // //////////////////////////////////////////////////////////
     // ////////////////////// Set-up ////////////////////////////
     // //////////////////////////////////////////////////////////
     // TODO: replace width resired with
-    const screenWidth = 700;
+    const screenWidth = 900;
     const mobileScreen = (!(screenWidth > 400));
 
     const margin = {
       left: 50, top: 10, right: 50, bottom: 10,
     };
-    const width = Math.min(screenWidth, 800) - margin.left - margin.right;
-    const height = (mobileScreen ? 300 : Math.min(screenWidth, 800) * 5 / 6) - margin.top - margin.bottom;
+    const width = 900 - margin.left - margin.right;
+    const height = 500 - margin.top - margin.bottom;
 
     const svg = d3.select(id).append('svg')
       .attr('width', (width + margin.left + margin.right))
@@ -54,138 +37,188 @@ const ButterflyChord = {
     const opacityDefault = 0.7; // default opacity of chords
     const opacityLow = 0.02; // hover opacity of those chords not hovered over
 
+    var titleWrapper = svg.append("g").attr("class", "chordTitleWrapper"),
+      titleOffset = mobileScreen ? 15 : 40,
+      titleSeparate = mobileScreen ? 30 : 0;
+
+    //Title	top left
+    titleWrapper.append("text")
+      .attr("class","title left")
+      .style("font-size", mobileScreen ? "12px" : "16px" )
+      .attr("x", (width/2 + margin.left - outerRadius - titleSeparate))
+      .attr("y", 40)
+      .text("Placeholder");
+    titleWrapper.append("line")
+      .attr("class","titleLine left")
+      .attr("x1", (width/2 + margin.left - outerRadius - titleSeparate)*0.6)
+      .attr("x2", (width/2 + margin.left - outerRadius - titleSeparate)*1.4)
+      .attr("y1", titleOffset+8)
+      .attr("y2", titleOffset+8);
+    //Title top right
+    titleWrapper.append("text")
+      .attr("class","title right")
+      .style("font-size", mobileScreen ? "12px" : "16px" )
+      .attr("x", (width/2 + margin.left + outerRadius + titleSeparate))
+      .attr("y", 40)
+      .text("Selektoren");
+    titleWrapper.append("line")
+      .attr("class","titleLine right")
+      .attr("x1", (width/2 + margin.left - outerRadius - titleSeparate)*0.6 + 2*(outerRadius + titleSeparate))
+      .attr("x2", (width/2 + margin.left - outerRadius - titleSeparate)*1.4 + 2*(outerRadius + titleSeparate))
+      .attr("y1", titleOffset+8)
+      .attr("y2", titleOffset+8);
+
 
     // //////////////////////////////////////////////////////////
     // //////////////////////// Data ////////////////////////////
     // //////////////////////////////////////////////////////////
 
     // TODO: replace with data
-    const Names = ['X', 'Y', 'Z', '', 'C', 'B', 'A', ''];
+    const Names = options.names
 
     const respondents = 95; // Total number of respondents (i.e. the number that makes up the total group)
     const emptyPerc = 0.4; // What % of the circle should become empty
     const emptyStroke = Math.round(respondents * emptyPerc);
-    const matrix = [
-      [0, 0, 0, 0, 10, 5, 15, 0], // X
-      [0, 0, 0, 0, 5, 15, 20, 0], // Y
-      [0, 0, 0, 0, 15, 5, 5, 0], // Z
-      [0, 0, 0, 0, 0, 0, 0, emptyStroke], // Dummy stroke
-      [10, 5, 15, 0, 0, 0, 0, 0], // C
-      [5, 15, 5, 0, 0, 0, 0, 0], // B
-      [15, 20, 5, 0, 0, 0, 0, 0], // A
-      [0, 0, 0, emptyStroke, 0, 0, 0, 0], // Dummy stroke
-    ];
+    const matrix = options.data
 
     // Calculate how far the Chord Diagram needs to be rotated clockwise to make the dummy
     // invisible chord center vertically
-    const offset = (2 * Math.PI) * (emptyStroke / (respondents + emptyStroke)) / 4;
+    const offset = options.offset
 
-    // Include the offset in de start and end angle to rotate the Chord diagram clockwise
-    function startAngle(d) { return d.startAngle + offset; }
-    function endAngle(d) { return d.endAngle + offset; }
-
-    // Custom sort function of the chords to keep them in the original order
-    function customSort(a, b) {
-      return 1;
-    }
-
-    // Custom sort function of the chords to keep them in the original order
-    const chord = customChordLayout() // d3.layout.chord()//Custom sort function of the chords to keep them in the original order
-      .padding(0.02)
-      .sortChords(d3.descending) // which chord should be shown on top when chords cross. Now the biggest chord is at the bottom
+    //Custom sort function of the chords to keep them in the original order
+    var chord = customChordLayout() //d3.layout.chord()
+      .padding(.02)
+      .sortChords(d3.descending) //which chord should be shown on top when chords cross. Now the biggest chord is at the bottom
       .matrix(matrix);
 
-    const arc = d3.arc()
+    var arc = d3.arc()
       .innerRadius(innerRadius)
       .outerRadius(outerRadius)
-      .startAngle(startAngle) // startAngle and endAngle now include the offset in degrees
+      .startAngle(startAngle) //startAngle and endAngle now include the offset in degrees
       .endAngle(endAngle);
 
-    const path = stretchedChord()
+    var path = stretchedChord() //Call the stretched chord function 
       .radius(innerRadius)
       .startAngle(startAngle)
       .endAngle(endAngle)
       .pullOutSize(pullOutSize);
 
-    // //////////////////////////////////////////////////////////
-    // ////////////////// Draw outer Arcs ///////////////////////
-    // //////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+    /////////////////// Animated gradient //////////////////////
+    ////////////////////////////////////////////////////////////
 
-    const g = wrapper.selectAll('g.group')
-      .data(chord.groups)
-      .enter().append('g')
-      .attr('class', 'group')
-      .on('mouseover', fade(opacityLow))
-      .on('mouseout', fade(opacityDefault));
+    var defs = wrapper.append("defs");
+    var linearGradient = defs.append("linearGradient")
+      .attr("id","animatedGradient")
+      .attr("x1","0%")
+      .attr("y1","0%")
+      .attr("x2","100%")
+      .attr("y2","0")
+      .attr("spreadMethod", "reflect");
 
-    g.append('path')
-      .style('stroke', (d, i) => (Names[i] === '' ? 'none' : '#da1b60'))
-      .style('fill', (d, i) => (Names[i] === '' ? 'none' : '#da1b60'))
-      .style('pointer-events', (d, i) => (Names[i] === '' ? 'none' : 'auto'))
-      .attr('d', arc)
-      .attr('transform', (d, i) => { // Pull the two slices apart
-        d.pullOutSize = pullOutSize * (d.startAngle + 0.001 > Math.PI ? -1 : 1);
-        return `translate(${d.pullOutSize},${0})`;
-      });
+    linearGradient.append("animate")
+      .attr("attributeName","x1")
+      .attr("values","0%;100%")
+    //	.attr("from","0%")
+    //	.attr("to","100%")
+      .attr("dur","7s")
+      .attr("repeatCount","indefinite");
 
+    linearGradient.append("animate")
+      .attr("attributeName","x2")
+      .attr("values","100%;200%")
+    //	.attr("from","100%")
+    //	.attr("to","200%")
+      .attr("dur","7s")
+      .attr("repeatCount","indefinite");
 
-    // //////////////////////////////////////////////////////////
-    // //////////////////// Append Names ////////////////////////
-    // //////////////////////////////////////////////////////////
+    linearGradient.append("stop")
+      .attr("offset","5%")
+      .attr("stop-color","#E8E8E8");
+    linearGradient.append("stop")
+      .attr("offset","45%")
+      .attr("stop-color","#A3A3A3");
+    linearGradient.append("stop")
+      .attr("offset","55%")
+      .attr("stop-color","#A3A3A3");
+    linearGradient.append("stop")
+      .attr("offset","95%")
+      .attr("stop-color","#E8E8E8");
 
-    // The text also needs to be displaced in the horizontal directions
-    // And also rotated with the offset in the clockwise direction
-    g.append('text')
-      .each((d) => { d.angle = ((d.startAngle + d.endAngle) / 2) + offset; })
-      .attr('dy', '.35em')
-      .attr('class', 'titles')
-      .attr('text-anchor', d => (d.angle > Math.PI ? 'end' : null))
-      .attr('transform', (d, i) => {
-        const c = arc.centroid(d);
-        return `translate(${c[0] + d.pullOutSize},${c[1]})`
-      + `rotate(${d.angle * 180 / Math.PI - 90})`
-      + `translate(${55},0)${
-        d.angle > Math.PI ? 'rotate(180)' : ''}`;
+    ////////////////////////////////////////////////////////////
+    //////////////////// Draw outer Arcs ///////////////////////
+    ////////////////////////////////////////////////////////////
+
+    var g = wrapper.selectAll("g.group")
+    .data(chord.groups)
+    .enter().append("g")
+    .attr("class", "group")
+    .on("mouseover", fade(opacityLow))
+    .on("mouseout", fade(opacityDefault));
+
+    g.append("path")
+    .style("stroke", function(d,i) { return (Names[i] === "" ? "none" : "#00A1DE"); })
+    .style("fill", function(d,i) { return (Names[i] === "" ? "none" : "#00A1DE"); })
+    .style("pointer-events", function(d,i) { return (Names[i] === "" ? "none" : "auto"); })
+    .attr("d", arc)
+    .attr("transform", function(d, i) { //Pull the two slices apart
+          d.pullOutSize = pullOutSize * ( d.startAngle + 0.001 > Math.PI ? -1 : 1);
+          return "translate(" + d.pullOutSize + ',' + 0 + ")";
+    });
+
+    ////////////////////////////////////////////////////////////
+    ////////////////////// Append Names ////////////////////////
+    ////////////////////////////////////////////////////////////
+
+    //The text also needs to be displaced in the horizontal directions
+    //And also rotated with the offset in the clockwise direction
+    g.append("text")
+      .each(function(d) { d.angle = ((d.startAngle + d.endAngle) / 2) + offset;})
+      .attr("dy", ".35em")
+      .attr("class", "titles")
+      .style("font-size", mobileScreen ? "8px" : "10px" )
+      .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+      .attr("transform", function(d,i) { 
+        var c = arc.centroid(d);
+        return "translate(" + (c[0] + d.pullOutSize) + "," + c[1] + ")"
+        + "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+        + "translate(" + 20 + ",0)"
+        + (d.angle > Math.PI ? "rotate(180)" : "")
       })
-      .text((d, i) => Names[i]);
+      .text(function(d,i) { return Names[i]; })
+      .call(wrapChord, 100);
 
-    // //////////////////////////////////////////////////////////
-    // ////////////////// Draw inner chords /////////////////////
-    // //////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+    //////////////////// Draw inner chords /////////////////////
+    ////////////////////////////////////////////////////////////
 
-    const chords = wrapper.selectAll('path.chord')
+    wrapper.selectAll("path.chord")
       .data(chord.chords)
-      .enter().append('path')
-      .attr('class', 'chord')
-      .style('stroke', 'none')
-      .style('fill', '#C4C4C4')
-      .style('opacity', d => (Names[d.source.index] === '' ? 0 : opacityDefault)) // Make the dummy strokes have a zero opacity (invisible)
-      .style('pointer-events', (d, i) => (Names[d.source.index] === '' ? 'none' : 'auto')) // Remove pointer events from dummy strokes
-      .attr('d', path)
-      .on("mouseover", fadeOnChord)
-      .on("mouseout", fade(opacityDefault));	
+      .enter().append("path")
+      .attr("class", "chord")
+      .style("stroke", "none")
+      .style("fill", "#000") //An SVG Gradient to give the impression of a flow from left to right
+      .style("opacity", function(d) { return (Names[d.source.index] === "" ? 0 : opacityDefault); }) //Make the dummy strokes have a zero opacity (invisible)
+      .style("pointer-events", function(d,i) { return (Names[d.source.index] === "" ? "none" : "auto"); }) //Remove pointer events from dummy strokes
+      .attr("d", path);	
 
-    // //////////////////////////////////////////////////////////
-    // /////////////////////// Tooltip //////////////////////////
-    // //////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+    ////////////////// Extra Functions /////////////////////////
+    ////////////////////////////////////////////////////////////
 
-    // Arcs
-    g.append('title')
-      .text((d, i) => `${Math.round(d.value) } people in ${Names[i]}`);
-
-    // Chords
-    chords.append('title')
-      .text(d => [Math.round(d.source.value), ' people from ', Names[d.target.index], ' to ', Names[d.source.index]].join(''));
+    //Include the offset in de start and end angle to rotate the Chord diagram clockwise
+    function startAngle(d) { return d.startAngle + offset; }
+    function endAngle(d) { return d.endAngle + offset; }
 
     // Returns an event handler for fading a given chord group
     function fade(opacity) {
-      return function (d, i) {
-        svg.selectAll('path.chord')
-          .filter(d => d.source.index !== i && d.target.index !== i && Names[d.source.index] !== '')
-          .transition('fadeOnArc')
-          .style('opacity', opacity);
+      return function(d, i) {
+      wrapper.selectAll("path.chord")
+        .filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
+        .transition()
+        .style("opacity", opacity);
       };
-    }// fade
+    }//fade
 
     // Fade function when hovering over chord
     function fadeOnChord(d) {
@@ -196,6 +229,34 @@ const ButterflyChord = {
           return d.source.index === chosen.source.index && d.target.index === chosen.target.index ? opacityDefault : opacityLow;
         });
     }//fadeOnChord
+
+    /*Taken from http://bl.ocks.org/mbostock/7555321
+    //Wraps SVG text*/
+    function wrapChord(text, width) {
+      text.each(function() {
+      var text = d3.select(this),
+      words = text.text().split(/\s+/).reverse(),
+      word,
+      line = [],
+      lineNumber = 0,
+      lineHeight = 1.1, // ems
+      y = 0,
+      x = 0,
+      dy = parseFloat(text.attr("dy")),
+      tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+
+      while (word = words.pop()) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+          }
+        }
+      });
+    }//wrapChord
 
     function stretchedChord() {
       var source = d3_source, 
@@ -440,3 +501,4 @@ const ButterflyChord = {
 };
 
 export default ButterflyChord;
+/* eslint-enable */

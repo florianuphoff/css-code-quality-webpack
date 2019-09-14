@@ -2,7 +2,8 @@
   <div class="selectors">
     <div class="content">
       <SelectorHierarchy v-bind:chartData=chartData />
-      <ButterflyChortChart v-bind:chordData=chordData />
+      <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
+      <SpecificityChart :dataseries=dataseries :yAxis=yAxis :specificityValues=specificityValues />
     </div>
 
   </div>
@@ -12,6 +13,7 @@
 import Vue from 'vue';
 import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an alias to /src
 import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
+import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
 // import json from '@/results/data.json'; // @ is an alias to /src
 
 function log(s){
@@ -22,7 +24,8 @@ export default Vue.extend({
   name: 'home',
   components: {
     SelectorHierarchy,
-    ButterflyChortChart
+    ButterflyChortChart,
+    SpecificityChart
   },
   data() {
     return {
@@ -32,34 +35,132 @@ export default Vue.extend({
         general: {},
         smelly: {}
       },
-      chordData: [[], []]
+      chordData: {
+        data: [],
+        names: [],
+        offset: 0
+      },
+      specificityValues: [],
+      yAxis: [],
+      dataseries: []
     };
   },
   methods: {
+    specificityChartData() {
+      log("Create Data")
+
+      this.specificityValues = this.results.stats[0].selectors.getSpecificityValues
+      this.yAxis = [...new Set(this.results.stats[0].selectors.getSpecificityGraph)].sort((a, b) => a - b)
+
+      let ds = []
+      this.results.stats[0].selectors.getSpecificityGraph.forEach((specificity, index) => {
+        ds.push([index, this.yAxis.indexOf(specificity)])
+      });
+
+      this.dataseries = ds
+      
+      // Y Achse muss nur unique sein
+      // TODO: Data serie muss ein Array von Arrays sein: [[index im Selectorarray, index der Specificity aus Y Achse]]
+    },
     butterFlyData() {
       let data = []
       let mixins = []
+      let mixinsNames = []
       let includes = []
+      let mixinIncludes = []
+      let includeNames = []
       let placeholder = []
+      let placeholderNames = []
       let extend = []
-
+      let extendNames = []
 
       this.results.mixins.forEach(report => {
         if(report.type === 'include') {
           includes.push(report)
+
+
+          if(report.selector) {
+            // case: mixin includes another mixin
+            // this is the mixin name
+            // save the usage and add it later the matrix
+
+            //save the mixin to Names
+            // TODO: add usage reference from mixin to mixin
+            mixinsNames.push(report.selector.split('(')[0])
+          } else {
+
+            includeNames.push(report.resolvedSelector)
+          }
         } else if(report.type === 'mixin') {
           mixins.push(report)
+          mixinsNames.push(report.selector.split('(')[0])
         } else if(report.type === 'extend') {
           extend.push(report)
+
+          if(!report.value.includes('%')) {
+            extendNames.push(report.resolvedSelector)            
+            placeholderNames.push(report.value)
+          } else if(report.resolvedSelector.includes('%')) {
+            // placeholder extends placeholder
+            placeholderNames.push(report.value)          
+            placeholderNames.push(report.resolvedSelector)
+          } else {
+            extendNames.push(report.resolvedSelector)            
+          }
         } else if(report.type === 'placeholder') {
-          placeholder.push(report)
+          placeholderNames.push(report.selector)
         }
       });
-      const respondentsMixins = mixins.length + includes.length
-      const respondentsExtends = placeholder.length + extend.length
 
-      log(respondentsMixins)
-      log(respondentsExtends)
+      placeholderNames = [...new Set(placeholderNames)]
+      extendNames = [...new Set(extendNames)]
+      const mNames = [...new Set(mixinsNames) ,'' , includeNames , ''].flat();
+      // const eNames = [placeholderNames ,'' , extendNames , ''].flat(); //uncomment for butterfly
+      const eNames = [placeholderNames, extendNames].flat();
+
+      // TODO: es fehlt die Matrix
+
+      let eMatrix = []
+      for (let j = 0; j < eNames.length; j++) {
+        eMatrix.push(new Array(eNames.length))
+        eMatrix[j].fill(0)
+      }
+      let respondents = 0
+      for (let k = 0; k < eNames.length; k++) {
+        let name = eNames[k]
+        extend.forEach(report => {
+          let index = 0
+          let hit = false
+          if(name === report.resolvedSelector) {
+            // placeholder extends placeholder
+            // find s in eNames
+            index = eNames.indexOf(report.value)
+            eMatrix[k][index] = 1
+            respondents += 1
+          } else if(name === report.value) {
+            index = eNames.indexOf(report.resolvedSelector)
+            eMatrix[k][index] = 1
+            respondents += 1
+          }
+        })
+      }
+
+      const emptyPerc = 0.2; // What % of the circle should become empty
+      const emptyStroke = Math.round(respondents * emptyPerc)
+      const offset = (2 * Math.PI) * (emptyStroke / (respondents + emptyStroke)) / 4
+      // let eIndex = 0
+      // for (let l = 0; l < eNames.length; l++) {
+      //   if(eNames[l] === '') {
+      //     eIndex = l
+      //     eMatrix[l][eNames.length-1] = emptyStroke
+      //     break;
+      //   }
+      // }
+      // eMatrix[eMatrix.length-1][eIndex] = emptyStroke
+
+      this.chordData.data = eMatrix
+      this.chordData.names = eNames
+      this.chordData.offset = offset
     },
     cData() {
       this.chartData.general = this.parseSelectors(this.generalData(), "general")
@@ -118,6 +219,7 @@ export default Vue.extend({
         this.duplications = this.results.duplications
         this.cData()
         this.butterFlyData()
+        this.specificityChartData()
       })
     },
     parseSelectors: function(selectors, dType) {
@@ -216,54 +318,6 @@ export default Vue.extend({
         }
       })
     },
-    // find selector names recursevly and add children on a no-match
-    // findDeepAndCreate: function(data, selector, flag) {
-    //   if(flag) {
-    //   // erneuter aufruf mit einem Treffer
-    //     return data.some((e) => {
-    //       // parent wurde gefunden
-    //       if(e.name == selector[0]) {
-    //         // wieder ein match also nochmal aufrufen
-    //         selector = selector.slice(1)
-            
-    //         // Falls das Parent Element keine kinder hat -> sofort pushen
-    //         if(e.children.length === 0) {
-    //           return this.addToArray(selector, e.children) 
-    //         }
-
-    //         // noch eine Runde drehen
-    //         return this.findDeepAndCreate(e.children, selector, true)            
-    //       } else {
-    //         // kein match gefunden, also hier alle Children plazieren
-    //         // Sonderfall!
-    //         // Kind ist bereits vorhanden -> müsste beim Parent plaziert werden
-    //         // wie finde ich heraus, ab wann der Sonderfall eintritt?
-            
-    //         return this.addToArray(selector, e.children)            
-    //       }
-    //     })
-    //   } else {
-    //     return data.some((e) => {
-    //       if(e.name == selector[0]) {
-    //         // we have a hit
-    //         selector = selector.slice(1)
-
-    //         //
-            
-
-    //         if(e.children.length === 0) {
-    //           return this.addToArray(selector, e.children) 
-    //         }
-  
-    //         return this.findDeepAndCreate(e.children, selector, true)
-            
-    //         // return this.findDeepAndCreate(e.children, selector)
-    //       } else if(e.children) {
-    //         return this.findDeepAndCreate(e.children, selector)
-    //       }
-    //     })
-    //   }
-    // },
     cleanArray: function(array, operator) {
       let index = array.indexOf(operator)
       if (index > -1) {

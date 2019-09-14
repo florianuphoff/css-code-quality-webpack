@@ -144,21 +144,7 @@ const RadarChart = {
                return str;
               })
              .style("fill", function(j, i){return cfg.color(series)})
-             .style("fill-opacity", cfg.opacityArea)
-             .on('mouseover', function (d){
-                      const z = "polygon."+d3.select(this).attr("class");
-                      g.selectAll("polygon")
-                       .transition(200)
-                       .style("fill-opacity", 0.1); 
-                      g.selectAll(z)
-                       .transition(200)
-                       .style("fill-opacity", .5);
-                      })
-             .on('mouseout', function(){
-                      g.selectAll("polygon")
-                       .transition(200)
-                       .style("fill-opacity", cfg.opacityArea);
-             });
+             .style("fill-opacity", cfg.opacityArea);
       series++;
     });
     series=0;

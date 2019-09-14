@@ -7,7 +7,7 @@
       <button class="data-picker__btn duplications" @click="drawChart('duplications')" v-bind:class="{ active: dSet === 'd' }" v-on:click="dSet = 'd'">Duplications</button>
       <button class="data-picker__btn smelly" @click="drawChart('smelly')" v-bind:class="{ active: dSet === 's' }" v-on:click="dSet = 's'">Smelly</button>
     </div>
-    <div class="v-box__chart selector-chart" id="selectorChart"></div>
+    <div class="v-box__chart selector-chart v-box__content" id="selectorChart"></div>
   </div>
 </template>
 

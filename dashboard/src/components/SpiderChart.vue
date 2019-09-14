@@ -1,7 +1,7 @@
 <template>
   <div class="v-box w-1-3">
     <div class="v-box__header">Komplexität</div>
-    <div class="v-box__chart" id="chart"></div>
+    <div class="v-box__chart v-box__content" id="chart"></div>
   </div>
 </template>
 
