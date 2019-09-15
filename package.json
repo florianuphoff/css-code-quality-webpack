@@ -39,7 +39,7 @@
     "postcss": "^7.0.17",
     "postcss-code-duplication": "^1.1.0",
     "postcss-resolve-nested-selector": "^0.1.1",
-    "postcss-selector-stats": "0.0.1",
+    "postcss-selector-stats": "^1.0.1",
     "stylelint": "^10.1.0",
     "winston": "^3.2.1"
   },
