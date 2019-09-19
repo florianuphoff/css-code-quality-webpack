@@ -3,7 +3,7 @@
     <div class="content">
       <SelectorHierarchy v-bind:chartData=chartData />
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
-      <SpecificityChart :dataseries=dataseries :yAxis=yAxis :specificityValues=specificityValues />
+      <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
     </div>
 
   </div>
@@ -42,25 +42,27 @@ export default Vue.extend({
       },
       specificityValues: [],
       yAxis: [],
+      xAxis: 0,
       dataseries: []
     };
   },
   methods: {
     specificityChartData() {
-      log("Create Data")
-
-      this.specificityValues = this.results.stats[0].selectors.getSpecificityValues
       this.yAxis = [...new Set(this.results.stats[0].selectors.getSpecificityGraph)].sort((a, b) => a - b)
 
       let ds = []
       this.results.stats[0].selectors.getSpecificityGraph.forEach((specificity, index) => {
-        ds.push([index, this.yAxis.indexOf(specificity)])
+        const lineNumber = this.results.stats[1].selectors[index].startsAt
+        ds.push([lineNumber, this.yAxis.indexOf(specificity)])
       });
 
+
+
+      this.specificityValues = this.results.stats[1].selectors
+      this.xAxis = this.results.stats[1].lines
       this.dataseries = ds
-      
-      // Y Achse muss nur unique sein
-      // TODO: Data serie muss ein Array von Arrays sein: [[index im Selectorarray, index der Specificity aus Y Achse]]
+      console.log(ds)
+      console.log(this.specificityValues)
     },
     butterFlyData() {
       let data = []

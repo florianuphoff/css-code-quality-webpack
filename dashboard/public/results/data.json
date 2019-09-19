@@ -3,6 +3,18 @@
     "dataType": "Map",
     "value": [
       [
+        ".v-hidden",
+        0
+      ],
+      [
+        ".v-visible",
+        0
+      ],
+      [
+        ".v-block",
+        0
+      ],
+      [
         ".alert",
         0
       ],
@@ -51,19 +63,15 @@
         1
       ],
       [
-        ".v-hidden",
-        0
-      ],
-      [
-        ".v-visible",
-        0
-      ],
-      [
-        ".v-block",
-        0
-      ],
-      [
         "%tool",
+        0
+      ],
+      [
+        "%tap",
+        0
+      ],
+      [
+        ".non-placeholder",
         0
       ],
       [
@@ -371,7 +379,19 @@
         0
       ],
       [
-        ".oqipw",
+        ".bubble",
+        0
+      ],
+      [
+        ".main-nav",
+        0
+      ],
+      [
+        ".side-nav",
+        0
+      ],
+      [
+        ".hidden",
         0
       ],
       [
@@ -480,6 +500,12 @@
       "column": 1,
       "rule": "no-duplicate-selectors",
       "word": null
+    },
+    {
+      "resolvedSelector": "",
+      "line": 43,
+      "column": 24,
+      "rule": "block-no-empty"
     },
     {
       "selector": "a",
@@ -640,6 +666,13 @@
       "column": 15,
       "rule": "plugin/no-low-performance-animation-properties",
       "word": "transition:margin 350ms ease-in"
+    },
+    {
+      "selector": ".hidden",
+      "resolvedSelector": ".hidden",
+      "line": 179,
+      "column": 3,
+      "rule": "scss/at-extend-no-missing-placeholder"
     },
     {
       "selector": ".c5",
@@ -874,20 +907,6 @@
       "value": "dimensions($dimension, $dimension)"
     },
     {
-      "type": "placeholder",
-      "line": 1,
-      "column": 1,
-      "selector": "%tool",
-      "value": "%tool"
-    },
-    {
-      "type": "placeholder",
-      "line": 8,
-      "column": 1,
-      "selector": "%tap",
-      "value": "%tap"
-    },
-    {
       "type": "include",
       "line": 11,
       "column": 12,
@@ -959,30 +978,9 @@
     },
     {
       "type": "extend",
-      "line": 175,
-      "column": 11,
-      "resolvedSelector": "%tool",
-      "value": "%tap"
-    },
-    {
-      "type": "extend",
-      "line": 175,
-      "column": 11,
-      "resolvedSelector": ".aht",
-      "value": "%tap"
-    },
-    {
-      "type": "extend",
       "line": 179,
       "column": 11,
       "resolvedSelector": ".hidden",
-      "value": ".non-placeholder"
-    },
-    {
-      "type": "extend",
-      "line": 179,
-      "column": 11,
-      "resolvedSelector": ".awd",
       "value": ".non-placeholder"
     },
     {
@@ -1001,6 +999,17 @@
     }
   ],
   "duplications": [
+    {
+      "type": 1,
+      "origin": {
+        "hash": "485bdc20ec22c08679c81ccd17d90940",
+        "selector": ".non-placeholder, .hidden"
+      },
+      "duplication": {
+        "hash": "485bdc20ec22c08679c81ccd17d90940",
+        "selector": ".v-hidden"
+      }
+    },
     {
       "type": 1,
       "origin": {
@@ -1260,13 +1269,15 @@
   ],
   "stats": [
     {
-      "size": 7954,
-      "gzip": 2336,
+      "size": 8070,
+      "gzip": 2370,
       "rules": {
-        "total": 111,
+        "total": 113,
         "size": {
           "graph": [
             4,
+            2,
+            1,
             4,
             6,
             1,
@@ -1379,7 +1390,7 @@
             1
           ],
           "max": 19,
-          "average": 2.144144144144144
+          "average": 2.1327433628318584
         },
         "selectorByRuleSizes": [
           {
@@ -1447,7 +1458,7 @@
             "declarations": 4
           },
           {
-            "selector": ".oqipw",
+            "selector": ".bubble",
             "declarations": 4
           },
           {
@@ -1603,6 +1614,10 @@
             "declarations": 2
           },
           {
+            "selector": ".main-nav, .side-nav",
+            "declarations": 2
+          },
+          {
             "selector": ".f9",
             "declarations": 1
           },
@@ -1659,7 +1674,7 @@
             "declarations": 1
           },
           {
-            "selector": ".oqipw",
+            "selector": ".bubble",
             "declarations": 1
           },
           {
@@ -1825,18 +1840,26 @@
           {
             "selector": ".alert__text",
             "declarations": 1
+          },
+          {
+            "selector": ".non-placeholder, .hidden",
+            "declarations": 1
           }
         ]
       },
       "selectors": {
-        "total": 114,
+        "total": 118,
         "type": 14,
-        "class": 100,
+        "class": 104,
         "id": 17,
         "pseudoClass": 7,
         "pseudoElement": 10,
         "values": [
-          ".oqipw",
+          ".bubble",
+          ".main-nav",
+          ".side-nav",
+          ".non-placeholder",
+          ".hidden",
           ".alert",
           ".alert:before",
           ".alert__text",
@@ -1926,7 +1949,7 @@
           ".close .pok",
           ".close .pokawdf",
           ".outline-button",
-          ".oqipw",
+          ".bubble",
           ".glowing-button",
           ".red-border",
           ".red-border:before",
@@ -1953,9 +1976,13 @@
         ],
         "specificity": {
           "max": 200,
-          "average": 28.982456140350877
+          "average": 28.338983050847457
         },
         "getSpecificityGraph": [
+          10,
+          10,
+          10,
+          10,
           10,
           10,
           11,
@@ -2073,7 +2100,23 @@
         ],
         "getSpecificityValues": [
           {
-            "selector": ".oqipw",
+            "selector": ".bubble",
+            "specificity": 10
+          },
+          {
+            "selector": ".main-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".side-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".non-placeholder",
+            "specificity": 10
+          },
+          {
+            "selector": ".hidden",
             "specificity": 10
           },
           {
@@ -2433,7 +2476,7 @@
             "specificity": 10
           },
           {
-            "selector": ".oqipw",
+            "selector": ".bubble",
             "specificity": 10
           },
           {
@@ -2695,7 +2738,23 @@
             "specificity": 11
           },
           {
-            "selector": ".oqipw",
+            "selector": ".bubble",
+            "specificity": 10
+          },
+          {
+            "selector": ".main-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".side-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".non-placeholder",
+            "specificity": 10
+          },
+          {
+            "selector": ".hidden",
             "specificity": 10
           },
           {
@@ -2895,7 +2954,7 @@
             "specificity": 10
           },
           {
-            "selector": ".oqipw",
+            "selector": ".bubble",
             "specificity": 10
           },
           {
@@ -2988,11 +3047,11 @@
           }
         ],
         "getRepeatedValues": [
+          ".bubble",
           ".duplication-type-4",
           ".gf-e",
           ".glowing-button",
           ".header",
-          ".oqipw",
           ".red-border",
           ".red-border:after",
           ".spread-selector",
@@ -3001,7 +3060,7 @@
         ]
       },
       "declarations": {
-        "total": 238,
+        "total": 241,
         "unique": 177,
         "properties": {
           "box-sizing": [
@@ -3042,7 +3101,14 @@
             "2rem",
             "1rem"
           ],
+          "position": [
+            "relative",
+            "relative",
+            "absolute"
+          ],
           "display": [
+            "block",
+            "none",
             "inline-block",
             "inline-block",
             "none",
@@ -3355,10 +3421,6 @@
           "align-self": [
             "center"
           ],
-          "position": [
-            "relative",
-            "absolute"
-          ],
           "top": [
             "12.15rem"
           ],
@@ -3428,6 +3490,601 @@
         "values": [],
         "contents": []
       }
+    },
+    {
+      "selectors": [
+        {
+          "selector": ".bubble",
+          "startsAt": 1,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".main-nav",
+          "startsAt": 7,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".side-nav",
+          "startsAt": 7,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".non-placeholder",
+          "startsAt": 11,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".hidden",
+          "startsAt": 11,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".alert",
+          "startsAt": 14,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert:before",
+          "startsAt": 19,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert__text",
+          "startsAt": 26,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--warning",
+          "startsAt": 28,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--warning:before",
+          "startsAt": 30,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--info",
+          "startsAt": 33,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--info:before",
+          "startsAt": 35,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".button",
+          "startsAt": 39,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".v-hidden",
+          "startsAt": 43,
+          "origin": "webpack:///frontend/css/2_alignment/_display.scss"
+        },
+        {
+          "selector": ".v-visible",
+          "startsAt": 46,
+          "origin": "webpack:///frontend/css/2_alignment/_display.scss"
+        },
+        {
+          "selector": ".v-block",
+          "startsAt": 49,
+          "origin": "webpack:///frontend/css/2_alignment/_display.scss"
+        },
+        {
+          "selector": ".duplication-type-1",
+          "startsAt": 52,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-1-dup",
+          "startsAt": 56,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-1",
+          "startsAt": 60,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-2",
+          "startsAt": 65,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-x",
+          "startsAt": 70,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-y",
+          "startsAt": 75,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-3-1",
+          "startsAt": 80,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-3-1-htr",
+          "startsAt": 83,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-a",
+          "startsAt": 89,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-awd",
+          "startsAt": 95,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-b",
+          "startsAt": 98,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-c",
+          "startsAt": 101,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-4",
+          "startsAt": 106,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-4",
+          "startsAt": 109,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".glowing-button",
+          "startsAt": 112,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".red-border",
+          "startsAt": 116,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".wrong-value",
+          "startsAt": 119,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".slider",
+          "startsAt": 125,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".unknown-prop",
+          "startsAt": 128,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a",
+          "startsAt": 133,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a:UNKNOWN",
+          "startsAt": 136,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a:hoverr",
+          "startsAt": 139,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "unknown",
+          "startsAt": 144,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a",
+          "startsAt": 148,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".fancy-table",
+          "startsAt": 154,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".fancy-item",
+          "startsAt": 159,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".super-table-column",
+          "startsAt": 165,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".floated-element",
+          "startsAt": 172,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": "a.special-link",
+          "startsAt": 176,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": "a.special-link:hover",
+          "startsAt": 179,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".special-link",
+          "startsAt": 183,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".header",
+          "startsAt": 187,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".header",
+          "startsAt": 194,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".gf-e",
+          "startsAt": 198,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".gf-e",
+          "startsAt": 202,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".spread-selector",
+          "startsAt": 205,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".layout-animation",
+          "startsAt": 209,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".paint-animation",
+          "startsAt": 212,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-1",
+          "startsAt": 215,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-2",
+          "startsAt": 219,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-3",
+          "startsAt": 223,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-4",
+          "startsAt": 227,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-5",
+          "startsAt": 231,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-6",
+          "startsAt": 235,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": "input[type=\"email\"]",
+          "startsAt": 239,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": "span[lang=\"pt\"]",
+          "startsAt": 242,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": "a.c1",
+          "startsAt": 245,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "a#id1",
+          "startsAt": 248,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id2#id3",
+          "startsAt": 251,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".agr#oie",
+          "startsAt": 254,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4.c2",
+          "startsAt": 257,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4",
+          "startsAt": 260,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4:hover",
+          "startsAt": 262,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4#id5",
+          "startsAt": 264,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4.c3",
+          "startsAt": 266,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4",
+          "startsAt": 268,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4:before",
+          "startsAt": 270,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4__element",
+          "startsAt": 272,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5",
+          "startsAt": 275,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item",
+          "startsAt": 278,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+          "startsAt": 280,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+          "startsAt": 282,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+          "startsAt": 284,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c6 > .c7 ~ button.c8.c9",
+          "startsAt": 287,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12.c13:hover",
+          "startsAt": 290,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12.c13.c14",
+          "startsAt": 293,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12 .c15",
+          "startsAt": 296,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#opk.c13",
+          "startsAt": 300,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".fancy-image",
+          "startsAt": 303,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "kbd",
+          "startsAt": 306,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "code",
+          "startsAt": 314,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".badge",
+          "startsAt": 322,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close",
+          "startsAt": 330,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close:hover",
+          "startsAt": 335,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close:focus",
+          "startsAt": 335,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close .pok",
+          "startsAt": 340,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close .pokawdf",
+          "startsAt": 340,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".outline-button",
+          "startsAt": 344,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".bubble",
+          "startsAt": 352,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".glowing-button",
+          "startsAt": 355,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".red-border",
+          "startsAt": 359,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".red-border:before",
+          "startsAt": 363,
+          "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
+        },
+        {
+          "selector": ".red-border:after",
+          "startsAt": 363,
+          "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
+        },
+        {
+          "selector": ".red-border:after",
+          "startsAt": 366,
+          "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
+        },
+        {
+          "selector": ".spread-selector",
+          "startsAt": 369,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".undoing-styles-1",
+          "startsAt": 373,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".undoing-styles-1",
+          "startsAt": 378,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".too-long-selector",
+          "startsAt": 381,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".too-long-selector:before",
+          "startsAt": 401,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".too-long-selector:after",
+          "startsAt": 403,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".js-styled",
+          "startsAt": 406,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".magic-fix",
+          "startsAt": 411,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".magic-fix .magic-number",
+          "startsAt": 413,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f1",
+          "startsAt": 419,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f2",
+          "startsAt": 422,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f3",
+          "startsAt": 425,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f4",
+          "startsAt": 428,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f5",
+          "startsAt": 431,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f6",
+          "startsAt": 434,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f7",
+          "startsAt": 437,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f8",
+          "startsAt": 440,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f9",
+          "startsAt": 443,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        }
+      ],
+      "lines": 446
     }
   ]
 }

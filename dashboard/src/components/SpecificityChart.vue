@@ -29,6 +29,10 @@ export default Vue.extend({
     yAxis: {
       type: Array,
       required: true
+    },
+    xAxis: {
+      type: Number,
+      required: true
     }
   },
   watch: {
@@ -43,6 +47,10 @@ export default Vue.extend({
     yAxis(data) {
       this.yAxis = data
       this.chartOptions.yAxis.categories = this.yAxis      
+    },
+    xAxis(data) {
+      this.xAxis = data
+      this.chartOptions.xAxis.max = this.xAxis
     }
   },
   computed: {
@@ -75,14 +83,16 @@ export default Vue.extend({
         },
         xAxis: {
           title: {
-            text: 'Ort im Quellcode'
-          }
+            text: 'Zeile im Quellcode'
+          },
+          max: this.xAxis,
+          tickAmount: 10
         },
         tooltip: {
         },
         yAxis: {
           title: {
-            text: 'Specificity'
+            text: 'Spezifizität'
           },
           categories: [1,2,10,11,20,21,40,41,200],
           labels: {
@@ -116,8 +126,24 @@ export default Vue.extend({
   methods: {
     tooltipCallback(values, yAxis) {
       this.chartOptions.tooltip.formatter = function() {
-        return `Selector: <b>${values[this.x].selector}</b><br>
-            Specificity: <b>${yAxis[this.y]}</b>`;
+        // wir können mehrere Treffer bei X haben, da mehrere Selektoren auf einer Zeile liegen können
+        const hits = values.flatMap((entry, i) => entry.startsAt === this.x ? entry : []);
+
+        if(hits.length > 1) {
+          let template = `<b>Mehrzeilige Selektoren: </b>`
+          hits.forEach(entry => {
+            template += `${entry.selector}, `
+          });
+          return `${template}<br>
+                  <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
+                  <b>Zeile: </b>${hits[0].startsAt}</b><br>
+                  <b>Spezifizität: </b>${yAxis[this.y]}`;
+        }
+
+        return `<b>Selektor: </b>${hits[0].selector}<br>
+                <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
+                <b>Zeile: </b>${hits[0].startsAt}</b><br>
+                <b>Spezifizität: </b>${yAxis[this.y]}`;
       }
     },
   },
