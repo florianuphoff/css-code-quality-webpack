@@ -1,6 +1,6 @@
 <template>
   <div class="v-box w-2-3 specificity">
-    <div class="v-box__header">Spezifizitätsgraph</div>
+    <div class="v-box__header">CSS Spezifizitätsgraph</div>
     <div class="v-box__chart  v-box__content">
       <highcharts :options="chartOptions" :updateArgs="updateArgs" ></highcharts>
     </div>

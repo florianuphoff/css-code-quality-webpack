@@ -4,6 +4,7 @@
       <SelectorHierarchy v-bind:chartData=chartData />
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
       <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
+      <Heatmap :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis />
     </div>
 
   </div>
@@ -14,6 +15,7 @@ import Vue from 'vue';
 import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an alias to /src
 import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
 import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
+import Heatmap from '@/components/Heatmap.vue'
 // import json from '@/results/data.json'; // @ is an alias to /src
 
 function log(s){
@@ -25,7 +27,8 @@ export default Vue.extend({
   components: {
     SelectorHierarchy,
     ButterflyChortChart,
-    SpecificityChart
+    SpecificityChart,
+    Heatmap
   },
   data() {
     return {
@@ -47,6 +50,14 @@ export default Vue.extend({
     };
   },
   methods: {
+    heatmapData() {
+      let nestings = []
+
+      this.results.nesting.value.forEach(element => {
+        nestings.push(element[1])
+      });
+      // this.yAxis = [...new Set(this.results.nesting.value)]
+    },
     specificityChartData() {
       this.yAxis = [...new Set(this.results.stats[0].selectors.getSpecificityGraph)].sort((a, b) => a - b)
 
@@ -222,6 +233,7 @@ export default Vue.extend({
         this.cData()
         this.butterFlyData()
         this.specificityChartData()
+        this.heatmapData()
       })
     },
     parseSelectors: function(selectors, dType) {
