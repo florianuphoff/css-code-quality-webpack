@@ -1,6 +1,6 @@
 {
   "name": "stylesheet-code-quality-webpack-plugin",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A (s)css analysis plugin for webpack",
   "license": "MIT",
   "repository": "florianuphoff/stylesheet-code-quality-webpack-plugin",
@@ -39,7 +39,7 @@
     "postcss": "^7.0.17",
     "postcss-code-duplication": "^1.1.0",
     "postcss-resolve-nested-selector": "^0.1.1",
-    "postcss-selector-stats": "^1.0.1",
+    "postcss-selector-stats": "^1.1.0",
     "stylelint": "^10.1.0",
     "winston": "^3.2.1"
   },
