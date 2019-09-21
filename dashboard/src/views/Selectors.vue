@@ -4,7 +4,7 @@
       <SelectorHierarchy v-bind:chartData=chartData />
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
       <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
-      <Heatmap :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis />
+      <Heatmap :heatMapData=heatMapData />
     </div>
 
   </div>
@@ -16,6 +16,7 @@ import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an a
 import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
 import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
 import Heatmap from '@/components/Heatmap.vue'
+import { calculate } from 'specificity';
 // import json from '@/results/data.json'; // @ is an alias to /src
 
 function log(s){
@@ -46,17 +47,143 @@ export default Vue.extend({
       specificityValues: [],
       yAxis: [],
       xAxis: 0,
-      dataseries: []
+      dataseries: [],
+      heatMapData: {
+        yAxis: [],
+        xAxis: [],
+        dataseries: []
+      }
     };
   },
   methods: {
     heatmapData() {
+      const xaxis = [1,2,3,10,11,20,21,30,31,100,101,'zu spezifisch']
       let nestings = []
+      let selectorList = []
+      let yaxis = []
 
-      this.results.nesting.value.forEach(element => {
-        nestings.push(element[1])
+      // objekt für data series
+
+      this.results.nesting.forEach(element => {
+        if(element.selector.includes(',')) {
+          const newSel = element.selector.split(',')
+          newSel.forEach(el => {
+            let sp = calculate(el)[0].specificity
+            sp = parseInt(sp.replace(/,/g, ''), 10)
+            selectorList.push({selector: newSel, depth: element.depth, specificity: sp})
+
+          });
+        } else {
+          let sp = calculate(element.selector)[0].specificity
+          sp = parseInt(sp.replace(/,/g, ''), 10)
+          selectorList.push({selector: element.selector, depth: element.depth, specificity: sp})
+        }
+        nestings.push(element.depth)
       });
-      // this.yAxis = [...new Set(this.results.nesting.value)]
+
+      // y achse
+      nestings = [...new Set(nestings)]
+      this.heatMapData.yAxis = nestings.length-1
+
+      const entries = nestings.length * xaxis.length
+
+      let dataseries = []
+      for (let j = 0; j < xaxis.length; j++) {
+        dataseries.push(new Array(nestings.length))
+        nestings.forEach((depth,index) => {
+          dataseries[j][index] = [j,depth,0]
+        })
+      }
+
+      this.results.nesting.forEach(element => {
+        if(element.selector.includes(',')) {
+          const newSel = element.selector.split(',')
+          newSel.forEach(el => {
+            let sp = calculate(el)[0].specificity
+            sp = parseInt(sp.replace(/,/g, ''), 10)
+            const depth = element.depth
+
+            let firstIndex = -1
+            // falls true -> 'zu spezifisch'
+            if ((sp > 2 && sp < 10) 
+             || (sp > 11 && sp < 20) 
+             || (sp > 21 && sp < 30) 
+             || (sp > 31 && sp < 100) 
+             || (sp >= 102)) {
+              firstIndex = xaxis.indexOf('zu spezifisch')
+            } else {
+              firstIndex = xaxis.indexOf(sp)
+            }
+            let secondIndex = nestings.indexOf(element.depth)
+            // log(dataseries[firstIndex][secondIndex][2])
+            log(secondIndex)
+            dataseries[firstIndex][secondIndex][2] += 1
+          });
+        } else {
+          let sp = calculate(element.selector)[0].specificity
+          sp = parseInt(sp.replace(/,/g, ''), 10)
+
+          let firstIndex = -1
+            // falls true -> 'zu spezifisch'
+          if ((sp > 2 && sp < 10) 
+            || (sp > 11 && sp < 20) 
+            || (sp > 21 && sp < 30) 
+            || (sp > 31 && sp < 100) 
+            || (sp >= 102)) {
+            firstIndex = xaxis.indexOf('zu spezifisch')
+          } else {
+            firstIndex = xaxis.indexOf(sp)
+          }
+          let secondIndex = nestings.indexOf(element.depth)
+          dataseries[firstIndex][secondIndex][2] += 1
+        }
+      });
+
+
+
+      dataseries = dataseries.flat()
+      log(dataseries)
+      this.heatMapData.dataseries = dataseries
+      this.heatMapData.xAxis = xaxis
+
+
+
+
+
+      // Datum: [x-Achse (specificity), y-Achse (Nesting), SUM der Selektoren]
+      // so muss dataseries aussehen: [[0, 1, 10], [0, 2, 10] , [0, 3, 10], [1, 1, 19], [1, 2, 8], [1, 3, 24], [2, 1, 67], [2, 2, 92], [2, 3, 58]]
+      // X: Index
+      // Y: Nesting
+      // Value: Count
+
+      
+
+      // specificities = [...new Set(specificities)]
+
+      // this.results.nesting.forEach(element => {
+      //   selectors.push(element.selector)
+      //   nestings.push(element.depth)
+      // });
+
+      // specificities.forEach(specificity => {
+      //   if (specificity > 2 && specificity < 10) {
+
+      //   } else if(specificity > 11 && specificity < 20) {
+      //     // tHS++            
+      //   } else if(specificity > 21 && specificity < 30) {
+      //     // tHS++
+      //   } else if(specificity > 31 && specificity < 100) {
+      //     // tHS++
+      //   } else if(specificity >= 102) {
+      //     // tHS++
+      //   } else {
+      //     yaxis.push(specificity)
+      //   }
+      // });
+
+
+
+
     },
     specificityChartData() {
       this.yAxis = [...new Set(this.results.stats[0].selectors.getSpecificityGraph)].sort((a, b) => a - b)
@@ -72,8 +199,6 @@ export default Vue.extend({
       this.specificityValues = this.results.stats[1].selectors
       this.xAxis = this.results.stats[1].lines
       this.dataseries = ds
-      console.log(ds)
-      console.log(this.specificityValues)
     },
     butterFlyData() {
       let data = []

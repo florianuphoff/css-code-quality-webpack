@@ -1,465 +1,494 @@
 {
-  "nesting": {
-    "dataType": "Map",
-    "value": [
-      [
-        ".v-hidden",
-        0
-      ],
-      [
-        ".v-visible",
-        0
-      ],
-      [
-        ".v-block",
-        0
-      ],
-      [
-        ".alert",
-        0
-      ],
-      [
-        ".alert:before",
-        0
-      ],
-      [
-        ".alert__text",
-        1
-      ],
-      [
-        ".alert--warning",
-        1
-      ],
-      [
-        ".alert--warning:before",
-        1
-      ],
-      [
-        ".alert--info",
-        1
-      ],
-      [
-        ".alert--info:before",
-        1
-      ],
-      [
-        ".button",
-        0
-      ],
-      [
-        ".button:hover",
-        0
-      ],
-      [
-        ".button--glowing",
-        1
-      ],
-      [
-        ".button--outline",
-        1
-      ],
-      [
-        ".button--filled",
-        1
-      ],
-      [
-        "%tool",
-        0
-      ],
-      [
-        "%tap",
-        0
-      ],
-      [
-        ".non-placeholder",
-        0
-      ],
-      [
-        ".duplication-type-1",
-        0
-      ],
-      [
-        ".duplication-type-1-dup",
-        0
-      ],
-      [
-        ".duplication-prop-1-1",
-        0
-      ],
-      [
-        ".duplication-prop-1-2",
-        0
-      ],
-      [
-        ".duplication-prop-1-x",
-        0
-      ],
-      [
-        ".duplication-prop-1-y",
-        0
-      ],
-      [
-        ".duplication-prop-3-1",
-        0
-      ],
-      [
-        ".duplication-prop-3-1-htr",
-        0
-      ],
-      [
-        ".duplication-type-3-a",
-        0
-      ],
-      [
-        ".duplication-type-3-awd",
-        0
-      ],
-      [
-        ".duplication-type-3-b",
-        0
-      ],
-      [
-        ".duplication-type-3-c",
-        0
-      ],
-      [
-        ".duplication-type-4",
-        0
-      ],
-      [
-        ".glowing-button",
-        0
-      ],
-      [
-        ".red-border",
-        0
-      ],
-      [
-        ".wrong-value",
-        0
-      ],
-      [
-        ".slider",
-        0
-      ],
-      [
-        ".unknown-prop",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "a:UNKNOWN",
-        0
-      ],
-      [
-        "a:hoverr",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        ".fancy-table",
-        0
-      ],
-      [
-        ".fancy-item",
-        0
-      ],
-      [
-        ".super-table-column",
-        0
-      ],
-      [
-        ".floated-element",
-        0
-      ],
-      [
-        "a.special-link",
-        0
-      ],
-      [
-        "a.special-link:hover",
-        0
-      ],
-      [
-        ".special-link",
-        0
-      ],
-      [
-        ".header",
-        0
-      ],
-      [
-        ".gf-e",
-        0
-      ],
-      [
-        ".spread-selector",
-        0
-      ],
-      [
-        ".layout-animation",
-        0
-      ],
-      [
-        ".paint-animation",
-        0
-      ],
-      [
-        ".font-type-1",
-        0
-      ],
-      [
-        ".font-type-2",
-        0
-      ],
-      [
-        ".font-type-3",
-        0
-      ],
-      [
-        ".font-type-4",
-        0
-      ],
-      [
-        ".font-type-5",
-        0
-      ],
-      [
-        ".font-type-6",
-        0
-      ],
-      [
-        "input[type=\"email\"]",
-        0
-      ],
-      [
-        "span[lang=\"pt\"]",
-        0
-      ],
-      [
-        "a.c1",
-        0
-      ],
-      [
-        "a#id1",
-        0
-      ],
-      [
-        "#id2#id3",
-        0
-      ],
-      [
-        ".agr#oie",
-        0
-      ],
-      [
-        "#id4.c2",
-        0
-      ],
-      [
-        "#id4",
-        0
-      ],
-      [
-        "#id4:hover",
-        0
-      ],
-      [
-        "#id4#id5",
-        1
-      ],
-      [
-        "#id4.c3",
-        1
-      ],
-      [
-        "#id4 .c4",
-        1
-      ],
-      [
-        "#id4 .c4:before",
-        1
-      ],
-      [
-        "#id4 .c4__element",
-        2
-      ],
-      [
-        "#id4 .c4 .c5",
-        2
-      ],
-      [
-        "#id4 .c4 .c5 ~ .list__item",
-        3
-      ],
-      [
-        "#id4 .c4 .c5 ~ .list__item .list__link",
-        4
-      ],
-      [
-        "#id4 .c4 .c5 ~ .list__item .list__link:after",
-        4
-      ],
-      [
-        "#id4 .c4 .c5 ~ .list__item .list__link:focus",
-        4
-      ],
-      [
-        ".c6 > .c7 ~ button.c8.c9",
-        0
-      ],
-      [
-        ".c10",
-        0
-      ],
-      [
-        ".c10.c11",
-        1
-      ],
-      [
-        ".c10.c11.c12",
-        2
-      ],
-      [
-        ".c10.c11.c12.c13",
-        3
-      ],
-      [
-        ".c10.c11.c12.c13:hover",
-        3
-      ],
-      [
-        ".c10.c11.c12.c13.c14",
-        4
-      ],
-      [
-        ".c10.c11.c12 .c15",
-        3
-      ],
-      [
-        "#opk.c13",
-        0
-      ],
-      [
-        ".fancy-image",
-        0
-      ],
-      [
-        "kbd",
-        0
-      ],
-      [
-        "code",
-        0
-      ],
-      [
-        ".badge",
-        0
-      ],
-      [
-        ".close",
-        0
-      ],
-      [
-        ".close:hover,\n  &:focus",
-        0
-      ],
-      [
-        ".close .pok,\n  .pokawdf",
-        1
-      ],
-      [
-        ".outline-button",
-        0
-      ],
-      [
-        ".bubble",
-        0
-      ],
-      [
-        ".main-nav",
-        0
-      ],
-      [
-        ".side-nav",
-        0
-      ],
-      [
-        ".hidden",
-        0
-      ],
-      [
-        ".undoing-styles-1",
-        0
-      ],
-      [
-        ".too-long-selector",
-        0
-      ],
-      [
-        ".too-long-selector:before",
-        0
-      ],
-      [
-        ".too-long-selector:after",
-        0
-      ],
-      [
-        ".js-styled",
-        0
-      ],
-      [
-        ".magic-fix",
-        0
-      ],
-      [
-        ".magic-fix .magic-number",
-        1
-      ],
-      [
-        ".f1",
-        0
-      ],
-      [
-        ".f2",
-        0
-      ],
-      [
-        ".f3",
-        0
-      ],
-      [
-        ".f4",
-        0
-      ],
-      [
-        ".f5",
-        0
-      ],
-      [
-        ".f6",
-        0
-      ],
-      [
-        ".f7",
-        0
-      ],
-      [
-        ".f8",
-        0
-      ],
-      [
-        ".f9",
-        0
-      ]
-    ]
-  },
+  "nesting": [
+    {
+      "selector": ".alert",
+      "depth": 0
+    },
+    {
+      "selector": ".alert:before",
+      "depth": 0
+    },
+    {
+      "selector": ".alert__text",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--warning",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--warning:before",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--info",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--info:before",
+      "depth": 1
+    },
+    {
+      "selector": ".button",
+      "depth": 0
+    },
+    {
+      "selector": ".button:hover",
+      "depth": 0
+    },
+    {
+      "selector": ".button--glowing",
+      "depth": 1
+    },
+    {
+      "selector": ".button--outline",
+      "depth": 1
+    },
+    {
+      "selector": ".button--filled",
+      "depth": 1
+    },
+    {
+      "selector": ".v-hidden",
+      "depth": 0
+    },
+    {
+      "selector": ".v-visible",
+      "depth": 0
+    },
+    {
+      "selector": ".v-block",
+      "depth": 0
+    },
+    {
+      "selector": "%tool",
+      "depth": 0
+    },
+    {
+      "selector": "%tap",
+      "depth": 0
+    },
+    {
+      "selector": ".non-placeholder",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-1",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-1-dup",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-1",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-2",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-x",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-y",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-3-1",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-3-1-htr",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-a",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-awd",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-b",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-c",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-4",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-4",
+      "depth": 0
+    },
+    {
+      "selector": ".glowing-button",
+      "depth": 0
+    },
+    {
+      "selector": ".red-border",
+      "depth": 0
+    },
+    {
+      "selector": ".wrong-value",
+      "depth": 0
+    },
+    {
+      "selector": ".slider",
+      "depth": 0
+    },
+    {
+      "selector": ".unknown-prop",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "depth": 0
+    },
+    {
+      "selector": "a:hoverr",
+      "depth": 0
+    },
+    {
+      "selector": "unknown",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": ".fancy-table",
+      "depth": 0
+    },
+    {
+      "selector": ".fancy-item",
+      "depth": 0
+    },
+    {
+      "selector": ".super-table-column",
+      "depth": 0
+    },
+    {
+      "selector": ".floated-element",
+      "depth": 0
+    },
+    {
+      "selector": "a.special-link",
+      "depth": 0
+    },
+    {
+      "selector": "a.special-link:hover",
+      "depth": 0
+    },
+    {
+      "selector": ".special-link",
+      "depth": 0
+    },
+    {
+      "selector": ".header",
+      "depth": 0
+    },
+    {
+      "selector": ".header",
+      "depth": 0
+    },
+    {
+      "selector": ".gf-e",
+      "depth": 0
+    },
+    {
+      "selector": ".gf-e",
+      "depth": 0
+    },
+    {
+      "selector": ".spread-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".layout-animation",
+      "depth": 0
+    },
+    {
+      "selector": ".paint-animation",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-1",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-2",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-3",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-4",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-5",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-6",
+      "depth": 0
+    },
+    {
+      "selector": "input[type=\"email\"]",
+      "depth": 0
+    },
+    {
+      "selector": "span[lang=\"pt\"]",
+      "depth": 0
+    },
+    {
+      "selector": "a.c1",
+      "depth": 0
+    },
+    {
+      "selector": "a#id1",
+      "depth": 0
+    },
+    {
+      "selector": "#id2#id3",
+      "depth": 0
+    },
+    {
+      "selector": ".agr#oie",
+      "depth": 0
+    },
+    {
+      "selector": "#id4.c2",
+      "depth": 0
+    },
+    {
+      "selector": "#id4",
+      "depth": 0
+    },
+    {
+      "selector": "#id4:hover",
+      "depth": 0
+    },
+    {
+      "selector": "#id4#id5",
+      "depth": 1
+    },
+    {
+      "selector": "#id4.c3",
+      "depth": 1
+    },
+    {
+      "selector": "#id4 .c4",
+      "depth": 1
+    },
+    {
+      "selector": "#id4 .c4:before",
+      "depth": 1
+    },
+    {
+      "selector": "#id4 .c4__element",
+      "depth": 2
+    },
+    {
+      "selector": "#id4 .c4 .c5",
+      "depth": 2
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item",
+      "depth": 3
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+      "depth": 4
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+      "depth": 4
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+      "depth": 4
+    },
+    {
+      "selector": ".c6 > .c7 ~ button.c8.c9",
+      "depth": 0
+    },
+    {
+      "selector": ".c10",
+      "depth": 0
+    },
+    {
+      "selector": ".c10.c11",
+      "depth": 1
+    },
+    {
+      "selector": ".c10.c11.c12",
+      "depth": 2
+    },
+    {
+      "selector": ".c10.c11.c12.c13",
+      "depth": 3
+    },
+    {
+      "selector": ".c10.c11.c12.c13:hover",
+      "depth": 3
+    },
+    {
+      "selector": ".c10.c11.c12.c13.c14",
+      "depth": 4
+    },
+    {
+      "selector": ".c10.c11.c12 .c15",
+      "depth": 3
+    },
+    {
+      "selector": "#opk.c13",
+      "depth": 0
+    },
+    {
+      "selector": ".fancy-image",
+      "depth": 0
+    },
+    {
+      "selector": "kbd",
+      "depth": 0
+    },
+    {
+      "selector": "code",
+      "depth": 0
+    },
+    {
+      "selector": ".badge",
+      "depth": 0
+    },
+    {
+      "selector": ".close",
+      "depth": 0
+    },
+    {
+      "selector": ".close:hover,\n  .close:focus",
+      "depth": 0
+    },
+    {
+      "selector": ".close .pok,\n  .pokawdf",
+      "depth": 1
+    },
+    {
+      "selector": ".outline-button",
+      "depth": 0
+    },
+    {
+      "selector": ".bubble",
+      "depth": 0
+    },
+    {
+      "selector": ".main-nav",
+      "depth": 0
+    },
+    {
+      "selector": ".side-nav",
+      "depth": 0
+    },
+    {
+      "selector": ".hidden",
+      "depth": 0
+    },
+    {
+      "selector": ".glowing-button",
+      "depth": 0
+    },
+    {
+      "selector": ".red-border",
+      "depth": 0
+    },
+    {
+      "selector": ".spread-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".undoing-styles-1",
+      "depth": 0
+    },
+    {
+      "selector": ".undoing-styles-1",
+      "depth": 0
+    },
+    {
+      "selector": ".too-long-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".too-long-selector:before",
+      "depth": 0
+    },
+    {
+      "selector": ".too-long-selector:after",
+      "depth": 0
+    },
+    {
+      "selector": ".js-styled",
+      "depth": 0
+    },
+    {
+      "selector": ".magic-fix",
+      "depth": 0
+    },
+    {
+      "selector": ".magic-fix .magic-number",
+      "depth": 1
+    },
+    {
+      "selector": ".f1",
+      "depth": 0
+    },
+    {
+      "selector": ".f2",
+      "depth": 0
+    },
+    {
+      "selector": ".f3",
+      "depth": 0
+    },
+    {
+      "selector": ".f4",
+      "depth": 0
+    },
+    {
+      "selector": ".f5",
+      "depth": 0
+    },
+    {
+      "selector": ".f6",
+      "depth": 0
+    },
+    {
+      "selector": ".f7",
+      "depth": 0
+    },
+    {
+      "selector": ".f8",
+      "depth": 0
+    },
+    {
+      "selector": ".f9",
+      "depth": 0
+    }
+  ],
   "warnings": [
     {
       "selector": "&:hover",

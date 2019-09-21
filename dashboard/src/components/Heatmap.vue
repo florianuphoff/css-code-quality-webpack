@@ -12,46 +12,64 @@
 import Vue from 'vue';
 import {Chart} from 'highcharts-vue'
 
+import Highcharts from 'highcharts'
+import heatmap from 'highcharts/modules/heatmap'
+
+heatmap(Highcharts)
+
 export default Vue.extend({
   name: 'Heatmap',
   components: {
     highcharts: Chart
   },
   props: {
-    dataseries: {
-      type: Array,
+    heatMapData: {
+      type: Object,
       required: true
-    },
+    }
+    // dataseries: {
+    //   type: Array,
+    //   required: true
+    // },
     // specificityValues: {
     //   type: Array,
     //   required: true
     // },
-    yAxis: {
-      type: Array,
-      required: true
-    },
-    xAxis: {
-      type: Number,
-      required: true
-    }
+    // yAxis: {
+    //   type: Array,
+    //   required: true
+    // },
+    // xAxis: {
+    //   type: Array,
+    //   required: true
+    // }
   },
   watch: {
-    dataseries(data) {
-      this.dataseries = data
-      this.chartOptions.series[0].data = this.dataseries      
-    },
-    // specificityValues(data) {
-    //   this.specificityValues = data
-    //   // this.tooltipCallback(this.specificityValues, this.yAxis)      
-    // },
-    yAxis(data) {
-      this.yAxis = data
-      this.chartOptions.yAxis.categories = this.yAxis      
-    },
-    xAxis(data) {
-      this.xAxis = data
-      this.chartOptions.xAxis.max = this.xAxis
+    heatMapData: {
+      handler: function(data) {
+        this.heatMapData = data
+
+        console.log(data)
+        console.log("HEATMAP: Data updated")
+        this.chartOptions.xAxis.categories = this.heatMapData.xAxis
+        this.chartOptions.yAxis.max = this.heatMapData.yAxis      
+        this.chartOptions.series[0].data = this.heatMapData.dataseries
+      },
+      deep: true
     }
+    // dataseries(data) {
+    //   this.dataseries = data
+    // },
+    // // specificityValues(data) {
+    // //   this.specificityValues = data
+    // //   // this.tooltipCallback(this.specificityValues, this.yAxis)      
+    // // },
+    // yAxis(data) {
+    //   this.yAxis = data
+    // },
+    // xAxis(data) {
+    //   this.xAxis = data
+    // }
   },
   computed: {
     clientWidth() {
@@ -64,8 +82,9 @@ export default Vue.extend({
       chartOptions: {
         series: [{
           name: 'Selektoren',
-          data: this.dataseries,
+          data: this.heatMapData.dataseries,
           borderWidth: 1,
+          borderColor: '#666666'
         }],
         chart: {
             type: 'heatmap',
@@ -80,12 +99,17 @@ export default Vue.extend({
           title: {
             text: 'Spezifizität'
           },
-          categories: [1,2,10,11,20,21,40,41,200],
-          tickmarkPlacement: 'on',
-          endOnTick: false,
-          maxPadding: 0
+          categories: this.heatMapData.xAxis,
         },
         tooltip: {
+        },
+        legend: {
+            align: 'right',
+            layout: 'vertical',
+            margin: 0,
+            verticalAlign: 'top',
+            y: 25,
+            symbolHeight: 280
         },
         yAxis: {
           title: {
@@ -94,13 +118,16 @@ export default Vue.extend({
           labels: {
             align: 'right'
           },
-          max: this.yAxis,
-          tickAmount: 1
+          max: this.heatMapData.yAxis
         },
         colorAxis: {
+          stops: [
+            [0, '#ffffff'],
+            [0.05, '#62c0ff'],
+            [0.15, '#1bda25'],
+            [0.9, '#da1b60']
+          ],
           min: 0,
-          minColor: '#62c0ff',
-          maxColor: '#da1b60'
         },
       }
     }
