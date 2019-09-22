@@ -1,6 +1,6 @@
 <template>
   <div class="selectors">
-    <div class="content">
+    <div class="container">
       <SelectorHierarchy v-bind:chartData=chartData />
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
       <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />

@@ -1,6 +1,6 @@
 <template>
   <div class="properties">
-    <div class="content">
+    <div class="container">
     </div>
 
   </div>

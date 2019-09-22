@@ -54,6 +54,7 @@ export default Vue.extend({
         this.chartOptions.xAxis.categories = this.heatMapData.xAxis
         this.chartOptions.yAxis.max = this.heatMapData.yAxis      
         this.chartOptions.series[0].data = this.heatMapData.dataseries
+        this.tooltipCallback(this.heatMapData.xAxis)
       },
       deep: true
     }
@@ -62,7 +63,7 @@ export default Vue.extend({
     // },
     // // specificityValues(data) {
     // //   this.specificityValues = data
-    // //   // this.tooltipCallback(this.specificityValues, this.yAxis)      
+    // //   // this.tooltipCallback(this.specificityValues, this.yAxis)
     // // },
     // yAxis(data) {
     //   this.yAxis = data
@@ -84,7 +85,7 @@ export default Vue.extend({
           name: 'Selektoren',
           data: this.heatMapData.dataseries,
           borderWidth: 1,
-          borderColor: '#666666'
+          borderColor: '#ccd6eb'
         }],
         chart: {
             type: 'heatmap',
@@ -122,10 +123,10 @@ export default Vue.extend({
         },
         colorAxis: {
           stops: [
-            [0, '#ffffff'],
-            [0.05, '#62c0ff'],
-            [0.15, '#1bda25'],
-            [0.9, '#da1b60']
+            // [0, '#ffffff'],
+            [0, '#3060cf'],
+            [0.15, '#fffbbc'],
+            [0.9, '#c4463a']
           ],
           min: 0,
         },
@@ -133,26 +134,11 @@ export default Vue.extend({
     }
   },
   methods: {
-    tooltipCallback(values, yAxis) {
+    tooltipCallback(xaxis) {
       this.chartOptions.tooltip.formatter = function() {
-        // wir können mehrere Treffer bei X haben, da mehrere Selektoren auf einer Zeile liegen können
-        const hits = values.flatMap((entry, i) => entry.startsAt === this.x ? entry : []);
-
-        if(hits.length > 1) {
-          let template = `<b>Mehrzeilige Selektoren: </b>`
-          hits.forEach(entry => {
-            template += `${entry.selector}, `
-          });
-          return `${template}<br>
-                  <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
-                  <b>Zeile: </b>${hits[0].startsAt}</b><br>
-                  <b>Spezifizität: </b>${yAxis[this.y]}`;
-        }
-
-        return `<b>Selektor: </b>${hits[0].selector}<br>
-                <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
-                <b>Zeile: </b>${hits[0].startsAt}</b><br>
-                <b>Spezifizität: </b>${yAxis[this.y]}`;
+        return `<b>Selektoren: </b>${this.point.value}<br>
+                <b>Spezifizität: </b>${xaxis[this.point.x]}<br>
+                <b>Verschachtelungstiefe: </b>${this.y}`;
       }
     },
   },
@@ -164,7 +150,8 @@ export default Vue.extend({
 
 <style scoped>
 .heatmap {
-  height: 100%;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 </style>

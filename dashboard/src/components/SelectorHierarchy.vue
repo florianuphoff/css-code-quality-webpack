@@ -1,8 +1,8 @@
 <template>
-  <div class="v-box w-1-3 relative">
+  <div class="v-box hierarchy relative">
     <div class="v-box__header">Fehlerbehaftete Selektoren</div>
     <div class="v-box absolute data-picker">
-      <h5>Dataset</h5>
+      <h5 class="v-box__header">Dataset</h5>
       <button class="data-picker__btn general" @click="drawChart('gerenal')" v-bind:class="{ active: dSet === 'g' }" v-on:click="dSet = 'g'">General</button>
       <button class="data-picker__btn duplications" @click="drawChart('duplications')" v-bind:class="{ active: dSet === 'd' }" v-on:click="dSet = 'd'">Duplications</button>
       <button class="data-picker__btn smelly" @click="drawChart('smelly')" v-bind:class="{ active: dSet === 's' }" v-on:click="dSet = 's'">Smelly</button>
@@ -69,6 +69,11 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.hierarchy {
+  grid-column: 1 / 2;
+  grid-row: 1 / span 3;
+}
+
 .selector-chart .node circle {
   fill: #fff;
   stroke: steelblue;
@@ -98,6 +103,9 @@ h5 {
 .data-picker {
   display: flex;
   flex-flow: column wrap;
+
+  border: 1px solid #e7e7e7;  
+  
 
   border-radius: 0;
   z-index: 2;

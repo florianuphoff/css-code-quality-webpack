@@ -155,7 +155,8 @@ export default Vue.extend({
 
 <style scoped>
 .specificity {
-  height: 100%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 </style>

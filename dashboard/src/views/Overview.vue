@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="content">
+    <div class="container">
       <!-- <SpiderChart v-bind:spiderChartData=spiderChartData /> -->
-      <div class="v-box w-1-1">
+      <div class="v-box cq">
         <div class="v-box__header">Code Qualität</div>
         <div class="cp v-box__content">
           <div class="cp-box">
@@ -99,15 +99,15 @@ export default Vue.extend({
       .then(data => {
         this.results = data
 
-        const nestingMap = new Map(this.results.nesting.value)
+        const nestings = this.results.nesting
 
         // nesting
         let percentageOfValidNestings = 0
         let lN = 0
-        nestingMap.forEach((value, key) => {
-          if(value <= 3) lN++
+        nestings.forEach(nesting => {
+          if(nesting.depth <= 3) lN++
         })
-        percentageOfValidNestings = Math.round(((lN / nestingMap.size) * 100)*100)/100
+        percentageOfValidNestings = Math.round(((lN / nestings.length) * 100)*100)/100
 
         // unique selectors
         const uSelectors = [...new Set(this.results.stats[0].selectors.values)].length
@@ -181,6 +181,7 @@ export default Vue.extend({
         this.cp[0] = cleanProps
         this.uSelectors[0] = percentageOfUniqueSelectors
         this.unspecificSelectors[0] = percentageOfUnspecificSelectors
+        console.log(percentageOfValidNestings)
         this.vn[0] = percentageOfValidNestings
 
         this.spiderChartData = [cleanProps, percentageOfValidNestings, percentageOfUnspecificSelectors, percentageOfUniqueSelectors]
@@ -192,3 +193,11 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+.cq {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+</style>
+
