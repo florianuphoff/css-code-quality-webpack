@@ -1,6 +1,26 @@
 {
   "nesting": [
     {
+      "selector": ".button",
+      "depth": 0
+    },
+    {
+      "selector": ".button:hover",
+      "depth": 0
+    },
+    {
+      "selector": ".button--glowing",
+      "depth": 1
+    },
+    {
+      "selector": ".button--outline",
+      "depth": 1
+    },
+    {
+      "selector": ".button--filled",
+      "depth": 1
+    },
+    {
       "selector": ".alert",
       "depth": 0
     },
@@ -29,26 +49,6 @@
       "depth": 1
     },
     {
-      "selector": ".button",
-      "depth": 0
-    },
-    {
-      "selector": ".button:hover",
-      "depth": 0
-    },
-    {
-      "selector": ".button--glowing",
-      "depth": 1
-    },
-    {
-      "selector": ".button--outline",
-      "depth": 1
-    },
-    {
-      "selector": ".button--filled",
-      "depth": 1
-    },
-    {
       "selector": ".v-hidden",
       "depth": 0
     },
@@ -58,18 +58,6 @@
     },
     {
       "selector": ".v-block",
-      "depth": 0
-    },
-    {
-      "selector": "%tool",
-      "depth": 0
-    },
-    {
-      "selector": "%tap",
-      "depth": 0
-    },
-    {
-      "selector": ".non-placeholder",
       "depth": 0
     },
     {
@@ -137,38 +125,6 @@
       "depth": 0
     },
     {
-      "selector": ".wrong-value",
-      "depth": 0
-    },
-    {
-      "selector": ".slider",
-      "depth": 0
-    },
-    {
-      "selector": ".unknown-prop",
-      "depth": 0
-    },
-    {
-      "selector": "a",
-      "depth": 0
-    },
-    {
-      "selector": "a:UNKNOWN",
-      "depth": 0
-    },
-    {
-      "selector": "a:hoverr",
-      "depth": 0
-    },
-    {
-      "selector": "unknown",
-      "depth": 0
-    },
-    {
-      "selector": "a",
-      "depth": 0
-    },
-    {
       "selector": ".fancy-table",
       "depth": 0
     },
@@ -214,6 +170,50 @@
     },
     {
       "selector": ".spread-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".wrong-value",
+      "depth": 0
+    },
+    {
+      "selector": ".slider",
+      "depth": 0
+    },
+    {
+      "selector": ".unknown-prop",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "depth": 0
+    },
+    {
+      "selector": "a:hoverr",
+      "depth": 0
+    },
+    {
+      "selector": "unknown",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": "%tool",
+      "depth": 0
+    },
+    {
+      "selector": "%tap",
+      "depth": 0
+    },
+    {
+      "selector": ".non-placeholder",
       "depth": 0
     },
     {
@@ -491,105 +491,11 @@
   ],
   "warnings": [
     {
-      "selector": "&:hover",
-      "resolvedSelector": ".button:hover",
-      "line": 5,
-      "column": 11,
-      "rule": "block-no-empty",
-      "word": null
-    },
-    {
-      "selector": "&--glowing",
-      "resolvedSelector": ".button--glowing",
-      "line": 9,
-      "column": 14,
-      "rule": "block-no-empty",
-      "word": null
-    },
-    {
-      "selector": "&--outline",
-      "resolvedSelector": ".button--outline",
-      "line": 13,
-      "column": 14,
-      "rule": "block-no-empty",
-      "word": null
-    },
-    {
-      "selector": "&--filled",
-      "resolvedSelector": ".button--filled",
-      "line": 17,
-      "column": 13,
-      "rule": "block-no-empty",
-      "word": null
-    },
-    {
       "selector": ".duplication-type-4",
       "resolvedSelector": ".duplication-type-4",
       "line": 83,
       "column": 1,
       "rule": "no-duplicate-selectors",
-      "word": null
-    },
-    {
-      "resolvedSelector": "",
-      "line": 43,
-      "column": 24,
-      "rule": "block-no-empty"
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 40,
-      "column": 1,
-      "rule": "no-descending-specificity",
-      "word": null
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 40,
-      "column": 1,
-      "rule": "no-descending-specificity",
-      "word": null
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 40,
-      "column": 1,
-      "rule": "no-duplicate-selectors",
-      "word": null
-    },
-    {
-      "selector": "a",
-      "resolvedSelector": "a",
-      "line": 41,
-      "column": 19,
-      "rule": "no-unknown-animations",
-      "word": "animation-name:fancccy-slide"
-    },
-    {
-      "selector": "a:UNKNOWN",
-      "resolvedSelector": "a:UNKNOWN",
-      "line": 25,
-      "column": 2,
-      "rule": "selector-pseudo-class-no-unknown",
-      "word": null
-    },
-    {
-      "selector": "a:hoverr",
-      "resolvedSelector": "a:hoverr",
-      "line": 29,
-      "column": 2,
-      "rule": "selector-pseudo-class-no-unknown",
-      "word": null
-    },
-    {
-      "selector": "unknown",
-      "resolvedSelector": "unknown",
-      "line": 35,
-      "column": 1,
-      "rule": "selector-type-no-unknown",
       "word": null
     },
     {
@@ -670,6 +576,68 @@
       "line": 64,
       "column": 1,
       "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "resolvedSelector": "",
+      "line": 43,
+      "column": 24,
+      "rule": "block-no-empty"
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-descending-specificity",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-descending-specificity",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 41,
+      "column": 19,
+      "rule": "no-unknown-animations",
+      "word": "animation-name:fancccy-slide"
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "resolvedSelector": "a:UNKNOWN",
+      "line": 25,
+      "column": 2,
+      "rule": "selector-pseudo-class-no-unknown",
+      "word": null
+    },
+    {
+      "selector": "a:hoverr",
+      "resolvedSelector": "a:hoverr",
+      "line": 29,
+      "column": 2,
+      "rule": "selector-pseudo-class-no-unknown",
+      "word": null
+    },
+    {
+      "selector": "unknown",
+      "resolvedSelector": "unknown",
+      "line": 35,
+      "column": 1,
+      "rule": "selector-type-no-unknown",
       "word": null
     },
     {
@@ -1043,6 +1011,17 @@
       "type": 1,
       "origin": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
+        "selector": ".button--filled"
+      },
+      "duplication": {
+        "hash": "02b583bfbb000d820790dd72be32a72e",
+        "selector": ".v-block"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "02b583bfbb000d820790dd72be32a72e",
         "selector": ".v-block"
       },
       "duplication": {
@@ -1298,10 +1277,10 @@
   ],
   "stats": [
     {
-      "size": 8070,
-      "gzip": 2370,
+      "size": 8275,
+      "gzip": 2421,
       "rules": {
-        "total": 113,
+        "total": 117,
         "size": {
           "graph": [
             4,
@@ -1315,6 +1294,10 @@
             1,
             2,
             2,
+            1,
+            2,
+            1,
+            1,
             1,
             1,
             1,
@@ -1419,7 +1402,7 @@
             1
           ],
           "max": 19,
-          "average": 2.1327433628318584
+          "average": 2.1025641025641026
         },
         "selectorByRuleSizes": [
           {
@@ -1628,6 +1611,10 @@
           },
           {
             "selector": ".duplication-type-1",
+            "declarations": 2
+          },
+          {
+            "selector": ".button--glowing",
             "declarations": 2
           },
           {
@@ -1859,6 +1846,18 @@
             "declarations": 1
           },
           {
+            "selector": ".button--filled",
+            "declarations": 1
+          },
+          {
+            "selector": ".button--outline",
+            "declarations": 1
+          },
+          {
+            "selector": ".button:hover",
+            "declarations": 1
+          },
+          {
             "selector": ".alert--info",
             "declarations": 1
           },
@@ -1877,11 +1876,11 @@
         ]
       },
       "selectors": {
-        "total": 118,
+        "total": 122,
         "type": 14,
-        "class": 104,
+        "class": 108,
         "id": 17,
-        "pseudoClass": 7,
+        "pseudoClass": 8,
         "pseudoElement": 10,
         "values": [
           ".bubble",
@@ -1897,6 +1896,10 @@
           ".alert--info",
           ".alert--info:before",
           ".button",
+          ".button:hover",
+          ".button--glowing",
+          ".button--outline",
+          ".button--filled",
           ".v-hidden",
           ".v-visible",
           ".v-block",
@@ -2005,7 +2008,7 @@
         ],
         "specificity": {
           "max": 200,
-          "average": 28.338983050847457
+          "average": 27.81967213114754
         },
         "getSpecificityGraph": [
           10,
@@ -2020,6 +2023,10 @@
           11,
           10,
           11,
+          10,
+          20,
+          10,
+          10,
           10,
           10,
           10,
@@ -2178,6 +2185,22 @@
           },
           {
             "selector": ".button",
+            "specificity": 10
+          },
+          {
+            "selector": ".button:hover",
+            "specificity": 20
+          },
+          {
+            "selector": ".button--glowing",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--outline",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--filled",
             "specificity": 10
           },
           {
@@ -2691,6 +2714,10 @@
             "specificity": 21
           },
           {
+            "selector": ".button:hover",
+            "specificity": 20
+          },
+          {
             "selector": ".close:hover",
             "specificity": 20
           },
@@ -2804,6 +2831,18 @@
           },
           {
             "selector": ".button",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--glowing",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--outline",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--filled",
             "specificity": 10
           },
           {
@@ -3089,8 +3128,8 @@
         ]
       },
       "declarations": {
-        "total": 241,
-        "unique": 177,
+        "total": 246,
+        "unique": 180,
         "properties": {
           "box-sizing": [
             "border-box"
@@ -3140,6 +3179,7 @@
             "none",
             "inline-block",
             "inline-block",
+            "block",
             "none",
             "block",
             "inline",
@@ -3181,6 +3221,7 @@
           ],
           "color": [
             "#fff",
+            "#ffffff",
             "#F00",
             "#F00",
             "#FFF",
@@ -3208,6 +3249,7 @@
           "background-color": [
             "#f0ad4e",
             "#5bc0de",
+            "#db6300",
             "#F00",
             "#981232",
             "#432",
@@ -3232,6 +3274,23 @@
             "1px solid #A8E",
             "1rem solid #CA5515",
             "1px solid #FA01A1"
+          ],
+          "font-weight": [
+            "bold",
+            "700",
+            "700",
+            "700",
+            "700",
+            "700",
+            "700",
+            "700",
+            "bold",
+            "bold"
+          ],
+          "border-width": [
+            "4px",
+            "1px",
+            "1px"
           ],
           "visibility": [
             "visible"
@@ -3265,17 +3324,6 @@
             "14px",
             "12px",
             "18px"
-          ],
-          "font-weight": [
-            "700",
-            "700",
-            "700",
-            "700",
-            "700",
-            "700",
-            "700",
-            "bold",
-            "bold"
           ],
           "text-decoration": [
             "underline",
@@ -3318,10 +3366,6 @@
             "0",
             "20px",
             "0.2rem"
-          ],
-          "border-width": [
-            "1px",
-            "1px"
           ],
           "border-style": [
             "solid",
@@ -3588,532 +3632,552 @@
           "origin": "webpack:///frontend/css/1_components/_button.scss"
         },
         {
+          "selector": ".button:hover",
+          "startsAt": 42,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button--glowing",
+          "startsAt": 44,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button--outline",
+          "startsAt": 47,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button--filled",
+          "startsAt": 49,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
           "selector": ".v-hidden",
-          "startsAt": 43,
+          "startsAt": 52,
           "origin": "webpack:///frontend/css/2_alignment/_display.scss"
         },
         {
           "selector": ".v-visible",
-          "startsAt": 46,
+          "startsAt": 55,
           "origin": "webpack:///frontend/css/2_alignment/_display.scss"
         },
         {
           "selector": ".v-block",
-          "startsAt": 49,
+          "startsAt": 58,
           "origin": "webpack:///frontend/css/2_alignment/_display.scss"
         },
         {
           "selector": ".duplication-type-1",
-          "startsAt": 52,
+          "startsAt": 61,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".duplication-type-1-dup",
-          "startsAt": 56,
-          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
-        },
-        {
-          "selector": ".duplication-prop-1-1",
-          "startsAt": 60,
-          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
-        },
-        {
-          "selector": ".duplication-prop-1-2",
           "startsAt": 65,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
+          "selector": ".duplication-prop-1-1",
+          "startsAt": 69,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-2",
+          "startsAt": 74,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
           "selector": ".duplication-prop-1-x",
-          "startsAt": 70,
+          "startsAt": 79,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".duplication-prop-1-y",
-          "startsAt": 75,
+          "startsAt": 84,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".duplication-prop-3-1",
-          "startsAt": 80,
-          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
-        },
-        {
-          "selector": ".duplication-prop-3-1-htr",
-          "startsAt": 83,
-          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
-        },
-        {
-          "selector": ".duplication-type-3-a",
           "startsAt": 89,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
-          "selector": ".duplication-type-3-awd",
-          "startsAt": 95,
+          "selector": ".duplication-prop-3-1-htr",
+          "startsAt": 92,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
-          "selector": ".duplication-type-3-b",
+          "selector": ".duplication-type-3-a",
           "startsAt": 98,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
+          "selector": ".duplication-type-3-awd",
+          "startsAt": 104,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-b",
+          "startsAt": 107,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
           "selector": ".duplication-type-3-c",
-          "startsAt": 101,
+          "startsAt": 110,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".duplication-type-4",
-          "startsAt": 106,
+          "startsAt": 115,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".duplication-type-4",
-          "startsAt": 109,
+          "startsAt": 118,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".glowing-button",
-          "startsAt": 112,
+          "startsAt": 121,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".red-border",
-          "startsAt": 116,
+          "startsAt": 125,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".wrong-value",
-          "startsAt": 119,
-          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
-        },
-        {
-          "selector": ".slider",
-          "startsAt": 125,
-          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
-        },
-        {
-          "selector": ".unknown-prop",
           "startsAt": 128,
           "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
         },
         {
+          "selector": ".slider",
+          "startsAt": 134,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".unknown-prop",
+          "startsAt": 137,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
           "selector": "a",
-          "startsAt": 133,
+          "startsAt": 142,
           "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
         },
         {
           "selector": "a:UNKNOWN",
-          "startsAt": 136,
+          "startsAt": 145,
           "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
         },
         {
           "selector": "a:hoverr",
-          "startsAt": 139,
-          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
-        },
-        {
-          "selector": "unknown",
-          "startsAt": 144,
-          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
-        },
-        {
-          "selector": "a",
           "startsAt": 148,
           "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
         },
         {
+          "selector": "unknown",
+          "startsAt": 153,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a",
+          "startsAt": 157,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
           "selector": ".fancy-table",
-          "startsAt": 154,
+          "startsAt": 163,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".fancy-item",
-          "startsAt": 159,
+          "startsAt": 168,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".super-table-column",
-          "startsAt": 165,
+          "startsAt": 174,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".floated-element",
-          "startsAt": 172,
+          "startsAt": 181,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": "a.special-link",
-          "startsAt": 176,
+          "startsAt": 185,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": "a.special-link:hover",
-          "startsAt": 179,
+          "startsAt": 188,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".special-link",
-          "startsAt": 183,
+          "startsAt": 192,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".header",
-          "startsAt": 187,
+          "startsAt": 196,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".header",
-          "startsAt": 194,
+          "startsAt": 203,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".gf-e",
-          "startsAt": 198,
+          "startsAt": 207,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".gf-e",
-          "startsAt": 202,
+          "startsAt": 211,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".spread-selector",
-          "startsAt": 205,
+          "startsAt": 214,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".layout-animation",
-          "startsAt": 209,
+          "startsAt": 218,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".paint-animation",
-          "startsAt": 212,
+          "startsAt": 221,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".font-type-1",
-          "startsAt": 215,
+          "startsAt": 224,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".font-type-2",
-          "startsAt": 219,
+          "startsAt": 228,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".font-type-3",
-          "startsAt": 223,
+          "startsAt": 232,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".font-type-4",
-          "startsAt": 227,
+          "startsAt": 236,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".font-type-5",
-          "startsAt": 231,
+          "startsAt": 240,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": ".font-type-6",
-          "startsAt": 235,
+          "startsAt": 244,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": "input[type=\"email\"]",
-          "startsAt": 239,
+          "startsAt": 248,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": "span[lang=\"pt\"]",
-          "startsAt": 242,
+          "startsAt": 251,
           "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
         },
         {
           "selector": "a.c1",
-          "startsAt": 245,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": "a#id1",
-          "startsAt": 248,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": "#id2#id3",
-          "startsAt": 251,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": ".agr#oie",
           "startsAt": 254,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4.c2",
+          "selector": "a#id1",
           "startsAt": 257,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4",
+          "selector": "#id2#id3",
           "startsAt": 260,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4:hover",
-          "startsAt": 262,
+          "selector": ".agr#oie",
+          "startsAt": 263,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4#id5",
-          "startsAt": 264,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": "#id4.c3",
+          "selector": "#id4.c2",
           "startsAt": 266,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4",
-          "startsAt": 268,
+          "selector": "#id4",
+          "startsAt": 269,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4:before",
-          "startsAt": 270,
+          "selector": "#id4:hover",
+          "startsAt": 271,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4__element",
-          "startsAt": 272,
+          "selector": "#id4#id5",
+          "startsAt": 273,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4 .c5",
+          "selector": "#id4.c3",
           "startsAt": 275,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4 .c5 ~ .list__item",
-          "startsAt": 278,
+          "selector": "#id4 .c4",
+          "startsAt": 277,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
-          "startsAt": 280,
+          "selector": "#id4 .c4:before",
+          "startsAt": 279,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
-          "startsAt": 282,
+          "selector": "#id4 .c4__element",
+          "startsAt": 281,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+          "selector": "#id4 .c4 .c5",
           "startsAt": 284,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": ".c6 > .c7 ~ button.c8.c9",
+          "selector": "#id4 .c4 .c5 ~ .list__item",
           "startsAt": 287,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": ".c10.c11.c12.c13:hover",
-          "startsAt": 290,
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+          "startsAt": 289,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": ".c10.c11.c12.c13.c14",
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+          "startsAt": 291,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
           "startsAt": 293,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
-          "selector": ".c10.c11.c12 .c15",
+          "selector": ".c6 > .c7 ~ button.c8.c9",
           "startsAt": 296,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
+          "selector": ".c10.c11.c12.c13:hover",
+          "startsAt": 299,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12.c13.c14",
+          "startsAt": 302,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12 .c15",
+          "startsAt": 305,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
           "selector": "#opk.c13",
-          "startsAt": 300,
+          "startsAt": 309,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": ".fancy-image",
-          "startsAt": 303,
+          "startsAt": 312,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": "kbd",
-          "startsAt": 306,
+          "startsAt": 315,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": "code",
-          "startsAt": 314,
+          "startsAt": 323,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": ".badge",
-          "startsAt": 322,
+          "startsAt": 331,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": ".close",
-          "startsAt": 330,
+          "startsAt": 339,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": ".close:hover",
-          "startsAt": 335,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": ".close:focus",
-          "startsAt": 335,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": ".close .pok",
-          "startsAt": 340,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": ".close .pokawdf",
-          "startsAt": 340,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": ".outline-button",
           "startsAt": 344,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
+          "selector": ".close:focus",
+          "startsAt": 344,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close .pok",
+          "startsAt": 349,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close .pokawdf",
+          "startsAt": 349,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".outline-button",
+          "startsAt": 353,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
           "selector": ".bubble",
-          "startsAt": 352,
+          "startsAt": 361,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
           "selector": ".glowing-button",
-          "startsAt": 355,
+          "startsAt": 364,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".red-border",
-          "startsAt": 359,
+          "startsAt": 368,
           "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
         },
         {
           "selector": ".red-border:before",
-          "startsAt": 363,
+          "startsAt": 372,
           "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
         },
         {
           "selector": ".red-border:after",
-          "startsAt": 363,
+          "startsAt": 372,
           "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
         },
         {
           "selector": ".red-border:after",
-          "startsAt": 366,
+          "startsAt": 375,
           "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
         },
         {
           "selector": ".spread-selector",
-          "startsAt": 369,
+          "startsAt": 378,
           "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
         },
         {
           "selector": ".undoing-styles-1",
-          "startsAt": 373,
+          "startsAt": 382,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".undoing-styles-1",
-          "startsAt": 378,
+          "startsAt": 387,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".too-long-selector",
-          "startsAt": 381,
+          "startsAt": 390,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".too-long-selector:before",
-          "startsAt": 401,
+          "startsAt": 410,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".too-long-selector:after",
-          "startsAt": 403,
+          "startsAt": 412,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".js-styled",
-          "startsAt": 406,
+          "startsAt": 415,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".magic-fix",
-          "startsAt": 411,
+          "startsAt": 420,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
           "selector": ".magic-fix .magic-number",
-          "startsAt": 413,
-          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
-        },
-        {
-          "selector": ".f1",
-          "startsAt": 419,
-          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
-        },
-        {
-          "selector": ".f2",
           "startsAt": 422,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
-          "selector": ".f3",
-          "startsAt": 425,
-          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
-        },
-        {
-          "selector": ".f4",
+          "selector": ".f1",
           "startsAt": 428,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
-          "selector": ".f5",
+          "selector": ".f2",
           "startsAt": 431,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
-          "selector": ".f6",
+          "selector": ".f3",
           "startsAt": 434,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
-          "selector": ".f7",
+          "selector": ".f4",
           "startsAt": 437,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
-          "selector": ".f8",
+          "selector": ".f5",
           "startsAt": 440,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         },
         {
-          "selector": ".f9",
+          "selector": ".f6",
           "startsAt": 443,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f7",
+          "startsAt": 446,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f8",
+          "startsAt": 449,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f9",
+          "startsAt": 452,
           "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
         }
       ],
-      "lines": 446
+      "lines": 455
     }
   ]
 }

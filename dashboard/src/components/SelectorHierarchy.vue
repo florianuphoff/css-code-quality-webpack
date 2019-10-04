@@ -1,12 +1,12 @@
 <template>
   <div class="v-box hierarchy relative">
     <div class="v-box__header">Fehlerbehaftete Selektoren</div>
-    <div class="v-box absolute data-picker">
+    <!-- <div class="v-box absolute data-picker">
       <h5 class="v-box__header">Dataset</h5>
       <button class="data-picker__btn general" @click="drawChart('gerenal')" v-bind:class="{ active: dSet === 'g' }" v-on:click="dSet = 'g'">General</button>
       <button class="data-picker__btn duplications" @click="drawChart('duplications')" v-bind:class="{ active: dSet === 'd' }" v-on:click="dSet = 'd'">Duplications</button>
       <button class="data-picker__btn smelly" @click="drawChart('smelly')" v-bind:class="{ active: dSet === 's' }" v-on:click="dSet = 's'">Smelly</button>
-    </div>
+    </div> -->
     <div class="v-box__chart selector-chart v-box__content" id="selectorChart"></div>
   </div>
 </template>
@@ -71,7 +71,7 @@ export default Vue.extend({
 <style>
 .hierarchy {
   grid-column: 1 / 2;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 4;
 }
 
 .selector-chart .node circle {

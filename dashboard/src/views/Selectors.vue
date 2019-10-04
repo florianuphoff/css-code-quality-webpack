@@ -2,9 +2,10 @@
   <div class="selectors">
     <div class="container">
       <SelectorHierarchy v-bind:chartData=chartData />
+      <SelectorHierarchy v-bind:chartData=chartData />
+      <!-- <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
+      <Heatmap :heatMapData=heatMapData /> -->
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
-      <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
-      <Heatmap :heatMapData=heatMapData />
     </div>
 
   </div>
@@ -14,8 +15,8 @@
 import Vue from 'vue';
 import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an alias to /src
 import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
-import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
-import Heatmap from '@/components/Heatmap.vue'
+// import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
+// import Heatmap from '@/components/Heatmap.vue'
 import { calculate } from 'specificity';
 // import json from '@/results/data.json'; // @ is an alias to /src
 
@@ -28,8 +29,8 @@ export default Vue.extend({
   components: {
     SelectorHierarchy,
     ButterflyChortChart,
-    SpecificityChart,
-    Heatmap
+    // SpecificityChart,
+    // Heatmap
   },
   data() {
     return {
@@ -39,267 +40,115 @@ export default Vue.extend({
         general: {},
         smelly: {}
       },
-      chordData: {
-        data: [],
-        names: [],
-        offset: 0
-      },
-      specificityValues: [],
-      yAxis: [],
-      xAxis: 0,
-      dataseries: [],
-      heatMapData: {
-        yAxis: [],
-        xAxis: [],
-        dataseries: []
-      }
+      // chordData: {
+      //   data: [],
+      //   names: [],
+      //   offset: 0
+      // },
     };
   },
   methods: {
-    heatmapData() {
-      const xaxis = [1,2,3,10,11,20,21,30,31,100,101,'zu spezifisch']
-      let nestings = []
-      let selectorList = []
-      let yaxis = []
+    // butterFlyData() {
+    //   let data = []
+    //   let mixins = []
+    //   let mixinsNames = []
+    //   let includes = []
+    //   let mixinIncludes = []
+    //   let includeNames = []
+    //   let placeholder = []
+    //   let placeholderNames = []
+    //   let extend = []
+    //   let extendNames = []
 
-      // objekt für data series
-
-      this.results.nesting.forEach(element => {
-        if(element.selector.includes(',')) {
-          const newSel = element.selector.split(',')
-          newSel.forEach(el => {
-            let sp = calculate(el)[0].specificity
-            sp = parseInt(sp.replace(/,/g, ''), 10)
-            selectorList.push({selector: newSel, depth: element.depth, specificity: sp})
-
-          });
-        } else {
-          let sp = calculate(element.selector)[0].specificity
-          sp = parseInt(sp.replace(/,/g, ''), 10)
-          selectorList.push({selector: element.selector, depth: element.depth, specificity: sp})
-        }
-        nestings.push(element.depth)
-      });
-
-      // y achse
-      nestings = [...new Set(nestings)]
-      this.heatMapData.yAxis = nestings.length-1
-
-      const entries = nestings.length * xaxis.length
-
-      let dataseries = []
-      for (let j = 0; j < xaxis.length; j++) {
-        dataseries.push(new Array(nestings.length))
-        nestings.forEach((depth,index) => {
-          dataseries[j][index] = [j,depth,0]
-        })
-      }
-
-      this.results.nesting.forEach(element => {
-        if(element.selector.includes(',')) {
-          const newSel = element.selector.split(',')
-          newSel.forEach(el => {
-            let sp = calculate(el)[0].specificity
-            sp = parseInt(sp.replace(/,/g, ''), 10)
-            const depth = element.depth
-
-            let firstIndex = -1
-            // falls true -> 'zu spezifisch'
-            if ((sp > 2 && sp < 10) 
-             || (sp > 11 && sp < 20) 
-             || (sp > 21 && sp < 30) 
-             || (sp > 31 && sp < 100) 
-             || (sp >= 102)) {
-              firstIndex = xaxis.indexOf('zu spezifisch')
-            } else {
-              firstIndex = xaxis.indexOf(sp)
-            }
-            let secondIndex = nestings.indexOf(element.depth)
-            // log(dataseries[firstIndex][secondIndex][2])
-            log(secondIndex)
-            dataseries[firstIndex][secondIndex][2] += 1
-          });
-        } else {
-          let sp = calculate(element.selector)[0].specificity
-          sp = parseInt(sp.replace(/,/g, ''), 10)
-
-          let firstIndex = -1
-            // falls true -> 'zu spezifisch'
-          if ((sp > 2 && sp < 10) 
-            || (sp > 11 && sp < 20) 
-            || (sp > 21 && sp < 30) 
-            || (sp > 31 && sp < 100) 
-            || (sp >= 102)) {
-            firstIndex = xaxis.indexOf('zu spezifisch')
-          } else {
-            firstIndex = xaxis.indexOf(sp)
-          }
-          let secondIndex = nestings.indexOf(element.depth)
-          dataseries[firstIndex][secondIndex][2] += 1
-        }
-      });
+    //   this.results.mixins.forEach(report => {
+    //     if(report.type === 'include') {
+    //       includes.push(report)
 
 
+    //       if(report.selector) {
+    //         // case: mixin includes another mixin
+    //         // this is the mixin name
+    //         // save the usage and add it later the matrix
 
-      dataseries = dataseries.flat()
-      log(dataseries)
-      this.heatMapData.dataseries = dataseries
-      this.heatMapData.xAxis = xaxis
+    //         //save the mixin to Names
+    //         // TODO: add usage reference from mixin to mixin
+    //         mixinsNames.push(report.selector.split('(')[0])
+    //       } else {
 
+    //         includeNames.push(report.resolvedSelector)
+    //       }
+    //     } else if(report.type === 'mixin') {
+    //       mixins.push(report)
+    //       mixinsNames.push(report.selector.split('(')[0])
+    //     } else if(report.type === 'extend') {
+    //       extend.push(report)
 
+    //       if(!report.value.includes('%')) {
+    //         extendNames.push(report.resolvedSelector)            
+    //         placeholderNames.push(report.value)
+    //       } else if(report.resolvedSelector.includes('%')) {
+    //         // placeholder extends placeholder
+    //         placeholderNames.push(report.value)          
+    //         placeholderNames.push(report.resolvedSelector)
+    //       } else {
+    //         extendNames.push(report.resolvedSelector)            
+    //       }
+    //     } else if(report.type === 'placeholder') {
+    //       placeholderNames.push(report.selector)
+    //     }
+    //   });
 
+    //   placeholderNames = [...new Set(placeholderNames)]
+    //   extendNames = [...new Set(extendNames)]
+    //   const mNames = [...new Set(mixinsNames) ,'' , includeNames , ''].flat();
+    //   const eNames = [placeholderNames ,'' , extendNames , ''].flat(); //uncomment for butterfly
+    //   // const eNames = [placeholderNames, extendNames].flat();
 
+    //   // TODO: es fehlt die Matrix
 
-      // Datum: [x-Achse (specificity), y-Achse (Nesting), SUM der Selektoren]
-      // so muss dataseries aussehen: [[0, 1, 10], [0, 2, 10] , [0, 3, 10], [1, 1, 19], [1, 2, 8], [1, 3, 24], [2, 1, 67], [2, 2, 92], [2, 3, 58]]
-      // X: Index
-      // Y: Nesting
-      // Value: Count
+    //   let eMatrix = []
+    //   for (let j = 0; j < eNames.length; j++) {
+    //     eMatrix.push(new Array(eNames.length))
+    //     eMatrix[j].fill(0)
+    //   }
+    //   let respondents = 0
+    //   for (let k = 0; k < eNames.length; k++) {
+    //     let name = eNames[k]
+    //     extend.forEach(report => {
+    //       let index = 0
+    //       let hit = false
+    //       if(name === report.resolvedSelector) {
+    //         // placeholder extends placeholder
+    //         // find s in eNames
+    //         index = eNames.indexOf(report.value)
+    //         eMatrix[k][index] = 1
+    //         respondents += 1
+    //       } else if(name === report.value) {
+    //         index = eNames.indexOf(report.resolvedSelector)
+    //         eMatrix[k][index] = 1
+    //         respondents += 1
+    //       }
+    //     })
+    //   }
 
-      
+    //   const emptyPerc = 0.2; // What % of the circle should become empty
+    //   const emptyStroke = Math.round(respondents * emptyPerc)
+    //   const offset = (2 * Math.PI) * (emptyStroke / (respondents + emptyStroke)) / 4
+    //   let eIndex = 0
+    //   for (let l = 0; l < eNames.length; l++) {
+    //     if(eNames[l] === '') {
+    //       eIndex = l
+    //       eMatrix[l][eNames.length-1] = emptyStroke
+    //       break;
+    //     }
+    //   }
+    //   eMatrix[eMatrix.length-1][eIndex] = emptyStroke
 
-      // specificities = [...new Set(specificities)]
-
-      // this.results.nesting.forEach(element => {
-      //   selectors.push(element.selector)
-      //   nestings.push(element.depth)
-      // });
-
-      // specificities.forEach(specificity => {
-      //   if (specificity > 2 && specificity < 10) {
-
-      //   } else if(specificity > 11 && specificity < 20) {
-      //     // tHS++            
-      //   } else if(specificity > 21 && specificity < 30) {
-      //     // tHS++
-      //   } else if(specificity > 31 && specificity < 100) {
-      //     // tHS++
-      //   } else if(specificity >= 102) {
-      //     // tHS++
-      //   } else {
-      //     yaxis.push(specificity)
-      //   }
-      // });
-
-
-
-
-    },
-    specificityChartData() {
-      this.yAxis = [...new Set(this.results.stats[0].selectors.getSpecificityGraph)].sort((a, b) => a - b)
-
-      let ds = []
-      this.results.stats[0].selectors.getSpecificityGraph.forEach((specificity, index) => {
-        const lineNumber = this.results.stats[1].selectors[index].startsAt
-        ds.push([lineNumber, this.yAxis.indexOf(specificity)])
-      });
-
-
-
-      this.specificityValues = this.results.stats[1].selectors
-      this.xAxis = this.results.stats[1].lines
-      this.dataseries = ds
-    },
-    butterFlyData() {
-      let data = []
-      let mixins = []
-      let mixinsNames = []
-      let includes = []
-      let mixinIncludes = []
-      let includeNames = []
-      let placeholder = []
-      let placeholderNames = []
-      let extend = []
-      let extendNames = []
-
-      this.results.mixins.forEach(report => {
-        if(report.type === 'include') {
-          includes.push(report)
-
-
-          if(report.selector) {
-            // case: mixin includes another mixin
-            // this is the mixin name
-            // save the usage and add it later the matrix
-
-            //save the mixin to Names
-            // TODO: add usage reference from mixin to mixin
-            mixinsNames.push(report.selector.split('(')[0])
-          } else {
-
-            includeNames.push(report.resolvedSelector)
-          }
-        } else if(report.type === 'mixin') {
-          mixins.push(report)
-          mixinsNames.push(report.selector.split('(')[0])
-        } else if(report.type === 'extend') {
-          extend.push(report)
-
-          if(!report.value.includes('%')) {
-            extendNames.push(report.resolvedSelector)            
-            placeholderNames.push(report.value)
-          } else if(report.resolvedSelector.includes('%')) {
-            // placeholder extends placeholder
-            placeholderNames.push(report.value)          
-            placeholderNames.push(report.resolvedSelector)
-          } else {
-            extendNames.push(report.resolvedSelector)            
-          }
-        } else if(report.type === 'placeholder') {
-          placeholderNames.push(report.selector)
-        }
-      });
-
-      placeholderNames = [...new Set(placeholderNames)]
-      extendNames = [...new Set(extendNames)]
-      const mNames = [...new Set(mixinsNames) ,'' , includeNames , ''].flat();
-      // const eNames = [placeholderNames ,'' , extendNames , ''].flat(); //uncomment for butterfly
-      const eNames = [placeholderNames, extendNames].flat();
-
-      // TODO: es fehlt die Matrix
-
-      let eMatrix = []
-      for (let j = 0; j < eNames.length; j++) {
-        eMatrix.push(new Array(eNames.length))
-        eMatrix[j].fill(0)
-      }
-      let respondents = 0
-      for (let k = 0; k < eNames.length; k++) {
-        let name = eNames[k]
-        extend.forEach(report => {
-          let index = 0
-          let hit = false
-          if(name === report.resolvedSelector) {
-            // placeholder extends placeholder
-            // find s in eNames
-            index = eNames.indexOf(report.value)
-            eMatrix[k][index] = 1
-            respondents += 1
-          } else if(name === report.value) {
-            index = eNames.indexOf(report.resolvedSelector)
-            eMatrix[k][index] = 1
-            respondents += 1
-          }
-        })
-      }
-
-      const emptyPerc = 0.2; // What % of the circle should become empty
-      const emptyStroke = Math.round(respondents * emptyPerc)
-      const offset = (2 * Math.PI) * (emptyStroke / (respondents + emptyStroke)) / 4
-      // let eIndex = 0
-      // for (let l = 0; l < eNames.length; l++) {
-      //   if(eNames[l] === '') {
-      //     eIndex = l
-      //     eMatrix[l][eNames.length-1] = emptyStroke
-      //     break;
-      //   }
-      // }
-      // eMatrix[eMatrix.length-1][eIndex] = emptyStroke
-
-      this.chordData.data = eMatrix
-      this.chordData.names = eNames
-      this.chordData.offset = offset
-    },
+    //   this.chordData.data = eMatrix
+    //   this.chordData.names = eNames
+    //   this.chordData.offset = offset
+    //   log(eMatrix)
+    // },
     cData() {
       this.chartData.general = this.parseSelectors(this.generalData(), "general")
       this.chartData.duplications = this.parseSelectors(this.duplicationData(), "duplication")
@@ -329,7 +178,6 @@ export default Vue.extend({
 
       this.results.warnings.forEach(warning => {
         if(warning.rule === 'block-no-empty') {
-          // log(warning)
           sData.push(warning.resolvedSelector)
         } else if (warning.rule === 'no-descending-specificity') {
           sData.push(warning.resolvedSelector)
@@ -356,9 +204,9 @@ export default Vue.extend({
         this.results = data
         this.duplications = this.results.duplications
         this.cData()
-        this.butterFlyData()
-        this.specificityChartData()
-        this.heatmapData()
+        // this.butterFlyData()
+        // this.specificityChartData()
+        // this.heatmapData()
       })
     },
     parseSelectors: function(selectors, dType) {

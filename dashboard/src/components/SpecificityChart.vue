@@ -1,7 +1,7 @@
 <template>
   <div class="v-box w-2-3 specificity">
     <div class="v-box__header">CSS Spezifizitätsgraph</div>
-    <div class="v-box__chart  v-box__content">
+    <div class="v-box__chart  v-box__content spChart">
       <highcharts :options="chartOptions" :updateArgs="updateArgs" ></highcharts>
     </div>
   </div>
@@ -11,6 +11,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import {Chart} from 'highcharts-vue'
+import Highcharts from 'highcharts'
 
 export default Vue.extend({
   name: 'SpecificityChart',
@@ -30,8 +31,8 @@ export default Vue.extend({
       type: Array,
       required: true
     },
-    xAxis: {
-      type: Number,
+    selectorList: {
+      type: Array,
       required: true
     }
   },
@@ -48,9 +49,8 @@ export default Vue.extend({
       this.yAxis = data
       this.chartOptions.yAxis.categories = this.yAxis      
     },
-    xAxis(data) {
-      this.xAxis = data
-      this.chartOptions.xAxis.max = this.xAxis
+    selectorList(data) {
+      this.selectorList = data
     }
   },
   computed: {
@@ -76,7 +76,7 @@ export default Vue.extend({
           spacingTop: 10,
           spacingLeft: 10,
           spacingRight: 10,
-          height: 700
+          height: 500,
         },
         title: {
           text: ''
@@ -85,8 +85,7 @@ export default Vue.extend({
           title: {
             text: 'Zeile im Quellcode'
           },
-          max: this.xAxis,
-          tickAmount: 10
+          min: 0,
         },
         tooltip: {
         },
@@ -118,6 +117,20 @@ export default Vue.extend({
                 lineWidthPlus: 0
               }
             }
+          },
+          series: {
+            point: {
+              events: {
+                mouseOut: function (e) {
+                  const chartToSync = Highcharts.charts[1];
+                  const points = chartToSync.container.querySelectorAll('.point-hover')
+                  points.forEach(point => {
+                    point.classList.remove('point-hover')
+                  })
+                }
+              }
+            },
+            pointStart: 0,
           }
         },
       }
@@ -128,6 +141,28 @@ export default Vue.extend({
       this.chartOptions.tooltip.formatter = function() {
         // wir können mehrere Treffer bei X haben, da mehrere Selektoren auf einer Zeile liegen können
         const hits = values.flatMap((entry, i) => entry.startsAt === this.x ? entry : []);
+        const chartToSync = Highcharts.charts[1];
+        const xaxis = [1,2,3,10,11,20,21,30,31,100,101,'zu spezifisch']
+
+        let specificity = yAxis[this.y]
+        const depth = hits[0].depth
+
+        if ((specificity > 2 && specificity < 10) 
+          || (specificity > 11 && specificity < 20) 
+          || (specificity > 21 && specificity < 30) 
+          || (specificity > 31 && specificity < 100) 
+          || (specificity >= 102)) {
+          specificity = 'zu spezifisch'
+        }
+
+        const xindex = xaxis.indexOf(specificity)
+
+        const point = chartToSync.series[0].points.find(entry => entry.x === xindex && entry.y === depth);
+
+        if(point) point.graphic.element.classList.add('point-hover')
+
+        // ! point kann null sein denn -> Mixins werden durch das Plugin nicht aufgelöst 
+        // ! -> es wird ja vor Compilezeit analysiert und da ist es nur ein Aufruf und keine Verschachtelung
 
         if(hits.length > 1) {
           let template = `<b>Mehrzeilige Selektoren: </b>`
@@ -136,26 +171,57 @@ export default Vue.extend({
           });
           return `${template}<br>
                   <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
-                  <b>Zeile: </b>${hits[0].startsAt}</b><br>
-                  <b>Spezifizität: </b>${yAxis[this.y]}`;
+                  <b>Zeile: </b>${hits[0].startsAt}<br>
+                  <b>Spezifizität: </b>${yAxis[this.y]}<br>
+                  <b>Verschachtelung: </b>${hits[0].depth}`;
         }
 
         return `<b>Selektor: </b>${hits[0].selector}<br>
                 <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
-                <b>Zeile: </b>${hits[0].startsAt}</b><br>
-                <b>Spezifizität: </b>${yAxis[this.y]}`;
+                <b>Zeile: </b>${hits[0].startsAt}<br>
+                <b>Spezifizität: </b>${yAxis[this.y]}<br>
+                <b>Verschachtelung: </b>${hits[0].depth}`;
       }
     },
+    addListener() {
+      document.querySelector('.selectors').addEventListener('click', () => {
+        console.log("clicked")        
+        // for( var i = 0; i < Highcharts.charts.length; i++){ 
+        //   if ( Highcharts.charts[i] === undefined) {
+        //     Highcharts.charts.splice(i, 1); 
+        //   }
+        // }
+        // console.log(Highcharts.charts)
+      })
+      document.querySelector('.overview').addEventListener('click', () => {
+        console.log("clicked")
+        // for( var i = 0; i < Highcharts.charts.length; i++){ 
+        //   if ( Highcharts.charts[i] === undefined) {
+        //     Highcharts.charts.splice(i, 1); 
+        //   }
+        // }
+        // console.log(Highcharts.charts)
+      })
+    }
   },
   mounted() {
+    console.log("called")
+    console.log(Highcharts.charts)
+    for( var i = 0; i < Highcharts.charts.length; i++){ 
+      if ( Highcharts.charts[i] === undefined || Object.keys(Highcharts.charts[i]).length === 0) {
+        Highcharts.charts.splice(i, 1); 
+        i--;
+      }
+    }
     this.chartOptions.chart.width = this.clientWidth
+    this.addListener()
   }
 });
 </script>
 
 <style scoped>
 .specificity {
-  grid-column: 2 / 3;
+  grid-column: 1 / 3;
   grid-row: 1 / 2;
 }
 

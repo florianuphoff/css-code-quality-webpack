@@ -20,8 +20,19 @@ body {
 
 .container {
   display: grid;
-  grid-auto-rows: minmax(400px, 700px), 400px, minmax(10px, auto);
+  grid-auto-rows: minmax(400px, 700px), 400px, 500px, minmax(10px, auto);
   grid-template-columns: 29% 69%;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-auto-rows: minmax(400px, 700px), 400px, 500px, minmax(10px, auto);
+  grid-template-columns: 32.1% 33% 32.1%;
   grid-column-gap: 20px;
   grid-row-gap: 30px;
   justify-content: center;
@@ -91,3 +102,23 @@ body {
   fill: #da1b60;
 }
 
+.point-hover {
+  fill: #2b912b;
+  fill-opacity: 0.5;
+}
+
+.c-selectors {
+  color: #176bc0;
+}
+
+.c-dashboard {
+  color: #1a9fd4;
+}
+
+.c-spec {
+  color: #171ac0;
+}
+
+.err {
+  color: #d84930;
+}

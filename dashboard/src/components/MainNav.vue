@@ -1,19 +1,19 @@
 <template>
   <div class="main-nav">
     <div class="main-nav__host">(S)CSS Code Quality Dashboard</div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link overview" to="/"><font-awesome-icon icon="home" /> Overview</router-link></div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/selectors"><font-awesome-icon icon="sitemap" /> Selectors</router-link></div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/properties"><font-awesome-icon icon="sliders-h" /> Properties</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link overview" to="/"><font-awesome-icon icon="home" /> Dashboard</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/selectors"><font-awesome-icon icon="sitemap" /> Selektoren</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/specificity"><font-awesome-icon icon="chart-line" /> Spezifizität</router-link></div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faSitemap, faSlidersH } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faHome, faSitemap, faSlidersH)
+library.add(faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram)
 
 export default Vue.extend({
   name: 'MainNav',
@@ -63,34 +63,34 @@ export default Vue.extend({
 }
 
 .overview:hover, .overview.router-link-exact-active {
-  color: #ff8a00;
+  color: #1a9fd4;
 }
 
 .main-nav__link.overview.router-link-exact-active::after {
-  border-color: #ff8a00;
+  border-color: #1a9fd4;
 }
 
 .selectors:hover, .selectors.router-link-exact-active {
-  color: #da1b60;
+  color: #176bc0;
   
 }
 
 .main-nav__link.selectors.router-link-exact-active::after {  
-  border-color: #da1b60;
+  border-color: #176bc0;
 }
 
 .props:hover, .props.router-link-exact-active {
-  color: #f44336;
+  color: #171ac0;
 }
 
 .main-nav__link.props.router-link-exact-active::after {
-  border-color: #f44336;
+  border-color: #171ac0;
 }
 
 .main-nav__link.router-link-exact-active::after {
   position: absolute;
   top: 95%;
-  width: 95%;
+  width: 97%;
   content: "";
   
   border-width: 2px;

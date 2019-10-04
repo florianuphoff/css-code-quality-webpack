@@ -20,12 +20,12 @@ export default new Router({
       component: () => import(/* webpackChunkName: "selectors" */ './views/Selectors.vue'),
     },
     {
-      path: '/properties',
-      name: 'properties',
+      path: '/specificity',
+      name: 'specificity',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "properties" */ './views/Properties.vue'),
+      component: () => import(/* webpackChunkName: "properties" */ './views/Specificity.vue'),
     },
   ],
 });

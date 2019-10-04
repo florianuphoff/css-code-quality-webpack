@@ -27,30 +27,12 @@ export default Vue.extend({
       type: Object,
       required: true
     }
-    // dataseries: {
-    //   type: Array,
-    //   required: true
-    // },
-    // specificityValues: {
-    //   type: Array,
-    //   required: true
-    // },
-    // yAxis: {
-    //   type: Array,
-    //   required: true
-    // },
-    // xAxis: {
-    //   type: Array,
-    //   required: true
-    // }
   },
   watch: {
     heatMapData: {
       handler: function(data) {
         this.heatMapData = data
 
-        console.log(data)
-        console.log("HEATMAP: Data updated")
         this.chartOptions.xAxis.categories = this.heatMapData.xAxis
         this.chartOptions.yAxis.max = this.heatMapData.yAxis      
         this.chartOptions.series[0].data = this.heatMapData.dataseries
@@ -85,7 +67,7 @@ export default Vue.extend({
           name: 'Selektoren',
           data: this.heatMapData.dataseries,
           borderWidth: 1,
-          borderColor: '#ccd6eb'
+          borderColor: '#aaa'
         }],
         chart: {
             type: 'heatmap',
@@ -124,8 +106,9 @@ export default Vue.extend({
         colorAxis: {
           stops: [
             // [0, '#ffffff'],
-            [0, '#3060cf'],
-            [0.15, '#fffbbc'],
+            [0, '#ffffff'],
+            [0.15, '#3060cf'],
+            [0.30, '#fffbbc'],
             [0.9, '#c4463a']
           ],
           min: 0,
@@ -150,7 +133,7 @@ export default Vue.extend({
 
 <style scoped>
 .heatmap {
-  grid-column: 2 / 3;
+  grid-column: 1 / 3;
   grid-row: 2 / 3;
 }
 
