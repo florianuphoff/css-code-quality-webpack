@@ -122,7 +122,11 @@ export default Vue.extend({
             point: {
               events: {
                 mouseOut: function (e) {
-                  const chartToSync = Highcharts.charts[1];
+                  const chartToSync = Highcharts.charts.find(chart => {
+                    if(chart) {
+                      if(chart.renderTo.parentNode.classList.contains('heatmap-node')) return chart
+                    }
+                  })
                   const points = chartToSync.container.querySelectorAll('.point-hover')
                   points.forEach(point => {
                     point.classList.remove('point-hover')
@@ -141,7 +145,11 @@ export default Vue.extend({
       this.chartOptions.tooltip.formatter = function() {
         // wir können mehrere Treffer bei X haben, da mehrere Selektoren auf einer Zeile liegen können
         const hits = values.flatMap((entry, i) => entry.startsAt === this.x ? entry : []);
-        const chartToSync = Highcharts.charts[1];
+        const chartToSync = Highcharts.charts.find(chart => {
+          if(chart) {
+            if(chart.renderTo.parentNode.classList.contains('heatmap-node')) return chart
+          }
+        })
         const xaxis = [1,2,3,10,11,20,21,30,31,100,101,'zu spezifisch']
 
         let specificity = yAxis[this.y]
@@ -183,38 +191,17 @@ export default Vue.extend({
                 <b>Verschachtelung: </b>${hits[0].depth}`;
       }
     },
-    addListener() {
-      document.querySelector('.selectors').addEventListener('click', () => {
-        console.log("clicked")        
-        // for( var i = 0; i < Highcharts.charts.length; i++){ 
-        //   if ( Highcharts.charts[i] === undefined) {
-        //     Highcharts.charts.splice(i, 1); 
-        //   }
-        // }
-        // console.log(Highcharts.charts)
-      })
-      document.querySelector('.overview').addEventListener('click', () => {
-        console.log("clicked")
-        // for( var i = 0; i < Highcharts.charts.length; i++){ 
-        //   if ( Highcharts.charts[i] === undefined) {
-        //     Highcharts.charts.splice(i, 1); 
-        //   }
-        // }
-        // console.log(Highcharts.charts)
-      })
-    }
   },
   mounted() {
     console.log("called")
     console.log(Highcharts.charts)
-    for( var i = 0; i < Highcharts.charts.length; i++){ 
-      if ( Highcharts.charts[i] === undefined || Object.keys(Highcharts.charts[i]).length === 0) {
-        Highcharts.charts.splice(i, 1); 
-        i--;
-      }
-    }
+    // for( var i = 0; i < Highcharts.charts.length; i++){ 
+    //   if ( Highcharts.charts[i] === undefined || Object.keys(Highcharts.charts[i]).length === 0) {
+    //     Highcharts.charts.splice(i, 1); 
+    //     i--;
+    //   }
+    // }
     this.chartOptions.chart.width = this.clientWidth
-    this.addListener()
   }
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="v-box w-2-3 heatmap">
     <div class="v-box__header">SCSS Selektorenverteilung</div>
-    <div class="v-box__chart  v-box__content">
+    <div class="v-box__chart  v-box__content heatmap-node">
       <highcharts :options="chartOptions" :updateArgs="updateArgs" ></highcharts>
     </div>
   </div>
@@ -67,7 +67,12 @@ export default Vue.extend({
           name: 'Selektoren',
           data: this.heatMapData.dataseries,
           borderWidth: 1,
-          borderColor: '#aaa'
+          borderColor: '#aaa',
+          states: {
+            hover: {
+              color: 'rgba(43, 145, 43, 0.5)',
+            }
+          }
         }],
         chart: {
             type: 'heatmap',
