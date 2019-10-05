@@ -63,28 +63,28 @@ export default Vue.extend({
 }
 
 .overview:hover, .overview.router-link-exact-active {
-  color: #1a9fd4;
+  color: #5eaece;
 }
 
 .main-nav__link.overview.router-link-exact-active::after {
-  border-color: #1a9fd4;
+  border-color: #5eaece;
 }
 
 .selectors:hover, .selectors.router-link-exact-active {
-  color: #176bc0;
+  color: #5086bd;
   
 }
 
 .main-nav__link.selectors.router-link-exact-active::after {  
-  border-color: #176bc0;
+  border-color: #5086bd;
 }
 
 .props:hover, .props.router-link-exact-active {
-  color: #171ac0;
+  color: #4c5dbb;
 }
 
 .main-nav__link.props.router-link-exact-active::after {
-  border-color: #171ac0;
+  border-color: #4c5dbb;
 }
 
 .main-nav__link.router-link-exact-active::after {

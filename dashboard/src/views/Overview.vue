@@ -3,7 +3,14 @@
     <div class="dashboard-container">
       <!-- <SpiderChart v-bind:spiderChartData=spiderChartData /> -->
       <div class="v-box cq">
-        <div class="v-box__header">Code Qualität</div>
+        <div class="v-box__header">
+          Code Qualität 
+          <div class="tooltip-icon" 
+            v-tooltip='{content: cqHelp, placement: "right", targetClasses: ["cq-tooltip"],}' 
+          >
+            <font-awesome-icon icon="question-circle" />
+          </div>
+        </div>
         <div class="cp v-box__content">
           <div class="cp-box">
             <div class="cp-box__header">Selektoren</div>
@@ -27,16 +34,94 @@
           </div>  
         </div>
       </div>
-
+      
       <ColumnChart :dataseries=columnDataseries :categories=columnCategories />
 
       <div class="v-box text-stats">
-        <div class="v-box__header">Infos</div>
-        <div class="v-box__content">
-          bla bla bla
+        <div class="fact-box">
+          <div class="fact">
+            <div class="fact__header">
+              <div class="fact__title">
+                Dateien
+              </div>
+              <div class="fact__content">
+                {{columnCategories.length}} 
+              </div>
+            </div>
+            <div class="fact__icon">
+              <font-awesome-icon icon="file-code" /> 
+            </div>
+          </div>
+          <div class="fact">
+          <div class="fact__header">
+              <div class="fact__title">
+                Selektoren
+              </div>
+              <div class="fact__content">
+                {{textualData.scss}} 
+              </div>
+            </div>
+            <div class="fact__icon">
+              <font-awesome-icon icon="sitemap" />
+            </div>
+          </div>
+          <div class="fact">
+            <div class="fact__header">
+              <div class="fact__title">
+                Dateigröße
+              </div>
+              <div class="fact__content">
+                {{size}} 
+              </div>
+            </div>
+            <div class="fact__icon">
+              <font-awesome-icon icon="file-alt" />
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-box">
+          <div class="fact">
+            <div class="fact__header">
+              <div class="fact__title">
+                Größter Selektor
+              </div>
+              <div class="fact__content">
+                {{textualData.lS.selector}} 
+              </div>
+            </div>
+            <div class="fact__icon">
+              <font-awesome-icon icon="chart-pie" />
+            </div>
+          </div>
+          <div class="fact">
+            <div class="fact__header">
+              <div class="fact__title">
+                Max. Spezifizität
+              </div>
+              <div class="fact__content">
+                {{textualData.hS}} 
+              </div>
+            </div>
+            <div class="fact__icon">
+              <font-awesome-icon icon="chart-line" />
+            </div>
+          </div>
+          <div class="fact">
+            <div class="fact__header">
+              <div class="fact__title">
+                Warnungen
+              </div>
+              <div class="fact__content">
+                {{textualData.warnings}} 
+              </div>
+            </div>
+            <div class="fact__icon">
+              <font-awesome-icon icon="exclamation-triangle" />
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -47,7 +132,15 @@ import SpiderChart from '@/components/SpiderChart.vue'; // @ is an alias to /src
 import ProgressRing from '@/components/ProgressRing.vue'; // @ is an alias to /src
 import VueApexCharts from 'vue-apexcharts';
 import ColumnChart from '@/components/ColumnChart.vue';
-// import json from '@/results/data.json'; // @ is an alias to /src
+
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFileCode, faSitemap, faExclamationTriangle, faChartLine, faChartPie, faQuestionCircle, faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faFileCode, faSitemap, faExclamationTriangle, faChartLine, faChartPie, faQuestionCircle, faFileAlt)
 
 export default Vue.extend({
   name: 'home',
@@ -55,10 +148,17 @@ export default Vue.extend({
     SpiderChart,
     ProgressRing,
     apexchart: VueApexCharts,
-    ColumnChart
+    ColumnChart,
+    FontAwesomeIcon,
+  },
+  computed: {
+    size: function() {
+      return `${Math.round(this.textualData.cssSize * 100) / 100} KB`
+    }
   },
   data() {
     return {
+      cqHelp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mattis eros in orci viverra vulputate. Suspendisse at commodo lacus, laoreet dapibus sapien. Nulla consequat varius purus, vel porttitor lorem eleifend.",
       results: {},
       spiderChartData: [],
       barChartData: {},
@@ -109,10 +209,25 @@ export default Vue.extend({
         labels: ['Average Results'],
       }, // hier kommen die restlichen data props
       columnDataseries: [],
-      columnCategories: []
+      columnCategories: [],
+      textualData: {
+        scss: 0,
+        cssSize: 0,
+        lS: {},
+        hS: 0,
+        warnings: 0
+      }
     };
   },
   methods: {
+    infoData() {
+      this.textualData.scss = this.results.nesting.length
+      this.textualData.cssSize = this.results.stats[0].size / 1000
+
+      this.textualData.lS = this.results.stats[0].rules.selectorByRuleSizes[0]
+      this.textualData.hS = this.results.stats[0].selectors.specificity.max
+      this.textualData.warnings = this.results.warnings.length
+    },
     radialData() {
       const nestings = this.results.nesting
 
@@ -268,7 +383,7 @@ export default Vue.extend({
       this.columnDataseries = data
       this.columnCategories = cats
     },
-    async fetchSpiderChartData() {
+    async fetchData() {
       fetch('/results/data.json')
       .then(response => response.json())
       .then(data => {
@@ -276,11 +391,12 @@ export default Vue.extend({
 
         this.radialData()
         this.columnData()
+        this.infoData()
       });
     }
   },
   mounted() {
-    this.fetchSpiderChartData();
+    this.fetchData();
   },
 });
 </script>
@@ -294,6 +410,11 @@ export default Vue.extend({
 .text-stats {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
+}
+
+.text-stats .svg-inline--fa {
+  font-size: 1.7em;
+  color: #c4c4c4;
 }
 </style>
 
