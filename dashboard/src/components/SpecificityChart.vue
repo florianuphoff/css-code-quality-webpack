@@ -1,6 +1,12 @@
 <template>
   <div class="v-box w-2-3 specificity">
-    <div class="v-box__header">CSS Spezifizitätsgraph</div>
+    <div class="v-box__header">CSS Spezifizitätsgraph
+      <div class="tooltip-icon" 
+        v-tooltip='{content: help, placement: "right", targetClasses: ["cq-tooltip"],}' 
+      >
+        <font-awesome-icon icon="question-circle" />
+      </div>
+    </div>
     <div class="v-box__chart  v-box__content spChart">
       <highcharts :options="chartOptions" :updateArgs="updateArgs" ></highcharts>
     </div>
@@ -13,10 +19,21 @@ import Vue from 'vue';
 import {Chart} from 'highcharts-vue'
 import Highcharts from 'highcharts'
 
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faQuestionCircle)
+
+
 export default Vue.extend({
   name: 'SpecificityChart',
   components: {
-    highcharts: Chart
+    highcharts: Chart,
+    FontAwesomeIcon
   },
   props: {
     dataseries: {
@@ -60,6 +77,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      help: `Der Spezifizitätsgraph nach Harry Roberts zeigt den Verlauf der Spezifizität. Leichte Auf- und Abstiege sind normal. Dennoch sollte der Graph einen klaren aufwärtstrend haben, sodass sehr spezifische Selektoren möglichst spät auftauchen. Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten.`,
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {
         series: [{

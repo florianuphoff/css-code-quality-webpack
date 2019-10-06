@@ -1,6 +1,12 @@
 <template>
   <div class="v-box w-2-3 heatmap">
-    <div class="v-box__header">SCSS Selektorenverteilung</div>
+    <div class="v-box__header">SCSS Selektorenverteilung
+      <div class="tooltip-icon" 
+        v-tooltip='{content: help, placement: "right", targetClasses: ["cq-tooltip"],}' 
+      >
+        <font-awesome-icon icon="question-circle" />
+      </div>
+    </div>
     <div class="v-box__chart  v-box__content heatmap-node">
       <highcharts :options="chartOptions" :updateArgs="updateArgs" ></highcharts>
     </div>
@@ -17,10 +23,20 @@ import heatmap from 'highcharts/modules/heatmap'
 
 heatmap(Highcharts)
 
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faQuestionCircle} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faQuestionCircle)
+
 export default Vue.extend({
   name: 'Heatmap',
   components: {
-    highcharts: Chart
+    highcharts: Chart,
+    FontAwesomeIcon
   },
   props: {
     heatMapData: {
@@ -61,6 +77,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      help: 'Alle SCSS Selektoren werden in der Heatmap gruppiert dargestellt. Die Kategorie "zu spezifisch" ergibt sich aus den übrigen möglichen Werten der Spezifizität. Selektoren aus dem Spezifizitätsgraphen werden hier hervorgehoben. Häufig entsteht eine hohe Spezifizität durch den intensiven Gebrauch der Verschachtelung in SCSS.',
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {
         series: [{

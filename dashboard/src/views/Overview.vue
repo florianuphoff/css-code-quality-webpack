@@ -158,7 +158,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      cqHelp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mattis eros in orci viverra vulputate. Suspendisse at commodo lacus, laoreet dapibus sapien. Nulla consequat varius purus, vel porttitor lorem eleifend.",
+      cqHelp: "Die ermittelte Code Qualität ist in vier Kategorien aufgeteilt und bezieht sich auf alle SCSS Dateien. Dynamische und Inline-Styles werden nicht berücksichtigt. Weitere Details zu der Code Qualität befinden sich in den Tabs Selektoren und Spezifizität.",
       results: {},
       spiderChartData: [],
       barChartData: {},
@@ -370,7 +370,7 @@ export default Vue.extend({
           data: selectors
         },
         { 
-          name: "Properties",
+          name: "Deklarationen",
           data: declarations
         },
         { 

@@ -62,7 +62,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      help: "Beispieltext",
+      help: "Die Visualisierung zeigt den Anteil von Selektoren, Deklarationen und gefundenen Warnungen pro SCSS Datei. So lassen sich komplexe oder fehlerbehaftete Dateien schnell finden.",
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {
         series: this.dataseries,

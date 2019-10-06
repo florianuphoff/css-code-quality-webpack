@@ -185,6 +185,8 @@ body {
   border-radius: 5px;
   padding: 5px 10px 4px;
   max-width: 300px;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 15px;
 }
 
 .tooltip .tooltip-arrow {
