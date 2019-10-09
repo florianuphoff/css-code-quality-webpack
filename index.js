@@ -19,7 +19,7 @@ class StylesheetCodeQualityWebpackPlugin {
     const formatter = this.stylelintOptions.formatter || defaultFormatter
     const exportLocation = { location: this.stylelintOptions.exportLocation || '/' }
 
-    fs.writeFileSync('/dashboard/export.json', exportLocation)
+    fs.writeFileSync(path.dirname(require.resolve("stylesheet-code-quality-webpack-plugin/dashboard/package.json")) + '/export.json', exportLocation)
 
     stylelintOptions = Object.assign(
       {
