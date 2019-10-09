@@ -9,6 +9,7 @@ body {
 #app {
   min-height: 100%;
   background-color: #fbfbfb;
+  color: #363636;
 }
 
 .content {

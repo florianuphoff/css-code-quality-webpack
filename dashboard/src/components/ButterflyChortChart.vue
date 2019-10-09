@@ -6,7 +6,7 @@
 </template>
 
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import ButterflyChord from '@/assets/ButterflyChord'
 import * as d3 from 'd3'
@@ -23,15 +23,15 @@ export default Vue.extend({
   watch: {
     chordData: {
       handler: function(data) {
-        this.chordData = data
-        this.drawChart()
+        // this.chordData = data
+        // this.drawChart()
       },
       deep: true
     }
   },
   methods: {
     drawChart: function() {
-      ButterflyChord.draw('#sassUsageChart', this.chordData)
+      // ButterflyChord.draw('#sassUsageChart', this.chordData)
 
       // Dependency Wheel
       // d3.chart = d3.chart || {};

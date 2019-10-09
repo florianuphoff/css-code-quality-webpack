@@ -126,7 +126,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import SpiderChart from '@/components/SpiderChart.vue'; // @ is an alias to /src
 import ProgressRing from '@/components/ProgressRing.vue'; // @ is an alias to /src

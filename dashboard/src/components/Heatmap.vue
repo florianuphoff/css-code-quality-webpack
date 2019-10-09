@@ -14,7 +14,7 @@
 </template>
 
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import {Chart} from 'highcharts-vue'
 

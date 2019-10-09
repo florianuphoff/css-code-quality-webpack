@@ -1,6 +1,6 @@
 {
   "name": "stylesheet-code-quality-webpack-plugin",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "A (s)css analysis plugin for webpack",
   "license": "MIT",
   "repository": "florianuphoff/stylesheet-code-quality-webpack-plugin",
@@ -35,6 +35,7 @@
     "fast-glob": "^3.0.4",
     "mkdirp": "^0.5.1",
     "neo-async": "^2.6.1",
+    "npm-run": "^5.0.1",
     "path": "^0.12.7",
     "postcss": "^7.0.17",
     "postcss-code-duplication": "^1.1.0",

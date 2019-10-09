@@ -1,0 +1,4183 @@
+{
+  "nesting": [
+    {
+      "selector": ".button",
+      "depth": 0
+    },
+    {
+      "selector": ".button:hover",
+      "depth": 0
+    },
+    {
+      "selector": ".button--glowing",
+      "depth": 1
+    },
+    {
+      "selector": ".button--outline",
+      "depth": 1
+    },
+    {
+      "selector": ".button--filled",
+      "depth": 1
+    },
+    {
+      "selector": ".alert",
+      "depth": 0
+    },
+    {
+      "selector": ".alert:before",
+      "depth": 0
+    },
+    {
+      "selector": ".alert__text",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--warning",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--warning:before",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--info",
+      "depth": 1
+    },
+    {
+      "selector": ".alert--info:before",
+      "depth": 1
+    },
+    {
+      "selector": ".v-hidden",
+      "depth": 0
+    },
+    {
+      "selector": ".v-visible",
+      "depth": 0
+    },
+    {
+      "selector": ".v-block",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-1",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-1-dup",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-1",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-2",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-x",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-1-y",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-3-1",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-prop-3-1-htr",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-a",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-awd",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-b",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-3-c",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-4",
+      "depth": 0
+    },
+    {
+      "selector": ".duplication-type-4",
+      "depth": 0
+    },
+    {
+      "selector": ".glowing-button",
+      "depth": 0
+    },
+    {
+      "selector": ".red-border",
+      "depth": 0
+    },
+    {
+      "selector": ".fancy-table",
+      "depth": 0
+    },
+    {
+      "selector": ".fancy-item",
+      "depth": 0
+    },
+    {
+      "selector": ".super-table-column",
+      "depth": 0
+    },
+    {
+      "selector": ".floated-element",
+      "depth": 0
+    },
+    {
+      "selector": "a.special-link",
+      "depth": 0
+    },
+    {
+      "selector": "a.special-link:hover",
+      "depth": 0
+    },
+    {
+      "selector": ".special-link",
+      "depth": 0
+    },
+    {
+      "selector": ".header",
+      "depth": 0
+    },
+    {
+      "selector": ".header",
+      "depth": 0
+    },
+    {
+      "selector": ".gf-e",
+      "depth": 0
+    },
+    {
+      "selector": ".gf-e",
+      "depth": 0
+    },
+    {
+      "selector": ".spread-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".wrong-value",
+      "depth": 0
+    },
+    {
+      "selector": ".slider",
+      "depth": 0
+    },
+    {
+      "selector": ".unknown-prop",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "depth": 0
+    },
+    {
+      "selector": "a:hoverr",
+      "depth": 0
+    },
+    {
+      "selector": "unknown",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": "%tool",
+      "depth": 0
+    },
+    {
+      "selector": "%tap",
+      "depth": 0
+    },
+    {
+      "selector": ".non-placeholder",
+      "depth": 0
+    },
+    {
+      "selector": ".layout-animation",
+      "depth": 0
+    },
+    {
+      "selector": ".paint-animation",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-1",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-2",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-3",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-4",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-5",
+      "depth": 0
+    },
+    {
+      "selector": ".font-type-6",
+      "depth": 0
+    },
+    {
+      "selector": "input[type=\"email\"]",
+      "depth": 0
+    },
+    {
+      "selector": "span[lang=\"pt\"]",
+      "depth": 0
+    },
+    {
+      "selector": "a.c1",
+      "depth": 0
+    },
+    {
+      "selector": "a#id1",
+      "depth": 0
+    },
+    {
+      "selector": "#id2#id3",
+      "depth": 0
+    },
+    {
+      "selector": ".agr#oie",
+      "depth": 0
+    },
+    {
+      "selector": "#id4.c2",
+      "depth": 0
+    },
+    {
+      "selector": "#id4",
+      "depth": 0
+    },
+    {
+      "selector": "#id4:hover",
+      "depth": 0
+    },
+    {
+      "selector": "#id4#id5",
+      "depth": 1
+    },
+    {
+      "selector": "#id4.c3",
+      "depth": 1
+    },
+    {
+      "selector": "#id4 .c4",
+      "depth": 1
+    },
+    {
+      "selector": "#id4 .c4:before",
+      "depth": 1
+    },
+    {
+      "selector": "#id4 .c4__element",
+      "depth": 2
+    },
+    {
+      "selector": "#id4 .c4 .c5",
+      "depth": 2
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item",
+      "depth": 3
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+      "depth": 4
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+      "depth": 4
+    },
+    {
+      "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+      "depth": 4
+    },
+    {
+      "selector": ".c6 > .c7 ~ button.c8.c9",
+      "depth": 0
+    },
+    {
+      "selector": ".c10",
+      "depth": 0
+    },
+    {
+      "selector": ".c10.c11",
+      "depth": 1
+    },
+    {
+      "selector": ".c10.c11.c12",
+      "depth": 2
+    },
+    {
+      "selector": ".c10.c11.c12.c13",
+      "depth": 3
+    },
+    {
+      "selector": ".c10.c11.c12.c13:hover",
+      "depth": 3
+    },
+    {
+      "selector": ".c10.c11.c12.c13.c14",
+      "depth": 4
+    },
+    {
+      "selector": ".c10.c11.c12 .c15",
+      "depth": 3
+    },
+    {
+      "selector": "#opk.c13",
+      "depth": 0
+    },
+    {
+      "selector": ".fancy-image",
+      "depth": 0
+    },
+    {
+      "selector": "kbd",
+      "depth": 0
+    },
+    {
+      "selector": "code",
+      "depth": 0
+    },
+    {
+      "selector": ".badge",
+      "depth": 0
+    },
+    {
+      "selector": ".close",
+      "depth": 0
+    },
+    {
+      "selector": ".close:hover,\n  .close:focus",
+      "depth": 0
+    },
+    {
+      "selector": ".close .pok,\n  .pokawdf",
+      "depth": 1
+    },
+    {
+      "selector": ".outline-button",
+      "depth": 0
+    },
+    {
+      "selector": ".bubble",
+      "depth": 0
+    },
+    {
+      "selector": ".main-nav",
+      "depth": 0
+    },
+    {
+      "selector": ".side-nav",
+      "depth": 0
+    },
+    {
+      "selector": ".hidden",
+      "depth": 0
+    },
+    {
+      "selector": ".glowing-button",
+      "depth": 0
+    },
+    {
+      "selector": ".red-border",
+      "depth": 0
+    },
+    {
+      "selector": ".spread-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".undoing-styles-1",
+      "depth": 0
+    },
+    {
+      "selector": ".undoing-styles-1",
+      "depth": 0
+    },
+    {
+      "selector": ".too-long-selector",
+      "depth": 0
+    },
+    {
+      "selector": ".too-long-selector:before",
+      "depth": 0
+    },
+    {
+      "selector": ".too-long-selector:after",
+      "depth": 0
+    },
+    {
+      "selector": ".js-styled",
+      "depth": 0
+    },
+    {
+      "selector": ".magic-fix",
+      "depth": 0
+    },
+    {
+      "selector": ".magic-fix .magic-number",
+      "depth": 1
+    },
+    {
+      "selector": ".f1",
+      "depth": 0
+    },
+    {
+      "selector": ".f2",
+      "depth": 0
+    },
+    {
+      "selector": ".f3",
+      "depth": 0
+    },
+    {
+      "selector": ".f4",
+      "depth": 0
+    },
+    {
+      "selector": ".f5",
+      "depth": 0
+    },
+    {
+      "selector": ".f6",
+      "depth": 0
+    },
+    {
+      "selector": ".f7",
+      "depth": 0
+    },
+    {
+      "selector": ".f8",
+      "depth": 0
+    },
+    {
+      "selector": ".f9",
+      "depth": 0
+    }
+  ],
+  "warnings": [
+    {
+      "selector": ".duplication-type-4",
+      "resolvedSelector": ".duplication-type-4",
+      "line": 83,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "selector": ".fancy-table",
+      "resolvedSelector": ".fancy-table",
+      "line": 6,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "width:100rem"
+    },
+    {
+      "selector": ".fancy-table",
+      "resolvedSelector": ".fancy-table",
+      "line": 7,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "margin-top:2rem"
+    },
+    {
+      "selector": ".fancy-item",
+      "resolvedSelector": ".fancy-item",
+      "line": 14,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "vertical-align:middle"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 20,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "margin:1px"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 21,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "padding:1px"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 19,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "vertical-align:middle"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 22,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "height:5rem"
+    },
+    {
+      "selector": ".floated-element",
+      "resolvedSelector": ".floated-element",
+      "line": 27,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "vertical-align:top"
+    },
+    {
+      "selector": ".header",
+      "resolvedSelector": ".header",
+      "line": 54,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "selector": ".gf-e",
+      "resolvedSelector": ".gf-e",
+      "line": 64,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "resolvedSelector": "",
+      "line": 43,
+      "column": 24,
+      "rule": "block-no-empty"
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-descending-specificity",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-descending-specificity",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 40,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    },
+    {
+      "selector": "a",
+      "resolvedSelector": "a",
+      "line": 41,
+      "column": 19,
+      "rule": "no-unknown-animations",
+      "word": "animation-name:fancccy-slide"
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "resolvedSelector": "a:UNKNOWN",
+      "line": 25,
+      "column": 2,
+      "rule": "selector-pseudo-class-no-unknown",
+      "word": null
+    },
+    {
+      "selector": "a:hoverr",
+      "resolvedSelector": "a:hoverr",
+      "line": 29,
+      "column": 2,
+      "rule": "selector-pseudo-class-no-unknown",
+      "word": null
+    },
+    {
+      "selector": "unknown",
+      "resolvedSelector": "unknown",
+      "line": 35,
+      "column": 1,
+      "rule": "selector-type-no-unknown",
+      "word": null
+    },
+    {
+      "selector": ".paint-animation",
+      "resolvedSelector": ".paint-animation",
+      "line": 9,
+      "column": 24,
+      "rule": "plugin/no-low-performance-animation-properties",
+      "word": "transition-property:color, margin"
+    },
+    {
+      "selector": ".paint-animation",
+      "resolvedSelector": ".paint-animation",
+      "line": 9,
+      "column": 31,
+      "rule": "plugin/no-low-performance-animation-properties",
+      "word": "transition-property:color, margin"
+    },
+    {
+      "selector": ".layout-animation",
+      "resolvedSelector": ".layout-animation",
+      "line": 5,
+      "column": 15,
+      "rule": "plugin/no-low-performance-animation-properties",
+      "word": "transition:margin 350ms ease-in"
+    },
+    {
+      "selector": ".hidden",
+      "resolvedSelector": ".hidden",
+      "line": 179,
+      "column": 3,
+      "rule": "scss/at-extend-no-missing-placeholder"
+    },
+    {
+      "selector": ".c5",
+      "resolvedSelector": "#id4 .c4 .c5",
+      "line": 52,
+      "column": 5,
+      "rule": "plugin/no-undoing-styles",
+      "word": "border:0"
+    },
+    {
+      "selector": "&:after",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+      "line": 62,
+      "column": 11,
+      "rule": "plugin/no-undoing-styles",
+      "word": "margin:0"
+    },
+    {
+      "selector": "kbd",
+      "resolvedSelector": "kbd",
+      "line": 113,
+      "column": 1,
+      "rule": "plugin/no-undoing-styles",
+      "word": "box-shadow:none"
+    },
+    {
+      "selector": "&:hover,\n  &:focus",
+      "resolvedSelector": ".close:hover,\n  .close:focus",
+      "line": 145,
+      "column": 3,
+      "rule": "plugin/no-undoing-styles",
+      "word": "text-decoration:none"
+    },
+    {
+      "selector": ".list__link",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link",
+      "line": 59,
+      "column": 9,
+      "rule": "max-nesting-depth",
+      "word": null
+    },
+    {
+      "selector": "&:after",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+      "line": 62,
+      "column": 11,
+      "rule": "max-nesting-depth",
+      "word": null
+    },
+    {
+      "selector": "&:focus",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+      "line": 66,
+      "column": 11,
+      "rule": "max-nesting-depth",
+      "word": null
+    },
+    {
+      "selector": "&:hover",
+      "resolvedSelector": ".c10.c11.c12.c13:hover",
+      "line": 83,
+      "column": 9,
+      "rule": "max-nesting-depth",
+      "word": null
+    },
+    {
+      "selector": "&.c14",
+      "resolvedSelector": ".c10.c11.c12.c13.c14",
+      "line": 87,
+      "column": 9,
+      "rule": "max-nesting-depth",
+      "word": null
+    },
+    {
+      "selector": "~ .list__item",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item",
+      "line": 56,
+      "column": 7,
+      "rule": "selector-max-compound-selectors",
+      "word": null
+    },
+    {
+      "selector": ".list__link",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link",
+      "line": 59,
+      "column": 9,
+      "rule": "selector-max-compound-selectors",
+      "word": null
+    },
+    {
+      "selector": "&:after",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+      "line": 62,
+      "column": 11,
+      "rule": "selector-max-compound-selectors",
+      "word": null
+    },
+    {
+      "selector": "&:focus",
+      "resolvedSelector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+      "line": 66,
+      "column": 11,
+      "rule": "selector-max-compound-selectors",
+      "word": null
+    },
+    {
+      "selector": "#id2#id3",
+      "resolvedSelector": "#id2#id3",
+      "line": 13,
+      "column": 1,
+      "rule": "selector-max-id",
+      "word": null
+    },
+    {
+      "selector": "&#id5",
+      "resolvedSelector": "#id4#id5",
+      "line": 32,
+      "column": 3,
+      "rule": "selector-max-id",
+      "word": null
+    },
+    {
+      "selector": ".undoing-styles-1",
+      "resolvedSelector": ".undoing-styles-1",
+      "line": 10,
+      "column": 1,
+      "rule": "plugin/no-undoing-styles",
+      "word": "padding-bottom:0"
+    },
+    {
+      "selector": ".undoing-styles-1",
+      "resolvedSelector": ".undoing-styles-1",
+      "line": 10,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null
+    }
+  ],
+  "mixins": [
+    {
+      "type": "include",
+      "line": 2,
+      "column": 12,
+      "resolvedSelector": ".button",
+      "value": "button-border(1px, $brand-danger)"
+    },
+    {
+      "type": "mixin",
+      "line": 1,
+      "column": 8,
+      "selector": "button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius)",
+      "value": "button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius)"
+    },
+    {
+      "type": "mixin",
+      "line": 8,
+      "column": 8,
+      "selector": "button-border($width, $color)",
+      "value": "button-border($width, $color)"
+    },
+    {
+      "type": "mixin",
+      "line": 12,
+      "column": 8,
+      "selector": "glowing-button()",
+      "value": "glowing-button()"
+    },
+    {
+      "type": "mixin",
+      "line": 19,
+      "column": 8,
+      "selector": "outline-button()",
+      "value": "outline-button()"
+    },
+    {
+      "type": "mixin",
+      "line": 26,
+      "column": 8,
+      "selector": "square-dimension($dimension: 1rem)",
+      "value": "square-dimension($dimension: 1rem)"
+    },
+    {
+      "type": "mixin",
+      "line": 30,
+      "column": 8,
+      "selector": "dimensions($width: 1rem, $height: 1rem)",
+      "value": "dimensions($width: 1rem, $height: 1rem)"
+    },
+    {
+      "type": "mixin",
+      "line": 35,
+      "column": 8,
+      "selector": "clearfix()",
+      "value": "clearfix()"
+    },
+    {
+      "type": "mixin",
+      "line": 46,
+      "column": 8,
+      "selector": "alert-variant($background, $border, $text-color)",
+      "value": "alert-variant($background, $border, $text-color)"
+    },
+    {
+      "type": "mixin",
+      "line": 60,
+      "column": 8,
+      "selector": "opacity($opacity)",
+      "value": "opacity($opacity)"
+    },
+    {
+      "type": "include",
+      "line": 13,
+      "column": 12,
+      "selector": "glowing-button()",
+      "resolvedSelector": "",
+      "value": "button-border($width: 1rem, $color: #CA5555)"
+    },
+    {
+      "type": "include",
+      "line": 20,
+      "column": 12,
+      "selector": "outline-button()",
+      "resolvedSelector": "",
+      "value": "button-border($width: 1rem, $color: #CA5515)"
+    },
+    {
+      "type": "include",
+      "line": 27,
+      "column": 12,
+      "selector": "square-dimension($dimension: 1rem)",
+      "resolvedSelector": "",
+      "value": "dimensions($dimension, $dimension)"
+    },
+    {
+      "type": "include",
+      "line": 11,
+      "column": 12,
+      "resolvedSelector": ".fancy-item",
+      "value": "opacity(0.2)"
+    },
+    {
+      "type": "include",
+      "line": 93,
+      "column": 18,
+      "resolvedSelector": ".c10.c11.c12 .c15",
+      "value": "square-dimension($dimension: 5rem)"
+    },
+    {
+      "type": "include",
+      "line": 114,
+      "column": 12,
+      "resolvedSelector": "kbd",
+      "value": "opacity(0.8)"
+    },
+    {
+      "type": "include",
+      "line": 143,
+      "column": 12,
+      "resolvedSelector": ".close",
+      "value": "opacity(.2)"
+    },
+    {
+      "type": "include",
+      "line": 149,
+      "column": 14,
+      "resolvedSelector": ".close:hover,\n  .close:focus",
+      "value": "opacity(.5)"
+    },
+    {
+      "type": "include",
+      "line": 159,
+      "column": 12,
+      "resolvedSelector": ".outline-button",
+      "value": "outline-button()"
+    },
+    {
+      "type": "include",
+      "line": 160,
+      "column": 12,
+      "resolvedSelector": ".outline-button",
+      "value": "dimensions(5,2)"
+    },
+    {
+      "type": "extend",
+      "line": 166,
+      "column": 11,
+      "resolvedSelector": ".bubble",
+      "value": "%tool"
+    },
+    {
+      "type": "extend",
+      "line": 171,
+      "column": 11,
+      "resolvedSelector": ".main-nav",
+      "value": "%tap"
+    },
+    {
+      "type": "extend",
+      "line": 175,
+      "column": 11,
+      "resolvedSelector": ".side-nav",
+      "value": "%tap"
+    },
+    {
+      "type": "extend",
+      "line": 179,
+      "column": 11,
+      "resolvedSelector": ".hidden",
+      "value": ".non-placeholder"
+    },
+    {
+      "type": "include",
+      "line": 12,
+      "column": 12,
+      "resolvedSelector": ".red-border",
+      "value": "clearfix()"
+    },
+    {
+      "type": "include",
+      "line": 45,
+      "column": 12,
+      "resolvedSelector": ".js-styled",
+      "value": "dimensions($width: 1rem, $height: 10rem)"
+    }
+  ],
+  "duplications": [
+    {
+      "type": 1,
+      "origin": {
+        "hash": "485bdc20ec22c08679c81ccd17d90940",
+        "selector": ".non-placeholder, .hidden"
+      },
+      "duplication": {
+        "hash": "485bdc20ec22c08679c81ccd17d90940",
+        "selector": ".v-hidden"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "02b583bfbb000d820790dd72be32a72e",
+        "selector": ".button--filled"
+      },
+      "duplication": {
+        "hash": "02b583bfbb000d820790dd72be32a72e",
+        "selector": ".v-block"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "02b583bfbb000d820790dd72be32a72e",
+        "selector": ".v-block"
+      },
+      "duplication": {
+        "hash": "02b583bfbb000d820790dd72be32a72e",
+        "selector": "#id4#id5"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "d0c0350c4ceb56bff9287f52fd5e04d9",
+        "selector": ".duplication-type-1"
+      },
+      "duplication": {
+        "hash": "d0c0350c4ceb56bff9287f52fd5e04d9",
+        "selector": ".duplication-type-1-dup"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "ec41b83ff031fd764369195b6c798191",
+        "selector": ".duplication-prop-1-1"
+      },
+      "duplication": {
+        "hash": "ec41b83ff031fd764369195b6c798191",
+        "selector": ".duplication-prop-1-2"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "be28a9cd180ec111e0e769117c72b268",
+        "selector": ".duplication-prop-1-x"
+      },
+      "duplication": {
+        "hash": "be28a9cd180ec111e0e769117c72b268",
+        "selector": ".duplication-prop-1-y"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "22d5701b45a5c0ab74a6f62a8ef09da7",
+        "selector": ".glowing-button"
+      },
+      "duplication": {
+        "hash": "22d5701b45a5c0ab74a6f62a8ef09da7",
+        "selector": ".glowing-button"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "c71a520351cc19f48a1bbe26505ff6bf",
+        "selector": "unknown"
+      },
+      "duplication": {
+        "hash": "c71a520351cc19f48a1bbe26505ff6bf",
+        "selector": ".c10.c11.c12 .c15"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": "a#id1"
+      },
+      "duplication": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".c10.c11.c12.c13.c14"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "468d17a87a2ea269dcaff605ff1277a0",
+        "selector": "#id4 .c4:before"
+      },
+      "duplication": {
+        "hash": "468d17a87a2ea269dcaff605ff1277a0",
+        "selector": ".red-border:after"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".c10.c11.c12.c13.c14"
+      },
+      "duplication": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".f9"
+      }
+    },
+    {
+      "type": 3,
+      "origin": {
+        "hash": "ddedf8a99830f1dd8e38efa629b96c27",
+        "selector": ".duplication-type-1"
+      },
+      "duplication": {
+        "hash": "ddedf8a99830f1dd8e38efa629b96c27",
+        "selector": ".duplication-type-1-dup"
+      }
+    },
+    {
+      "type": 3,
+      "origin": {
+        "hash": "10c77a5dbe34c0ed3736665e2a9055e4",
+        "selector": ".duplication-type-3-c"
+      },
+      "duplication": {
+        "hash": "10c77a5dbe34c0ed3736665e2a9055e4",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 3,
+      "origin": {
+        "hash": "a5a72ce63ca917f95a625a64e7e3e534",
+        "selector": ".duplication-type-3-c"
+      },
+      "duplication": {
+        "hash": "a5a72ce63ca917f95a625a64e7e3e534",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 3,
+      "origin": {
+        "hash": "dc4c510fd17986ef72bfd81f90ae88b5",
+        "selector": "kbd"
+      },
+      "duplication": {
+        "hash": "dc4c510fd17986ef72bfd81f90ae88b5",
+        "selector": "code"
+      }
+    },
+    {
+      "type": 3,
+      "origin": {
+        "hash": "ab8cbae00acc1bb7bebfe744310ee26d",
+        "selector": ".duplication-prop-3-1"
+      },
+      "duplication": {
+        "hash": "ab8cbae00acc1bb7bebfe744310ee26d",
+        "selector": ".duplication-prop-3-1-htr"
+      }
+    },
+    {
+      "type": 3,
+      "origin": {
+        "hash": "67b32a1641b7c217e617c3c8d9f32380",
+        "selector": ".duplication-type-3-awd"
+      },
+      "duplication": {
+        "hash": "67b32a1641b7c217e617c3c8d9f32380",
+        "selector": ".duplication-type-3-a"
+      }
+    },
+    {
+      "type": 4,
+      "origin": {
+        "hash": "bf80a5deb3c0eededf0bc59ca1acb2c9",
+        "selector": ".duplication-type-4"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "dec3a6f5485ecb64d10cda619453b24f",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "aaa52db54b38da8193ebd1f5f2b9709f",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "49ca3d9eaabb50832b56e1426b1ace2c",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "2b0a7bbd17b9dc669a3a01b528b7e562",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "2d8414756d667b29f22196645ad6fe62",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "0e2ceeab179604f5c6c840fe52a2c99b",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "e93c0059b3eb10487aec17b51a38ffca",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "1718d01c35fdef68739545c7cdd407fa",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "0c3f5290c6fb21ce435424e05a190de0",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "924c24c9020b9a2509b41f8b8fa1ec0c",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "41ecef5f478d83f40f9f7bba26ad04f6",
+        "selector": ".red-border"
+      }
+    },
+    {
+      "type": 5,
+      "origin": {
+        "hash": "75c2d4da2a19a591086ffccaf140572e",
+        "selector": ".red-border"
+      }
+    }
+  ],
+  "stats": [
+    {
+      "size": 8275,
+      "gzip": 2421,
+      "rules": {
+        "total": 117,
+        "size": {
+          "graph": [
+            4,
+            2,
+            1,
+            4,
+            6,
+            1,
+            1,
+            2,
+            1,
+            2,
+            2,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            1,
+            4,
+            4,
+            1,
+            1,
+            3,
+            1,
+            1,
+            2,
+            1,
+            4,
+            1,
+            3,
+            1,
+            1,
+            3,
+            2,
+            2,
+            3,
+            4,
+            5,
+            2,
+            2,
+            2,
+            2,
+            5,
+            2,
+            2,
+            1,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1,
+            6,
+            6,
+            6,
+            4,
+            4,
+            1,
+            6,
+            1,
+            2,
+            3,
+            2,
+            1,
+            2,
+            3,
+            1,
+            19,
+            1,
+            1,
+            3,
+            1,
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "max": 19,
+          "average": 2.1025641025641026
+        },
+        "selectorByRuleSizes": [
+          {
+            "selector": ".too-long-selector",
+            "declarations": 19
+          },
+          {
+            "selector": ".outline-button",
+            "declarations": 6
+          },
+          {
+            "selector": ".badge",
+            "declarations": 6
+          },
+          {
+            "selector": "code",
+            "declarations": 6
+          },
+          {
+            "selector": "kbd",
+            "declarations": 6
+          },
+          {
+            "selector": ".alert:before",
+            "declarations": 6
+          },
+          {
+            "selector": ".header",
+            "declarations": 5
+          },
+          {
+            "selector": ".super-table-column",
+            "declarations": 5
+          },
+          {
+            "selector": ".magic-fix .magic-number",
+            "declarations": 4
+          },
+          {
+            "selector": ".close:hover, .close:focus",
+            "declarations": 4
+          },
+          {
+            "selector": ".close",
+            "declarations": 4
+          },
+          {
+            "selector": ".fancy-item",
+            "declarations": 4
+          },
+          {
+            "selector": ".wrong-value",
+            "declarations": 4
+          },
+          {
+            "selector": ".duplication-type-3-a",
+            "declarations": 4
+          },
+          {
+            "selector": ".duplication-prop-3-1-htr",
+            "declarations": 4
+          },
+          {
+            "selector": ".alert",
+            "declarations": 4
+          },
+          {
+            "selector": ".bubble",
+            "declarations": 4
+          },
+          {
+            "selector": ".js-styled",
+            "declarations": 3
+          },
+          {
+            "selector": ".undoing-styles-1",
+            "declarations": 3
+          },
+          {
+            "selector": ".red-border",
+            "declarations": 3
+          },
+          {
+            "selector": ".fancy-table",
+            "declarations": 3
+          },
+          {
+            "selector": "a:hoverr",
+            "declarations": 3
+          },
+          {
+            "selector": ".unknown-prop",
+            "declarations": 3
+          },
+          {
+            "selector": ".duplication-type-3-c",
+            "declarations": 3
+          },
+          {
+            "selector": ".duplication-prop-1-y",
+            "declarations": 3
+          },
+          {
+            "selector": ".duplication-prop-1-x",
+            "declarations": 3
+          },
+          {
+            "selector": ".duplication-prop-1-2",
+            "declarations": 3
+          },
+          {
+            "selector": ".duplication-prop-1-1",
+            "declarations": 3
+          },
+          {
+            "selector": ".spread-selector",
+            "declarations": 2
+          },
+          {
+            "selector": ".red-border:before, .red-border:after",
+            "declarations": 2
+          },
+          {
+            "selector": ".glowing-button",
+            "declarations": 2
+          },
+          {
+            "selector": ".c10.c11.c12 .c15",
+            "declarations": 2
+          },
+          {
+            "selector": "#id4 .c4 .c5",
+            "declarations": 2
+          },
+          {
+            "selector": "#id4 .c4__element",
+            "declarations": 2
+          },
+          {
+            "selector": ".font-type-6",
+            "declarations": 2
+          },
+          {
+            "selector": ".font-type-5",
+            "declarations": 2
+          },
+          {
+            "selector": ".font-type-4",
+            "declarations": 2
+          },
+          {
+            "selector": ".font-type-3",
+            "declarations": 2
+          },
+          {
+            "selector": ".font-type-2",
+            "declarations": 2
+          },
+          {
+            "selector": ".font-type-1",
+            "declarations": 2
+          },
+          {
+            "selector": ".spread-selector",
+            "declarations": 2
+          },
+          {
+            "selector": ".gf-e",
+            "declarations": 2
+          },
+          {
+            "selector": ".header",
+            "declarations": 2
+          },
+          {
+            "selector": ".special-link",
+            "declarations": 2
+          },
+          {
+            "selector": "a.special-link:hover",
+            "declarations": 2
+          },
+          {
+            "selector": "a.special-link",
+            "declarations": 2
+          },
+          {
+            "selector": ".floated-element",
+            "declarations": 2
+          },
+          {
+            "selector": "a",
+            "declarations": 2
+          },
+          {
+            "selector": "unknown",
+            "declarations": 2
+          },
+          {
+            "selector": ".glowing-button",
+            "declarations": 2
+          },
+          {
+            "selector": ".duplication-type-1-dup",
+            "declarations": 2
+          },
+          {
+            "selector": ".duplication-type-1",
+            "declarations": 2
+          },
+          {
+            "selector": ".button--glowing",
+            "declarations": 2
+          },
+          {
+            "selector": ".button",
+            "declarations": 2
+          },
+          {
+            "selector": ".alert--info:before",
+            "declarations": 2
+          },
+          {
+            "selector": ".alert--warning:before",
+            "declarations": 2
+          },
+          {
+            "selector": ".main-nav, .side-nav",
+            "declarations": 2
+          },
+          {
+            "selector": ".f9",
+            "declarations": 1
+          },
+          {
+            "selector": ".f8",
+            "declarations": 1
+          },
+          {
+            "selector": ".f7",
+            "declarations": 1
+          },
+          {
+            "selector": ".f6",
+            "declarations": 1
+          },
+          {
+            "selector": ".f5",
+            "declarations": 1
+          },
+          {
+            "selector": ".f4",
+            "declarations": 1
+          },
+          {
+            "selector": ".f3",
+            "declarations": 1
+          },
+          {
+            "selector": ".f2",
+            "declarations": 1
+          },
+          {
+            "selector": ".f1",
+            "declarations": 1
+          },
+          {
+            "selector": ".magic-fix",
+            "declarations": 1
+          },
+          {
+            "selector": ".too-long-selector:after",
+            "declarations": 1
+          },
+          {
+            "selector": ".too-long-selector:before",
+            "declarations": 1
+          },
+          {
+            "selector": ".undoing-styles-1",
+            "declarations": 1
+          },
+          {
+            "selector": ".red-border:after",
+            "declarations": 1
+          },
+          {
+            "selector": ".bubble",
+            "declarations": 1
+          },
+          {
+            "selector": ".close .pok,\n  .close .pokawdf",
+            "declarations": 1
+          },
+          {
+            "selector": ".fancy-image",
+            "declarations": 1
+          },
+          {
+            "selector": "#opk.c13",
+            "declarations": 1
+          },
+          {
+            "selector": ".c10.c11.c12.c13.c14",
+            "declarations": 1
+          },
+          {
+            "selector": ".c10.c11.c12.c13:hover",
+            "declarations": 1
+          },
+          {
+            "selector": ".c6 > .c7 ~ button.c8.c9",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4 .c4:before",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4 .c4",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4.c3",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4#id5",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4:hover",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4",
+            "declarations": 1
+          },
+          {
+            "selector": "#id4.c2",
+            "declarations": 1
+          },
+          {
+            "selector": ".agr#oie",
+            "declarations": 1
+          },
+          {
+            "selector": "#id2#id3",
+            "declarations": 1
+          },
+          {
+            "selector": "a#id1",
+            "declarations": 1
+          },
+          {
+            "selector": "a.c1",
+            "declarations": 1
+          },
+          {
+            "selector": "span[lang=\"pt\"]",
+            "declarations": 1
+          },
+          {
+            "selector": "input[type=\"email\"]",
+            "declarations": 1
+          },
+          {
+            "selector": ".paint-animation",
+            "declarations": 1
+          },
+          {
+            "selector": ".layout-animation",
+            "declarations": 1
+          },
+          {
+            "selector": ".gf-e",
+            "declarations": 1
+          },
+          {
+            "selector": "a:UNKNOWN",
+            "declarations": 1
+          },
+          {
+            "selector": "a",
+            "declarations": 1
+          },
+          {
+            "selector": ".slider",
+            "declarations": 1
+          },
+          {
+            "selector": ".red-border",
+            "declarations": 1
+          },
+          {
+            "selector": ".duplication-type-4",
+            "declarations": 1
+          },
+          {
+            "selector": ".duplication-type-4",
+            "declarations": 1
+          },
+          {
+            "selector": ".duplication-type-3-b",
+            "declarations": 1
+          },
+          {
+            "selector": ".duplication-type-3-awd",
+            "declarations": 1
+          },
+          {
+            "selector": ".duplication-prop-3-1",
+            "declarations": 1
+          },
+          {
+            "selector": ".v-block",
+            "declarations": 1
+          },
+          {
+            "selector": ".v-visible",
+            "declarations": 1
+          },
+          {
+            "selector": ".v-hidden",
+            "declarations": 1
+          },
+          {
+            "selector": ".button--filled",
+            "declarations": 1
+          },
+          {
+            "selector": ".button--outline",
+            "declarations": 1
+          },
+          {
+            "selector": ".button:hover",
+            "declarations": 1
+          },
+          {
+            "selector": ".alert--info",
+            "declarations": 1
+          },
+          {
+            "selector": ".alert--warning",
+            "declarations": 1
+          },
+          {
+            "selector": ".alert__text",
+            "declarations": 1
+          },
+          {
+            "selector": ".non-placeholder, .hidden",
+            "declarations": 1
+          }
+        ]
+      },
+      "selectors": {
+        "total": 122,
+        "type": 14,
+        "class": 108,
+        "id": 17,
+        "pseudoClass": 8,
+        "pseudoElement": 10,
+        "values": [
+          ".bubble",
+          ".main-nav",
+          ".side-nav",
+          ".non-placeholder",
+          ".hidden",
+          ".alert",
+          ".alert:before",
+          ".alert__text",
+          ".alert--warning",
+          ".alert--warning:before",
+          ".alert--info",
+          ".alert--info:before",
+          ".button",
+          ".button:hover",
+          ".button--glowing",
+          ".button--outline",
+          ".button--filled",
+          ".v-hidden",
+          ".v-visible",
+          ".v-block",
+          ".duplication-type-1",
+          ".duplication-type-1-dup",
+          ".duplication-prop-1-1",
+          ".duplication-prop-1-2",
+          ".duplication-prop-1-x",
+          ".duplication-prop-1-y",
+          ".duplication-prop-3-1",
+          ".duplication-prop-3-1-htr",
+          ".duplication-type-3-a",
+          ".duplication-type-3-awd",
+          ".duplication-type-3-b",
+          ".duplication-type-3-c",
+          ".duplication-type-4",
+          ".duplication-type-4",
+          ".glowing-button",
+          ".red-border",
+          ".wrong-value",
+          ".slider",
+          ".unknown-prop",
+          "a",
+          "a:UNKNOWN",
+          "a:hoverr",
+          "unknown",
+          "a",
+          ".fancy-table",
+          ".fancy-item",
+          ".super-table-column",
+          ".floated-element",
+          "a.special-link",
+          "a.special-link:hover",
+          ".special-link",
+          ".header",
+          ".header",
+          ".gf-e",
+          ".gf-e",
+          ".spread-selector",
+          ".layout-animation",
+          ".paint-animation",
+          ".font-type-1",
+          ".font-type-2",
+          ".font-type-3",
+          ".font-type-4",
+          ".font-type-5",
+          ".font-type-6",
+          "input[type=\"email\"]",
+          "span[lang=\"pt\"]",
+          "a.c1",
+          "a#id1",
+          "#id2#id3",
+          ".agr#oie",
+          "#id4.c2",
+          "#id4",
+          "#id4:hover",
+          "#id4#id5",
+          "#id4.c3",
+          "#id4 .c4",
+          "#id4 .c4:before",
+          "#id4 .c4__element",
+          "#id4 .c4 .c5",
+          "#id4 .c4 .c5 ~ .list__item",
+          "#id4 .c4 .c5 ~ .list__item .list__link",
+          "#id4 .c4 .c5 ~ .list__item .list__link:after",
+          "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+          ".c6 > .c7 ~ button.c8.c9",
+          ".c10.c11.c12.c13:hover",
+          ".c10.c11.c12.c13.c14",
+          ".c10.c11.c12 .c15",
+          "#opk.c13",
+          ".fancy-image",
+          "kbd",
+          "code",
+          ".badge",
+          ".close",
+          ".close:hover",
+          ".close:focus",
+          ".close .pok",
+          ".close .pokawdf",
+          ".outline-button",
+          ".bubble",
+          ".glowing-button",
+          ".red-border",
+          ".red-border:before",
+          ".red-border:after",
+          ".red-border:after",
+          ".spread-selector",
+          ".undoing-styles-1",
+          ".undoing-styles-1",
+          ".too-long-selector",
+          ".too-long-selector:before",
+          ".too-long-selector:after",
+          ".js-styled",
+          ".magic-fix",
+          ".magic-fix .magic-number",
+          ".f1",
+          ".f2",
+          ".f3",
+          ".f4",
+          ".f5",
+          ".f6",
+          ".f7",
+          ".f8",
+          ".f9"
+        ],
+        "specificity": {
+          "max": 200,
+          "average": 27.81967213114754
+        },
+        "getSpecificityGraph": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          11,
+          10,
+          10,
+          11,
+          10,
+          11,
+          10,
+          20,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          1,
+          11,
+          11,
+          1,
+          1,
+          10,
+          10,
+          10,
+          10,
+          11,
+          21,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          11,
+          11,
+          11,
+          101,
+          200,
+          110,
+          110,
+          100,
+          110,
+          200,
+          110,
+          110,
+          111,
+          110,
+          120,
+          130,
+          140,
+          141,
+          150,
+          41,
+          50,
+          50,
+          40,
+          110,
+          10,
+          1,
+          1,
+          10,
+          10,
+          20,
+          20,
+          20,
+          20,
+          10,
+          10,
+          10,
+          10,
+          11,
+          11,
+          11,
+          10,
+          10,
+          10,
+          10,
+          11,
+          11,
+          10,
+          10,
+          20,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "getSpecificityValues": [
+          {
+            "selector": ".bubble",
+            "specificity": 10
+          },
+          {
+            "selector": ".main-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".side-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".non-placeholder",
+            "specificity": 10
+          },
+          {
+            "selector": ".hidden",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".alert__text",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert--warning",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert--warning:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".alert--info",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert--info:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".button",
+            "specificity": 10
+          },
+          {
+            "selector": ".button:hover",
+            "specificity": 20
+          },
+          {
+            "selector": ".button--glowing",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--outline",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--filled",
+            "specificity": 10
+          },
+          {
+            "selector": ".v-hidden",
+            "specificity": 10
+          },
+          {
+            "selector": ".v-visible",
+            "specificity": 10
+          },
+          {
+            "selector": ".v-block",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-1-dup",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-2",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-x",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-y",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-3-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-3-1-htr",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-a",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-awd",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-b",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-c",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-4",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-4",
+            "specificity": 10
+          },
+          {
+            "selector": ".glowing-button",
+            "specificity": 10
+          },
+          {
+            "selector": ".red-border",
+            "specificity": 10
+          },
+          {
+            "selector": ".wrong-value",
+            "specificity": 10
+          },
+          {
+            "selector": ".slider",
+            "specificity": 10
+          },
+          {
+            "selector": ".unknown-prop",
+            "specificity": 10
+          },
+          {
+            "selector": "a",
+            "specificity": 1
+          },
+          {
+            "selector": "a:UNKNOWN",
+            "specificity": 11
+          },
+          {
+            "selector": "a:hoverr",
+            "specificity": 11
+          },
+          {
+            "selector": "unknown",
+            "specificity": 1
+          },
+          {
+            "selector": "a",
+            "specificity": 1
+          },
+          {
+            "selector": ".fancy-table",
+            "specificity": 10
+          },
+          {
+            "selector": ".fancy-item",
+            "specificity": 10
+          },
+          {
+            "selector": ".super-table-column",
+            "specificity": 10
+          },
+          {
+            "selector": ".floated-element",
+            "specificity": 10
+          },
+          {
+            "selector": "a.special-link",
+            "specificity": 11
+          },
+          {
+            "selector": "a.special-link:hover",
+            "specificity": 21
+          },
+          {
+            "selector": ".special-link",
+            "specificity": 10
+          },
+          {
+            "selector": ".header",
+            "specificity": 10
+          },
+          {
+            "selector": ".header",
+            "specificity": 10
+          },
+          {
+            "selector": ".gf-e",
+            "specificity": 10
+          },
+          {
+            "selector": ".gf-e",
+            "specificity": 10
+          },
+          {
+            "selector": ".spread-selector",
+            "specificity": 10
+          },
+          {
+            "selector": ".layout-animation",
+            "specificity": 10
+          },
+          {
+            "selector": ".paint-animation",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-2",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-3",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-4",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-5",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-6",
+            "specificity": 10
+          },
+          {
+            "selector": "input[type=\"email\"]",
+            "specificity": 11
+          },
+          {
+            "selector": "span[lang=\"pt\"]",
+            "specificity": 11
+          },
+          {
+            "selector": "a.c1",
+            "specificity": 11
+          },
+          {
+            "selector": "a#id1",
+            "specificity": 101
+          },
+          {
+            "selector": "#id2#id3",
+            "specificity": 200
+          },
+          {
+            "selector": ".agr#oie",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4.c2",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4",
+            "specificity": 100
+          },
+          {
+            "selector": "#id4:hover",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4#id5",
+            "specificity": 200
+          },
+          {
+            "selector": "#id4.c3",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4 .c4",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4 .c4:before",
+            "specificity": 111
+          },
+          {
+            "selector": "#id4 .c4__element",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4 .c4 .c5",
+            "specificity": 120
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item",
+            "specificity": 130
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+            "specificity": 140
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+            "specificity": 141
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+            "specificity": 150
+          },
+          {
+            "selector": ".c6 > .c7 ~ button.c8.c9",
+            "specificity": 41
+          },
+          {
+            "selector": ".c10.c11.c12.c13:hover",
+            "specificity": 50
+          },
+          {
+            "selector": ".c10.c11.c12.c13.c14",
+            "specificity": 50
+          },
+          {
+            "selector": ".c10.c11.c12 .c15",
+            "specificity": 40
+          },
+          {
+            "selector": "#opk.c13",
+            "specificity": 110
+          },
+          {
+            "selector": ".fancy-image",
+            "specificity": 10
+          },
+          {
+            "selector": "kbd",
+            "specificity": 1
+          },
+          {
+            "selector": "code",
+            "specificity": 1
+          },
+          {
+            "selector": ".badge",
+            "specificity": 10
+          },
+          {
+            "selector": ".close",
+            "specificity": 10
+          },
+          {
+            "selector": ".close:hover",
+            "specificity": 20
+          },
+          {
+            "selector": ".close:focus",
+            "specificity": 20
+          },
+          {
+            "selector": ".close .pok",
+            "specificity": 20
+          },
+          {
+            "selector": ".close .pokawdf",
+            "specificity": 20
+          },
+          {
+            "selector": ".outline-button",
+            "specificity": 10
+          },
+          {
+            "selector": ".bubble",
+            "specificity": 10
+          },
+          {
+            "selector": ".glowing-button",
+            "specificity": 10
+          },
+          {
+            "selector": ".red-border",
+            "specificity": 10
+          },
+          {
+            "selector": ".red-border:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".red-border:after",
+            "specificity": 11
+          },
+          {
+            "selector": ".red-border:after",
+            "specificity": 11
+          },
+          {
+            "selector": ".spread-selector",
+            "specificity": 10
+          },
+          {
+            "selector": ".undoing-styles-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".undoing-styles-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".too-long-selector",
+            "specificity": 10
+          },
+          {
+            "selector": ".too-long-selector:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".too-long-selector:after",
+            "specificity": 11
+          },
+          {
+            "selector": ".js-styled",
+            "specificity": 10
+          },
+          {
+            "selector": ".magic-fix",
+            "specificity": 10
+          },
+          {
+            "selector": ".magic-fix .magic-number",
+            "specificity": 20
+          },
+          {
+            "selector": ".f1",
+            "specificity": 10
+          },
+          {
+            "selector": ".f2",
+            "specificity": 10
+          },
+          {
+            "selector": ".f3",
+            "specificity": 10
+          },
+          {
+            "selector": ".f4",
+            "specificity": 10
+          },
+          {
+            "selector": ".f5",
+            "specificity": 10
+          },
+          {
+            "selector": ".f6",
+            "specificity": 10
+          },
+          {
+            "selector": ".f7",
+            "specificity": 10
+          },
+          {
+            "selector": ".f8",
+            "specificity": 10
+          },
+          {
+            "selector": ".f9",
+            "specificity": 10
+          }
+        ],
+        "getSortedSpecificity": [
+          {
+            "selector": "#id2#id3",
+            "specificity": 200
+          },
+          {
+            "selector": "#id4#id5",
+            "specificity": 200
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+            "specificity": 150
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+            "specificity": 141
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+            "specificity": 140
+          },
+          {
+            "selector": "#id4 .c4 .c5 ~ .list__item",
+            "specificity": 130
+          },
+          {
+            "selector": "#id4 .c4 .c5",
+            "specificity": 120
+          },
+          {
+            "selector": "#id4 .c4:before",
+            "specificity": 111
+          },
+          {
+            "selector": ".agr#oie",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4.c2",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4:hover",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4.c3",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4 .c4",
+            "specificity": 110
+          },
+          {
+            "selector": "#id4 .c4__element",
+            "specificity": 110
+          },
+          {
+            "selector": "#opk.c13",
+            "specificity": 110
+          },
+          {
+            "selector": "a#id1",
+            "specificity": 101
+          },
+          {
+            "selector": "#id4",
+            "specificity": 100
+          },
+          {
+            "selector": ".c10.c11.c12.c13:hover",
+            "specificity": 50
+          },
+          {
+            "selector": ".c10.c11.c12.c13.c14",
+            "specificity": 50
+          },
+          {
+            "selector": ".c6 > .c7 ~ button.c8.c9",
+            "specificity": 41
+          },
+          {
+            "selector": ".c10.c11.c12 .c15",
+            "specificity": 40
+          },
+          {
+            "selector": "a.special-link:hover",
+            "specificity": 21
+          },
+          {
+            "selector": ".button:hover",
+            "specificity": 20
+          },
+          {
+            "selector": ".close:hover",
+            "specificity": 20
+          },
+          {
+            "selector": ".close:focus",
+            "specificity": 20
+          },
+          {
+            "selector": ".close .pok",
+            "specificity": 20
+          },
+          {
+            "selector": ".close .pokawdf",
+            "specificity": 20
+          },
+          {
+            "selector": ".magic-fix .magic-number",
+            "specificity": 20
+          },
+          {
+            "selector": ".alert:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".alert--warning:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".alert--info:before",
+            "specificity": 11
+          },
+          {
+            "selector": "a:UNKNOWN",
+            "specificity": 11
+          },
+          {
+            "selector": "a:hoverr",
+            "specificity": 11
+          },
+          {
+            "selector": "a.special-link",
+            "specificity": 11
+          },
+          {
+            "selector": "input[type=\"email\"]",
+            "specificity": 11
+          },
+          {
+            "selector": "span[lang=\"pt\"]",
+            "specificity": 11
+          },
+          {
+            "selector": "a.c1",
+            "specificity": 11
+          },
+          {
+            "selector": ".red-border:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".red-border:after",
+            "specificity": 11
+          },
+          {
+            "selector": ".red-border:after",
+            "specificity": 11
+          },
+          {
+            "selector": ".too-long-selector:before",
+            "specificity": 11
+          },
+          {
+            "selector": ".too-long-selector:after",
+            "specificity": 11
+          },
+          {
+            "selector": ".bubble",
+            "specificity": 10
+          },
+          {
+            "selector": ".main-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".side-nav",
+            "specificity": 10
+          },
+          {
+            "selector": ".non-placeholder",
+            "specificity": 10
+          },
+          {
+            "selector": ".hidden",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert__text",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert--warning",
+            "specificity": 10
+          },
+          {
+            "selector": ".alert--info",
+            "specificity": 10
+          },
+          {
+            "selector": ".button",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--glowing",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--outline",
+            "specificity": 10
+          },
+          {
+            "selector": ".button--filled",
+            "specificity": 10
+          },
+          {
+            "selector": ".v-hidden",
+            "specificity": 10
+          },
+          {
+            "selector": ".v-visible",
+            "specificity": 10
+          },
+          {
+            "selector": ".v-block",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-1-dup",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-2",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-x",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-1-y",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-3-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-prop-3-1-htr",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-a",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-awd",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-b",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-3-c",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-4",
+            "specificity": 10
+          },
+          {
+            "selector": ".duplication-type-4",
+            "specificity": 10
+          },
+          {
+            "selector": ".glowing-button",
+            "specificity": 10
+          },
+          {
+            "selector": ".red-border",
+            "specificity": 10
+          },
+          {
+            "selector": ".wrong-value",
+            "specificity": 10
+          },
+          {
+            "selector": ".slider",
+            "specificity": 10
+          },
+          {
+            "selector": ".unknown-prop",
+            "specificity": 10
+          },
+          {
+            "selector": ".fancy-table",
+            "specificity": 10
+          },
+          {
+            "selector": ".fancy-item",
+            "specificity": 10
+          },
+          {
+            "selector": ".super-table-column",
+            "specificity": 10
+          },
+          {
+            "selector": ".floated-element",
+            "specificity": 10
+          },
+          {
+            "selector": ".special-link",
+            "specificity": 10
+          },
+          {
+            "selector": ".header",
+            "specificity": 10
+          },
+          {
+            "selector": ".header",
+            "specificity": 10
+          },
+          {
+            "selector": ".gf-e",
+            "specificity": 10
+          },
+          {
+            "selector": ".gf-e",
+            "specificity": 10
+          },
+          {
+            "selector": ".spread-selector",
+            "specificity": 10
+          },
+          {
+            "selector": ".layout-animation",
+            "specificity": 10
+          },
+          {
+            "selector": ".paint-animation",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-2",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-3",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-4",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-5",
+            "specificity": 10
+          },
+          {
+            "selector": ".font-type-6",
+            "specificity": 10
+          },
+          {
+            "selector": ".fancy-image",
+            "specificity": 10
+          },
+          {
+            "selector": ".badge",
+            "specificity": 10
+          },
+          {
+            "selector": ".close",
+            "specificity": 10
+          },
+          {
+            "selector": ".outline-button",
+            "specificity": 10
+          },
+          {
+            "selector": ".bubble",
+            "specificity": 10
+          },
+          {
+            "selector": ".glowing-button",
+            "specificity": 10
+          },
+          {
+            "selector": ".red-border",
+            "specificity": 10
+          },
+          {
+            "selector": ".spread-selector",
+            "specificity": 10
+          },
+          {
+            "selector": ".undoing-styles-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".undoing-styles-1",
+            "specificity": 10
+          },
+          {
+            "selector": ".too-long-selector",
+            "specificity": 10
+          },
+          {
+            "selector": ".js-styled",
+            "specificity": 10
+          },
+          {
+            "selector": ".magic-fix",
+            "specificity": 10
+          },
+          {
+            "selector": ".f1",
+            "specificity": 10
+          },
+          {
+            "selector": ".f2",
+            "specificity": 10
+          },
+          {
+            "selector": ".f3",
+            "specificity": 10
+          },
+          {
+            "selector": ".f4",
+            "specificity": 10
+          },
+          {
+            "selector": ".f5",
+            "specificity": 10
+          },
+          {
+            "selector": ".f6",
+            "specificity": 10
+          },
+          {
+            "selector": ".f7",
+            "specificity": 10
+          },
+          {
+            "selector": ".f8",
+            "specificity": 10
+          },
+          {
+            "selector": ".f9",
+            "specificity": 10
+          },
+          {
+            "selector": "a",
+            "specificity": 1
+          },
+          {
+            "selector": "unknown",
+            "specificity": 1
+          },
+          {
+            "selector": "a",
+            "specificity": 1
+          },
+          {
+            "selector": "kbd",
+            "specificity": 1
+          },
+          {
+            "selector": "code",
+            "specificity": 1
+          }
+        ],
+        "getRepeatedValues": [
+          ".bubble",
+          ".duplication-type-4",
+          ".gf-e",
+          ".glowing-button",
+          ".header",
+          ".red-border",
+          ".red-border:after",
+          ".spread-selector",
+          ".undoing-styles-1",
+          "a"
+        ]
+      },
+      "declarations": {
+        "total": 246,
+        "unique": 180,
+        "properties": {
+          "box-sizing": [
+            "border-box"
+          ],
+          "border-top": [
+            "1px rgba(0, 0, 0, 0.12) solid"
+          ],
+          "padding": [
+            "16px 0",
+            "20rem",
+            "4px 3px 2px 1px",
+            "1px 2px 3px 4px",
+            "15pixel",
+            "1px",
+            "5rem",
+            "0",
+            "0",
+            "3px 7px",
+            "0 5rem"
+          ],
+          "width": [
+            "100%",
+            "100%",
+            "25px",
+            "10rem",
+            "calc(10rem + 10err)",
+            "5vh",
+            "5rem",
+            "100rem",
+            "5rem",
+            "100%",
+            "34%",
+            "34%",
+            "15rem",
+            "5rem",
+            "5",
+            "2rem",
+            "1rem"
+          ],
+          "position": [
+            "relative",
+            "relative",
+            "absolute"
+          ],
+          "display": [
+            "block",
+            "none",
+            "inline-block",
+            "inline-block",
+            "block",
+            "none",
+            "block",
+            "inline",
+            "list-item",
+            "table-column",
+            "flex",
+            "block",
+            "block",
+            "flex",
+            "inline-block",
+            "table",
+            "flex"
+          ],
+          "border-radius": [
+            "4rem",
+            "1000px",
+            "0"
+          ],
+          "height": [
+            "25px",
+            "5rem",
+            "5rem",
+            "4rem",
+            "5rem",
+            "5rem",
+            "2",
+            "2rem",
+            "10rem"
+          ],
+          "margin-right": [
+            "10px",
+            "2px"
+          ],
+          "content": [
+            "'X'",
+            "\" \"",
+            "\"start - \"",
+            "\" - end\""
+          ],
+          "color": [
+            "#fff",
+            "#ffffff",
+            "#F00",
+            "#F00",
+            "#FFF",
+            "#337ab7",
+            "#23527c",
+            "#777777",
+            "#432",
+            "#ddd",
+            "#0A1",
+            "#523562",
+            "#871242",
+            "#198234",
+            "inherit",
+            "#585858",
+            "#337ab7",
+            "#2c3e50",
+            "#FAFCFB"
+          ],
+          "background": [
+            "#f0ad4e",
+            "#5bc0de",
+            "#FFF",
+            "#2c3e50"
+          ],
+          "background-color": [
+            "#f0ad4e",
+            "#5bc0de",
+            "#db6300",
+            "#F00",
+            "#981232",
+            "#432",
+            "#012483",
+            "transparent",
+            "#F00"
+          ],
+          "background-position": [
+            "-47px 7px",
+            "-47px 7px",
+            "center",
+            "left"
+          ],
+          "border": [
+            "1px solid #d9534f",
+            "1px solid #a23",
+            "1px solid #a23",
+            "1px solid #EE82EE",
+            "1px solid #F00",
+            "1px solid #981232",
+            "0",
+            "1px solid #A8E",
+            "1rem solid #CA5515",
+            "1px solid #FA01A1"
+          ],
+          "font-weight": [
+            "bold",
+            "700",
+            "700",
+            "700",
+            "700",
+            "700",
+            "700",
+            "700",
+            "bold",
+            "bold"
+          ],
+          "border-width": [
+            "4px",
+            "1px",
+            "1px"
+          ],
+          "visibility": [
+            "visible"
+          ],
+          "font-size": [
+            "1px",
+            "1px",
+            "14px",
+            "14px",
+            "12px",
+            "18px",
+            "14px",
+            "14px",
+            "14px",
+            "14px",
+            "14px",
+            "14px",
+            "18px",
+            "8rem",
+            "18px",
+            "100%",
+            "inherit",
+            "12px",
+            "14px",
+            "10rem",
+            "10px",
+            "13px",
+            "15rem",
+            "20px",
+            "23rem",
+            "14px",
+            "12px",
+            "18px"
+          ],
+          "text-decoration": [
+            "underline",
+            "underline",
+            "underline",
+            "underline",
+            "underline",
+            "none"
+          ],
+          "padding-top": [
+            "4px"
+          ],
+          "padding-right": [
+            "3px",
+            "2px"
+          ],
+          "padding-bottom": [
+            "2px",
+            "5rem",
+            "0"
+          ],
+          "padding-left": [
+            "1px"
+          ],
+          "margin-top": [
+            "1px",
+            "1px",
+            "2rem"
+          ],
+          "margin-bottom": [
+            "1px"
+          ],
+          "margin-left": [
+            "2px"
+          ],
+          "margin": [
+            "1px 2px",
+            "1px",
+            "2rem",
+            "0",
+            "20px",
+            "0.2rem"
+          ],
+          "border-style": [
+            "solid",
+            "solid"
+          ],
+          "border-color": [
+            "#EE82EE",
+            "#CCC",
+            "#F00"
+          ],
+          "widows": [
+            "24rem",
+            "24rem"
+          ],
+          "colr": [
+            "#163"
+          ],
+          "text-align": [
+            "center",
+            "right",
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "my-property": [
+            "1"
+          ],
+          "-webkit-animation-name": [
+            "fancccy-slide"
+          ],
+          "animation-name": [
+            "fancccy-slide"
+          ],
+          "filter": [
+            "alpha(opacity=20)",
+            "alpha(opacity=80)",
+            "alpha(opacity=20)",
+            "alpha(opacity=50)"
+          ],
+          "opacity": [
+            "0.2",
+            "0.8",
+            "0.2",
+            "0.5"
+          ],
+          "vertical-align": [
+            "middle",
+            "middle",
+            "top",
+            "middle"
+          ],
+          "float": [
+            "left",
+            "right"
+          ],
+          "flex": [
+            "row nowrap"
+          ],
+          "justify-content": [
+            "space-between",
+            "center"
+          ],
+          "transition": [
+            "margin 350ms ease-in"
+          ],
+          "transition-property": [
+            "color, margin"
+          ],
+          "font-family": [
+            "'Courier New', Courier, monospace",
+            "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+            "Arial, Helvetica, sans-serif",
+            "'Times New Roman', Times, serif",
+            "Verdana, Geneva, Tahoma, sans-serif",
+            "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+            "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
+          ],
+          "clear": [
+            "both",
+            "both"
+          ],
+          "flex-flow": [
+            "column nowrap",
+            "row wrap"
+          ],
+          "cursor": [
+            "pointer",
+            "pointer"
+          ],
+          "list-style-position": [
+            "outside"
+          ],
+          "text-shadow": [
+            "0 1px 0 #fff"
+          ],
+          "background-image": [
+            "url(\"https://images.freeimages.com/images/large-previews/e71/frog-1371919.jpg\")"
+          ],
+          "box-shadow": [
+            "none",
+            "inset 0 -1px 0 rgba(0, 0, 0, 0.25)"
+          ],
+          "white-space": [
+            "pre-wrap",
+            "nowrap"
+          ],
+          "min-width": [
+            "10px"
+          ],
+          "line-height": [
+            "1"
+          ],
+          "align-items": [
+            "center"
+          ],
+          "z-index": [
+            "5"
+          ],
+          "overflow": [
+            "hidden"
+          ],
+          "word-wrap": [
+            "none"
+          ],
+          "align-self": [
+            "center"
+          ],
+          "top": [
+            "12.15rem"
+          ],
+          "left": [
+            "5.505rem"
+          ],
+          "bottom": [
+            "12%"
+          ]
+        },
+        "getPropertyResets": {
+          "padding": 2,
+          "padding-bottom": 1,
+          "margin": 1
+        },
+        "getUniquePropertyCount": 0,
+        "getPropertyValueCount": 0,
+        "getVendorPrefixed": [
+          {
+            "property": "-webkit-animation-name",
+            "value": "fancccy-slide"
+          }
+        ],
+        "getAllFontSizes": [
+          "1px",
+          "1px",
+          "14px",
+          "14px",
+          "12px",
+          "18px",
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "14px",
+          "18px",
+          "8rem",
+          "18px",
+          "100%",
+          "inherit",
+          "12px",
+          "14px",
+          "10rem",
+          "10px",
+          "13px",
+          "15rem",
+          "20px",
+          "23rem",
+          "14px",
+          "12px",
+          "18px"
+        ],
+        "getAllFontFamilies": [
+          "'Courier New', Courier, monospace",
+          "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+          "Arial, Helvetica, sans-serif",
+          "'Times New Roman', Times, serif",
+          "Verdana, Geneva, Tahoma, sans-serif",
+          "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+          "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
+        ]
+      },
+      "mediaQueries": {
+        "total": 0,
+        "unique": 0,
+        "values": [],
+        "contents": []
+      }
+    },
+    {
+      "selectors": [
+        {
+          "selector": ".bubble",
+          "startsAt": 1,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".main-nav",
+          "startsAt": 7,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".side-nav",
+          "startsAt": 7,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".non-placeholder",
+          "startsAt": 11,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".hidden",
+          "startsAt": 11,
+          "origin": "webpack:///frontend/css/3_utils/_placeholder.scss"
+        },
+        {
+          "selector": ".alert",
+          "startsAt": 14,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert:before",
+          "startsAt": 19,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert__text",
+          "startsAt": 26,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--warning",
+          "startsAt": 28,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--warning:before",
+          "startsAt": 30,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--info",
+          "startsAt": 33,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".alert--info:before",
+          "startsAt": 35,
+          "origin": "webpack:///frontend/css/1_components/_alerts.scss"
+        },
+        {
+          "selector": ".button",
+          "startsAt": 39,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button:hover",
+          "startsAt": 42,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button--glowing",
+          "startsAt": 44,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button--outline",
+          "startsAt": 47,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".button--filled",
+          "startsAt": 49,
+          "origin": "webpack:///frontend/css/1_components/_button.scss"
+        },
+        {
+          "selector": ".v-hidden",
+          "startsAt": 52,
+          "origin": "webpack:///frontend/css/2_alignment/_display.scss"
+        },
+        {
+          "selector": ".v-visible",
+          "startsAt": 55,
+          "origin": "webpack:///frontend/css/2_alignment/_display.scss"
+        },
+        {
+          "selector": ".v-block",
+          "startsAt": 58,
+          "origin": "webpack:///frontend/css/2_alignment/_display.scss"
+        },
+        {
+          "selector": ".duplication-type-1",
+          "startsAt": 61,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-1-dup",
+          "startsAt": 65,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-1",
+          "startsAt": 69,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-2",
+          "startsAt": 74,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-x",
+          "startsAt": 79,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-1-y",
+          "startsAt": 84,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-3-1",
+          "startsAt": 89,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-prop-3-1-htr",
+          "startsAt": 92,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-a",
+          "startsAt": 98,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-awd",
+          "startsAt": 104,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-b",
+          "startsAt": 107,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-3-c",
+          "startsAt": 110,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-4",
+          "startsAt": 115,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".duplication-type-4",
+          "startsAt": 118,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".glowing-button",
+          "startsAt": 121,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".red-border",
+          "startsAt": 125,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".wrong-value",
+          "startsAt": 128,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".slider",
+          "startsAt": 134,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".unknown-prop",
+          "startsAt": 137,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a",
+          "startsAt": 142,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a:UNKNOWN",
+          "startsAt": 145,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a:hoverr",
+          "startsAt": 148,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "unknown",
+          "startsAt": 153,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": "a",
+          "startsAt": 157,
+          "origin": "webpack:///frontend/css/rule_coverage/_errors.scss"
+        },
+        {
+          "selector": ".fancy-table",
+          "startsAt": 163,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".fancy-item",
+          "startsAt": 168,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".super-table-column",
+          "startsAt": 174,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".floated-element",
+          "startsAt": 181,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": "a.special-link",
+          "startsAt": 185,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": "a.special-link:hover",
+          "startsAt": 188,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".special-link",
+          "startsAt": 192,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".header",
+          "startsAt": 196,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".header",
+          "startsAt": 203,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".gf-e",
+          "startsAt": 207,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".gf-e",
+          "startsAt": 211,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".spread-selector",
+          "startsAt": 214,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".layout-animation",
+          "startsAt": 218,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".paint-animation",
+          "startsAt": 221,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-1",
+          "startsAt": 224,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-2",
+          "startsAt": 228,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-3",
+          "startsAt": 232,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-4",
+          "startsAt": 236,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-5",
+          "startsAt": 240,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": ".font-type-6",
+          "startsAt": 244,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": "input[type=\"email\"]",
+          "startsAt": 248,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": "span[lang=\"pt\"]",
+          "startsAt": 251,
+          "origin": "webpack:///frontend/css/rule_coverage/_performance.scss"
+        },
+        {
+          "selector": "a.c1",
+          "startsAt": 254,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "a#id1",
+          "startsAt": 257,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id2#id3",
+          "startsAt": 260,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".agr#oie",
+          "startsAt": 263,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4.c2",
+          "startsAt": 266,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4",
+          "startsAt": 269,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4:hover",
+          "startsAt": 271,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4#id5",
+          "startsAt": 273,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4.c3",
+          "startsAt": 275,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4",
+          "startsAt": 277,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4:before",
+          "startsAt": 279,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4__element",
+          "startsAt": 281,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5",
+          "startsAt": 284,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item",
+          "startsAt": 287,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link",
+          "startsAt": 289,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:after",
+          "startsAt": 291,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#id4 .c4 .c5 ~ .list__item .list__link:focus",
+          "startsAt": 293,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c6 > .c7 ~ button.c8.c9",
+          "startsAt": 296,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12.c13:hover",
+          "startsAt": 299,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12.c13.c14",
+          "startsAt": 302,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".c10.c11.c12 .c15",
+          "startsAt": 305,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "#opk.c13",
+          "startsAt": 309,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".fancy-image",
+          "startsAt": 312,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "kbd",
+          "startsAt": 315,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": "code",
+          "startsAt": 323,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".badge",
+          "startsAt": 331,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close",
+          "startsAt": 339,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close:hover",
+          "startsAt": 344,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close:focus",
+          "startsAt": 344,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close .pok",
+          "startsAt": 349,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".close .pokawdf",
+          "startsAt": 349,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".outline-button",
+          "startsAt": 353,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".bubble",
+          "startsAt": 361,
+          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
+        },
+        {
+          "selector": ".glowing-button",
+          "startsAt": 364,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".red-border",
+          "startsAt": 368,
+          "origin": "webpack:///frontend/css/rule_coverage/_duplications.scss"
+        },
+        {
+          "selector": ".red-border:before",
+          "startsAt": 372,
+          "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
+        },
+        {
+          "selector": ".red-border:after",
+          "startsAt": 372,
+          "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
+        },
+        {
+          "selector": ".red-border:after",
+          "startsAt": 375,
+          "origin": "webpack:///frontend/css/3_utils/_mixins.scss"
+        },
+        {
+          "selector": ".spread-selector",
+          "startsAt": 378,
+          "origin": "webpack:///frontend/css/rule_coverage/_ignored_props.scss"
+        },
+        {
+          "selector": ".undoing-styles-1",
+          "startsAt": 382,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".undoing-styles-1",
+          "startsAt": 387,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".too-long-selector",
+          "startsAt": 390,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".too-long-selector:before",
+          "startsAt": 410,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".too-long-selector:after",
+          "startsAt": 412,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".js-styled",
+          "startsAt": 415,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".magic-fix",
+          "startsAt": 420,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".magic-fix .magic-number",
+          "startsAt": 422,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f1",
+          "startsAt": 428,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f2",
+          "startsAt": 431,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f3",
+          "startsAt": 434,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f4",
+          "startsAt": 437,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f5",
+          "startsAt": 440,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f6",
+          "startsAt": 443,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f7",
+          "startsAt": 446,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f8",
+          "startsAt": 449,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        },
+        {
+          "selector": ".f9",
+          "startsAt": 452,
+          "origin": "webpack:///frontend/css/rule_coverage/_stylistics.scss"
+        }
+      ],
+      "lines": 455
+    }
+  ]
+}

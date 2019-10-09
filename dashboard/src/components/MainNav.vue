@@ -1,19 +1,19 @@
 <template>
   <div class="main-nav">
-    <div class="main-nav__host">(S)CSS Code Quality Dashboard</div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link overview" to="/"><font-awesome-icon icon="home" /> Dashboard</router-link></div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/selectors"><font-awesome-icon icon="sitemap" /> Selektoren</router-link></div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/specificity"><font-awesome-icon icon="chart-line" /> Spezifizität</router-link></div>
+    <div class="main-nav__host"><router-link class="main-nav__home" to="/">(S)CSS Code Quality Dashboard</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link overview" to="/"><font-awesome-icon icon="tachometer-alt" class="nav-icon" /> Dashboard</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/selectors"><font-awesome-icon icon="sitemap" class="nav-icon" /> Selektoren</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/specificity"><font-awesome-icon icon="chart-line" class="nav-icon" /> Spezifizität</router-link></div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram)
+library.add(faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram, faTachometerAlt)
 
 export default Vue.extend({
   name: 'MainNav',
@@ -34,6 +34,11 @@ export default Vue.extend({
 
   background-color: #ffffff;
   border-bottom: 1px solid #8d8d8d;
+}
+
+.main-nav__home {
+  text-decoration: none;
+  color: #363636;
 }
 
 .main-nav__host {
@@ -95,5 +100,10 @@ export default Vue.extend({
   
   border-width: 2px;
   border-style: solid;
+}
+
+.nav-icon {
+  font-size: 1.5em;
+  margin-bottom: 5px;
 }
 </style>

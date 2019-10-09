@@ -17,6 +17,9 @@ class StylesheetCodeQualityWebpackPlugin {
     let stylelintOptions = this.stylelintOptions || {}
     const context = this.stylelintOptions.context || compiler.context
     const formatter = this.stylelintOptions.formatter || defaultFormatter
+    const exportLocation = { location: this.stylelintOptions.exportLocation || '/' }
+
+    fs.writeFileSync('/dashboard/export.json', exportLocation)
 
     stylelintOptions = Object.assign(
       {
@@ -70,6 +73,8 @@ class StylesheetCodeQualityWebpackPlugin {
 
       sLinter(compilation, saver, timestamp)
       postcssLinter(compilation, saver, timestamp)
+
+      
     })
   }
 }

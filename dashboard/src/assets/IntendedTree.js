@@ -1,21 +1,8 @@
 import * as d3 from 'd3';
 
+/* eslint-disable */
+
 export default class IntendedTree {
-
-  constructor() {
-  }
-  
-  margin: { left:number, right:number, top:number, bottom:number };  
-  width: number;
-  height: number;
-  barHeight: number;
-  barWidth: number;
-  i: number;
-  duration: number;
-  tree;
-  root;
-  svg;
-
   $onInit(data) {
     const tree = d3.tree;
     const hierarchy = d3.hierarchy;
@@ -50,7 +37,7 @@ export default class IntendedTree {
     this.update(this.root);
   }
   
-  connector = function(d:any) {
+  connector = function(d) {
    //curved 
    /*return "M" + d.y + "," + d.x +
       "C" + (d.y + d.parent.y) / 2 + "," + d.x +
@@ -104,7 +91,7 @@ export default class IntendedTree {
 
     // Update the nodes…
     let node = this.svg.selectAll('g.node')
-    .data(nodesSort, function (d: any) {
+    .data(nodesSort, function (d) {
       return d.id || (d.id = ++this.i);
     });
 
@@ -118,19 +105,19 @@ export default class IntendedTree {
 
     nodeEnter.append('circle')
       .attr('r', 1e-6)
-      .style('fill', function (d: any) {
+      .style('fill', function (d) {
       return d._children ? 'lightsteelblue' : '#fff';
     });
 
     nodeEnter.append('text')
-      .attr('x', function (d: any) {
+      .attr('x', function (d) {
       return d.children || d._children ? 10 : 10;
     })
       .attr('dy', '.35em')
-      .attr('text-anchor', function (d: any) {
+      .attr('text-anchor', function (d) {
       return d.children || d._children ? 'start' : 'start';
     })
-      .text(function (d: any) {
+      .text(function (d) {
       if (d.data.name.length > 30) {
         return d.data.name.substring(0, 20) + '...';
       } else {
@@ -139,7 +126,7 @@ export default class IntendedTree {
     })
       .style('fill-opacity', 1e-6);
 
-    nodeEnter.append('svg:title').text(function (d: any) {
+    nodeEnter.append('svg:title').text(function (d) {
       return d.data.name;
     });
 
@@ -149,13 +136,13 @@ export default class IntendedTree {
       .duration(this.duration);
     
     nodeUpdate
-        .attr('transform', function (d: any) {
+        .attr('transform', function (d) {
         return 'translate(' + d.y + ',' + d.x + ')';
       });
 
     nodeUpdate.select('circle')
       .attr('r', 4.5)
-      .style('fill', function (d: any) {
+      .style('fill', function (d) {
       return d._children ? 'lightsteelblue' : '#fff';
     });
     
@@ -180,7 +167,7 @@ export default class IntendedTree {
     
     // Update the links…
     var link = this.svg.selectAll('path.link')
-    .data(links, function (d: any) {
+    .data(links, function (d) {
       // return d.target.id;
       var id = d.id + '->' + d.parent.id;
       return id;
@@ -204,16 +191,17 @@ export default class IntendedTree {
     // // Transition exiting nodes to the parent's new position.
     link.exit().transition()
       .duration(this.duration)
-      .attr('d', (d: any) => {
+      .attr('d', (d) => {
       var o = {x: source.x, y: source.y, parent: {x: source.x, y: source.y}};
       return this.connector(o);
     })
       .remove();
 
     // Stash the old positions for transition.
-    nodesSort.forEach(function (d: any) {
+    nodesSort.forEach(function (d) {
       d.x0 = d.x;
       d.y0 = d.y;
     });
   }
 };
+/* eslint-enable */

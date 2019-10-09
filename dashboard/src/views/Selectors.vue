@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an alias to /src
 import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src

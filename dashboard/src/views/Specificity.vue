@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import { calculate } from 'specificity';
 import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
