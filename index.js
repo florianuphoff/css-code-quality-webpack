@@ -35,7 +35,7 @@ class StylesheetCodeQualityWebpackPlugin {
     )
 
     const sLinter = styleLinter.bind(this, stylelintOptions)
-    const pLinter = postcssLinter.bind(this)
+    const pLinter = postcssLinter.bind(this, this.stylelintOptions.exportLocation)
     const saver = new Saver()
 
     compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', (compilation, callback) => {
