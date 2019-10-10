@@ -20,10 +20,6 @@ import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is 
 import { calculate } from 'specificity';
 // import json from '@/results/data.json'; // @ is an alias to /src
 
-function log(s){
-  console.log(s)
-}
-
 export default Vue.extend({
   name: 'home',
   components: {
@@ -198,7 +194,7 @@ export default Vue.extend({
     },
     async fetchHierarchyChartData() {
       // return well formatted data
-      fetch('/results/data.json')
+      fetch('/dashboard/results/data.json')
       .then(response => response.json())
       .then(data => {
         this.results = data

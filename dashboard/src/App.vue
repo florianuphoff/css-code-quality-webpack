@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import MainNav from '@/components/MainNav.vue'; // @ is an alias to /src
 

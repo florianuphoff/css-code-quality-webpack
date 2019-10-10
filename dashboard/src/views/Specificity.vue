@@ -36,7 +36,7 @@ export default Vue.extend({
   methods: {
     async fetchHierarchyChartData() {
       // return well formatted data
-      fetch('/results/data.json')
+      fetch('/dashboard/results/data.json')
       .then(response => response.json())
       .then(data => {
         this.results = data
@@ -148,7 +148,6 @@ export default Vue.extend({
           selectorList.push({selector: element.selector, depth: element.depth, specificity: sp})
         }
       });
-      console.log(selectorList)
 
       let ds = []
       this.results.stats[0].selectors.getSpecificityGraph.forEach((specificity, index) => {

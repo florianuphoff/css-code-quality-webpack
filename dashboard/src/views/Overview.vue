@@ -384,7 +384,7 @@ export default Vue.extend({
       this.columnCategories = cats
     },
     async fetchData() {
-      fetch('/results/data.json')
+      fetch('/dashboard/results/data.json')
       .then(response => response.json())
       .then(data => {
         this.results = data

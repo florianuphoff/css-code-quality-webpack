@@ -211,14 +211,6 @@ export default Vue.extend({
     },
   },
   mounted() {
-    console.log("called")
-    console.log(Highcharts.charts)
-    // for( var i = 0; i < Highcharts.charts.length; i++){ 
-    //   if ( Highcharts.charts[i] === undefined || Object.keys(Highcharts.charts[i]).length === 0) {
-    //     Highcharts.charts.splice(i, 1); 
-    //     i--;
-    //   }
-    // }
     this.chartOptions.chart.width = this.clientWidth
   }
 });
