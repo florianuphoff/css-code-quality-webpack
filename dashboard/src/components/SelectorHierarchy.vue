@@ -60,6 +60,7 @@ export default Vue.extend({
           // general
           d = this.chartData.general
       }
+
       let iTree = new IntendedTree();
       iTree.$onInit(d)
     }

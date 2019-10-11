@@ -2,7 +2,7 @@
   <div class="selectors">
     <div class="container">
       <SelectorHierarchy v-bind:chartData=chartData />
-      <SelectorHierarchy v-bind:chartData=chartData />
+      <!-- <SelectorHierarchy v-bind:chartData=chartData /> -->
       <!-- <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
       <Heatmap :heatMapData=heatMapData /> -->
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
@@ -149,6 +149,7 @@ export default Vue.extend({
       this.chartData.general = this.parseSelectors(this.generalData(), "general")
       this.chartData.duplications = this.parseSelectors(this.duplicationData(), "duplication")
       this.chartData.smelly = this.parseSelectors(this.smellyData(), "smelly")
+      
     },
     duplicationData() {
       let dSelectors = []
@@ -200,9 +201,6 @@ export default Vue.extend({
         this.results = data
         this.duplications = this.results.duplications
         this.cData()
-        // this.butterFlyData()
-        // this.specificityChartData()
-        // this.heatmapData()
       })
     },
     parseSelectors: function(selectors, dType) {
