@@ -1,13 +1,13 @@
 <template>
-  <div class="v-box hierarchy relative">
-    <div class="v-box__header">Fehlerbehaftete Selektoren</div>
+  <div :class="classList">
+    <div class="v-box__header">{{ heading }}</div>
     <!-- <div class="v-box absolute data-picker">
       <h5 class="v-box__header">Dataset</h5>
       <button class="data-picker__btn general" @click="drawChart('gerenal')" v-bind:class="{ active: dSet === 'g' }" v-on:click="dSet = 'g'">General</button>
       <button class="data-picker__btn duplications" @click="drawChart('duplications')" v-bind:class="{ active: dSet === 'd' }" v-on:click="dSet = 'd'">Duplications</button>
       <button class="data-picker__btn smelly" @click="drawChart('smelly')" v-bind:class="{ active: dSet === 's' }" v-on:click="dSet = 's'">Smelly</button>
     </div> -->
-    <div class="v-box__chart selector-chart v-box__content" id="selectorChart"></div>
+    <div class="v-box__chart selector-chart v-box__content" :id="type"></div>
   </div>
 </template>
 
@@ -24,45 +24,60 @@ export default Vue.extend({
       type: Object,
       required: true
     },
+    type: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
       dSet: 'g'    
     }
   },
+  computed: {
+    classList() {
+      return `${this.type} v-box`
+    },
+    heading() {
+      let headline = ''
+      if(this.type === 'general') {
+        headline = 'CSS Selektorbaum'
+      } else if(this.type === 'duplications') {
+        headline = 'Duplizierte Selektoren'
+      } else {
+        // warnings
+        headline = 'Fehlerbehaftete Selektoren'
+      }
+      return headline
+    }
+  },
   watch: {
     chartData: {
       handler: function(data) {
         this.chartData = data
-        this.drawChart('general')
+        this.drawChart()
       },
       deep: true
     }
   },
   methods: {
-    drawChart: function(type) {
-      const chart = document.querySelector('#selectorChart')
-      if(chart.childNodes.length) {
-        chart.removeChild(chart.childNodes[0])
-      }
-      let d = {}
-      switch(type) {
+    drawChart: function() {
+      let iTree = new IntendedTree();
+      
+      switch(this.type) {
         case 'general':
-          d = this.chartData.general
+          iTree.$onInit(this.chartData.general, this.type)
           break;
         case 'duplications':
-          d = this.chartData.duplications
+          iTree.$onInit(this.chartData.duplications, this.type)
           break;
-        case 'smelly':
-          d = this.chartData.smelly
+        case 'warnings':
+          iTree.$onInit(this.chartData.smelly, this.type)
           break;
         default:
           // general
-          d = this.chartData.general
+          iTree.$onInit(this.chartData.general, this.type)
       }
-
-      let iTree = new IntendedTree();
-      iTree.$onInit(d)
     }
   },
 });
@@ -70,8 +85,18 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.hierarchy {
+.general {
   grid-column: 1 / 2;
+  grid-row: 1 / span 4;
+}
+
+.duplications {
+  grid-column: 2 / 3;
+  grid-row: 1 / span 4;
+}
+
+.warnings {
+  grid-column: 3 / 4;
   grid-row: 1 / span 4;
 }
 

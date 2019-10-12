@@ -155,7 +155,7 @@ export default Vue.extend({
 
 <style scoped>
 .heatmap {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 2 / 3;
 }
 

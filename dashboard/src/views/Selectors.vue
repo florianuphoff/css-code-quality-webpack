@@ -1,7 +1,9 @@
 <template>
   <div class="selectors">
     <div class="container">
-      <SelectorHierarchy v-bind:chartData=chartData />
+      <SelectorHierarchy v-bind:chartData=chartData type='general' />
+      <SelectorHierarchy v-bind:chartData=chartData type='duplications' />
+      <SelectorHierarchy v-bind:chartData=chartData type='warnings' />
       <!-- <SelectorHierarchy v-bind:chartData=chartData /> -->
       <!-- <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
       <Heatmap :heatMapData=heatMapData /> -->
@@ -149,7 +151,7 @@ export default Vue.extend({
       this.chartData.general = this.parseSelectors(this.generalData(), "general")
       this.chartData.duplications = this.parseSelectors(this.duplicationData(), "duplication")
       this.chartData.smelly = this.parseSelectors(this.smellyData(), "smelly")
-      
+
     },
     duplicationData() {
       let dSelectors = []

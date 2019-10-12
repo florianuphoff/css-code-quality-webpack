@@ -22,7 +22,7 @@ body {
 .container {
   display: grid;
   grid-auto-rows: minmax(400px, 700px), 400px, 500px, minmax(10px, auto);
-  grid-template-columns: 29% 69%;
+  grid-template-columns: 32.5% 32.5% 32.5%;
   grid-column-gap: 20px;
   grid-row-gap: 30px;
   justify-content: center;

@@ -218,7 +218,7 @@ export default Vue.extend({
 
 <style scoped>
 .specificity {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 1 / 2;
 }
 

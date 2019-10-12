@@ -18,7 +18,7 @@ export default class IntendedTree {
   // @ts-ignore
   svg;
 
-  $onInit(data: any) {
+  $onInit(data: any, selector: any) {
     const tree = d3.tree;
     const hierarchy = d3.hierarchy;
     const select = d3.select;
@@ -43,7 +43,7 @@ export default class IntendedTree {
     });
     this.root.x0 = this.root.x;
     this.root.y0 = this.root.y
-    this.svg = select('#selectorChart').append('svg')
+    this.svg = select(`#${selector}`).append('svg')
       .attr('width', this.width + this.margin.right + this.margin.left)
       .attr('height', this.height + this.margin.top + this.margin.bottom)
       .append('g')
