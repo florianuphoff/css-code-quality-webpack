@@ -19,9 +19,20 @@ body {
   justify-content: space-evenly;
 }
 
+.hierarchy-container {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 32.5% 32.5% 32.5%;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
 .container {
   display: grid;
-  grid-auto-rows: minmax(400px, 700px), 400px, 500px, minmax(10px, auto);
+  grid-auto-rows: minmax(400px, 700px) 400px 500px, minmax(10px, auto);
   grid-template-columns: 32.5% 32.5% 32.5%;
   grid-column-gap: 20px;
   grid-row-gap: 30px;
@@ -32,7 +43,7 @@ body {
 
 .dashboard-container {
   display: grid;
-  grid-auto-rows: minmax(400px, 700px), 400px, 500px, minmax(10px, auto);
+  grid-auto-rows: auto;
   grid-template-columns: 32.1% 33% 32.1%;
   grid-column-gap: 20px;
   grid-row-gap: 30px;

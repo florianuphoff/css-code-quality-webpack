@@ -31,6 +31,8 @@ export default class IntendedTree {
     this.i = 0;
     this.duration = 500;
     this.tree = tree().size([this.width, this.height]);
+    // @ts-ignore
+    this.sel = selector
     // this.tree = tree().nodeSize([0, 30]);
 
     this.tree = tree().nodeSize([0, 30]);
@@ -105,7 +107,8 @@ export default class IntendedTree {
     });
 
     // update chart/svg height
-    d3.select('#selectorChart svg').transition()
+    // @ts-ignore
+    d3.select(`#${this.sel} svg`).transition()
       .duration(this.duration)
       .attr("height", this.height);
 
@@ -146,10 +149,13 @@ export default class IntendedTree {
           return d.data.name;
         }
       })
+      .attr('class', function(d: any) {
+        return d.data.category ? d.data.category : '';
+      })
       .style('fill-opacity', 1e-6);
 
     nodeEnter.append('svg:title').text(function (d: any) {
-      return d.data.name;
+      return d.data.category ? d.data.category : '';
     });
 
     // Transition nodes to their new position.

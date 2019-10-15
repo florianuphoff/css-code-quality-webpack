@@ -87,17 +87,17 @@ export default Vue.extend({
 <style>
 .general {
   grid-column: 1 / 2;
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 3;
 }
 
 .duplications {
   grid-column: 2 / 3;
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 3;
 }
 
 .warnings {
   grid-column: 3 / 4;
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 3;
 }
 
 .selector-chart .node circle {

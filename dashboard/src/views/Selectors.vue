@@ -1,6 +1,6 @@
 <template>
   <div class="selectors">
-    <div class="container">
+    <div class="hierarchy-container">
       <SelectorHierarchy v-bind:chartData=chartData type='general' />
       <SelectorHierarchy v-bind:chartData=chartData type='duplications' />
       <SelectorHierarchy v-bind:chartData=chartData type='warnings' />
@@ -16,7 +16,7 @@
 <script>
 import Vue from 'vue';
 import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an alias to /src
-import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
+// import ButterflyChortChart from '@/components/ButterflyChortChart.vue'; // @ is an alias to /src
 // import SpecificityChart from '@/components/SpecificityChart.vue'; // @ is an alias to /src
 // import Heatmap from '@/components/Heatmap.vue'
 import { calculate } from 'specificity';
@@ -26,7 +26,7 @@ export default Vue.extend({
   name: 'home',
   components: {
     SelectorHierarchy,
-    ButterflyChortChart,
+    // ButterflyChortChart,
     // SpecificityChart,
     // Heatmap
   },
@@ -157,40 +157,32 @@ export default Vue.extend({
       let dSelectors = []
 
       this.results.duplications.forEach(duplicationObject => {
-        dSelectors.push(duplicationObject.origin.selector)
+        dSelectors.push({ selector: duplicationObject.origin.selector, category: "duplication" })
         if(duplicationObject.duplication) {
-          dSelectors.push(duplicationObject.duplication.selector)
+          dSelectors.push({ selector: duplicationObject.duplication.selector, category: "duplication" })
         }
       });
       this.results.warnings.forEach(warning => {
         if(warning.rule === 'no-duplicate-selectors') {
-          dSelectors.push(warning.resolvedSelector)
+          dSelectors.push({ selector: warning.resolvedSelector, category: "duplication" })
         }
       })
       return dSelectors
     },
     generalData() {
-      return this.results.stats[0].selectors.values
+      let data = []
+      this.results.stats[0].selectors.values.forEach(sel => {
+        data.push({ selector: sel, category: "general" })
+      })
+      return data
     },
     smellyData() {
       let sData = []
 
       this.results.warnings.forEach(warning => {
-        if(warning.rule === 'block-no-empty') {
-          sData.push(warning.resolvedSelector)
-        } else if (warning.rule === 'no-descending-specificity') {
-          sData.push(warning.resolvedSelector)
-        } else if (warning.rule === 'selector-pseudo-class-no-unknown') {
-          sData.push(warning.resolvedSelector)
-        } else if (warning.rule === 'selector-type-no-unknown') {
-          sData.push(warning.resolvedSelector)
-        } else if (warning.rule === 'max-nesting-depth') {
-          sData.push(warning.resolvedSelector)
-        } else if (warning.rule === 'selector-max-compound-selectors') {
-          sData.push(warning.resolvedSelector)
-        } else if (warning.rule === 'selector-max-id') {
-          sData.push(warning.resolvedSelector)
-        }
+        // TODO: hier müssen die Kategorien der Warnings gebildet werden
+        const category = 'Warning'
+        if(warning.resolvedSelector !== '') sData.push({ selector: warning.resolvedSelector, category: category})
       })
 
       return sData
@@ -201,38 +193,51 @@ export default Vue.extend({
       .then(response => response.json())
       .then(data => {
         this.results = data
-        this.duplications = this.results.duplications
         this.cData()
       })
     },
-    parseSelectors: function(selectors, dType) {
+    parseSelectors: function(selectorList, dType) {
+      // TODO: selectors ist jetzt ein Object - siehe oben
+      // TODO: immer beim letzten Selector Compount die Kategorie anhängen
+
+      // ! selectors ist ein Object wodurch der Fehler erzeugt wird
+
       const type = dType
       let sList = {"name":"root", "children": []}
-      selectors.forEach(selector => {
-        const seperatedSelectors = selector.split(' ')
+      selectorList.forEach(entry => {
+        if(!entry.selector) console.error(entry)
+        const seperatedSelectors = entry.selector.split(' ')
         const parentSelector = seperatedSelectors[0]
         
         const children = seperatedSelectors.slice(1)
 
+        // root level und kein pseudo element im selektor
         if(sList.children.filter(e => e.name === parentSelector).length <= 0 && !seperatedSelectors[0].includes(':')) {
-          sList.children.push({ "name": seperatedSelectors[0], "children": [] })
+          if(children.length) {
+            sList.children.push({ "name": seperatedSelectors[0], "children": [] })
+          } else {
+            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'category': entry.category })
+          }
         }
 
-        // nest pseudo elements inside selector
-        if(seperatedSelectors[0].includes(':')) {
-          const pS = selector.split(':')
-          // parent noch nicht da
+        // root level und pseudo element
+        if(parentSelector.includes(':')) {
+          // pS[0] = parent; pS[1] = pseudo element
+          const pS = entry.selector.split(':')
+          
+          // falls parent nicht gefunden
           if(!sList.children.filter(e => e.name === pS[0]).length) {
             sList.children.push({ "name": pS[0], "children": [] })
-            // todo: packe DATAINFOS hierhin
-            sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [] })            
+            // packe pseudo element direkt als kind hinzu
+            // es kann hier keine kinder geben
+            sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [], 'category': entry.category })
           } else {
             // parent vorhanden, also finden und child hinzufügen
             for(var i = 0; i < sList.children.length; i++) {
               if (sList.children[i].name === pS[0]) {
                 // todo: packe DATAINFOS hierhin - falls !children.length
                 // denn gibts keine children
-                sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [] })
+                sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [], 'category': entry.category })
                 break;
               }
             }
@@ -248,56 +253,55 @@ export default Vue.extend({
         }
         // children vorhanden, also hinzufügen
         if(children.length) {
-          this.generateChildren(children, index, sList)
+          this.generateChildren(children, index, sList, entry.category)
         }
         
       });
       
       return sList
     },
-    generateChildren(children, parentIndex, sList) {
+    generateChildren(children, parentIndex, sList, cat) {
       children = this.cleanArray(children, '+')
       children = this.cleanArray(children, '>')
       children = this.cleanArray(children, '~')
       children = this.separatePseudos(children)
+      // hole direkt das parent-parent element
       const subParentIndex = sList.children[parentIndex].children.filter(e => e.name === children[0]).length
 
       // falls bestimmte sorte an selektoren -> skip fürs erste
       if(children[0] === '+' || children[0] === '>' || children[0] === '~') {
         // sonderfall
-        // darf nicht passiere durchs cleaning im schritt vorher
+        // darf nicht passieren durchs cleaning im schritt vorher
       } else {
         // keine kinder oder kind nicht da
         if(sList.children[parentIndex].children.length == 0 || subParentIndex <= 0) {
           // bei einem Kind = puhse sofort
           if(children.length === 1) {
-            // todo: packe DATAINFOS hierhin
-            sList.children[parentIndex].children.push({ "name": children[0], children: [] })
+            sList.children[parentIndex].children.push({ "name": children[0], children: [], 'category': cat })
           } else {
             // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
-            this.addToArray(children, sList.children[parentIndex].children)
+            this.addToArray(children, sList.children[parentIndex].children, cat)
           }
         } // wenn child[0] ein Treffer ist, dann suche weiter bis kein Treffer da ist 
         else if(subParentIndex > 0) {
           // remove first child = its the parent
-          this.recursiveAdd(sList.children[parentIndex], children)
-          // this.findDeepAndCreate(sList.children[parentIndex].children, children)
+          this.recursiveAdd(sList.children[parentIndex], children, cat)
         }
       }
     },
-    recursiveAdd(tree, selector, hit) {
+    recursiveAdd(tree, selector, cat) {
       tree.children.forEach(subtree => {
         if(selector[0] === subtree.name) {
           parent = selector[0]
           selector = selector.slice(1)
           if(subtree.children.length === 0) {
-            return this.addToArray(selector, subtree.children) 
+            return this.addToArray(selector, subtree.children, cat) 
           } else if(subtree.children.filter(e => e.name === selector[0]).length <= 0) {
-            return this.addToArray(selector, subtree.children) 
+            return this.addToArray(selector, subtree.children, cat) 
           } else if(subtree.children.filter(e => e.name === selector[0]).length > 0 && selector.length === 1) {
             return 
           }
-          return this.recursiveAdd(subtree, selector, true)
+          return this.recursiveAdd(subtree, selector, cat)
         }
       })
     },
@@ -309,9 +313,9 @@ export default Vue.extend({
       }
       return array
     },
-    addToArray: function(children, array) {
+    addToArray: function(children, array, cat) {
       if(children.length === 1) {
-        array.push({ "name": children[0], children: [] })
+        array.push({ "name": children[0], children: [], 'category': cat })
       } else {
         let struct = {}
         let tmpStruct = {}
@@ -319,7 +323,7 @@ export default Vue.extend({
         for(var i = children.length-1; i >= 0; i--) {
           if(i == children.length-1) {
             // todo: packe DATAINFOS hierhin
-            tmpStruct = { "name": children[i], children: [] }
+            tmpStruct = { "name": children[i], children: [], 'category': cat }
           } else {
             struct = { "name": children[i], children: [tmpStruct] }
             tmpStruct = struct
