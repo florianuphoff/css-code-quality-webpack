@@ -34,6 +34,19 @@ export default class IntendedTree {
     // @ts-ignore
     this.sel = selector
     // this.tree = tree().nodeSize([0, 30]);
+    // @ts-ignore
+    this.syntaxIcon = '\uf121';
+    // @ts-ignore
+    this.duplicationsIcon = '\uf0c5';
+    // @ts-ignore
+    this.specificityIcon = '\uf201';
+    // @ts-ignore
+    this.performanceIcon = '\uf251';
+    // @ts-ignore
+    this.stylisticIcon = '\uf0d0';
+    // @ts-ignore
+    this.currCat = ''
+
 
     this.tree = tree().nodeSize([0, 30]);
     this.root = this.tree(hierarchy(data));
@@ -122,7 +135,9 @@ export default class IntendedTree {
 
     // Enter any new nodes at the parent's previous position.
     let nodeEnter = node.enter().append('g')
-      .attr('class', 'node')
+      .attr('class', function(d: any) {
+        return `node g${d.id ? d.id : 0}`
+      })
       .attr('transform', function () {
         return 'translate(' + source.y0 + ',' + source.x0 + ')';
       })
@@ -134,6 +149,7 @@ export default class IntendedTree {
         return d._children ? 'lightsteelblue' : '#fff';
       });
 
+    const that = this;
     nodeEnter.append('text')
       .attr('x', function (d: any) {
         return d.children || d._children ? 10 : 10;
@@ -143,19 +159,78 @@ export default class IntendedTree {
         return d.children || d._children ? 'start' : 'start';
       })
       .text(function (d: any) {
+        // add icons
+        const node = that.svg.select(`.g${d.id ? d.id : 0}`)
+        if(d.data.category) {
+          // @ts-ignore
+          d.data.category.forEach((cat, index) => {
+            // @ts-ignore
+            that.currCat = cat
+            node.append('text')
+            .attr('x', function (d: any) {
+              const length = d.data.name.length
+              return 25 + length*6;
+            })
+            .attr('dy', '.35em')
+            .attr('font-family', 'Font Awesome 5 Free')
+            .style('font-weight', '900')
+            .style('font-size', '15px' )
+            .text(function(d: any) {
+              let icon = ''
+            // @ts-ignore
+              switch(that.currCat) {
+                case 'syntax':
+                // @ts-ignore
+                icon = that.syntaxIcon;
+                break;
+                case 'specificity':
+                // @ts-ignore
+                icon = that.specificityIcon;
+                break;                  
+                case 'style':
+                // @ts-ignore
+                icon = that.stylisticIcon;
+                break;                  
+                case 'performance':
+                // @ts-ignore
+                icon = that.performanceIcon;
+                break;
+                case 'dupl':
+               // @ts-ignore
+                icon = that.duplicationsIcon;
+                break;                  
+              }
+              return icon;
+            })
+            .attr('class', function(d: any) {
+               // @ts-ignore              
+              return 'fa-icon ' + that.currCat;
+            })
+            .attr('transform', function () {
+              if(index === 0) {
+                return 'translate()';
+              } else {
+                const value = 20 * index;
+                return `translate(${value})`;
+              }
+            })
+          })
+        }
+        // continue as usual
         if (d.data.name.length > 30) {
           return d.data.name.substring(0, 20) + '...';
         } else {
           return d.data.name;
         }
       })
-      .attr('class', function(d: any) {
-        return d.data.category ? d.data.category : '';
-      })
       .style('fill-opacity', 1e-6);
 
+    // return d.data.category ? d.data.category : '';
+    // TODO: hier müssen die Icons entsprechend der Kategorien hinzugefügt werden
+    // forearch d.data.category 
+
     nodeEnter.append('svg:title').text(function (d: any) {
-      return d.data.category ? d.data.category : '';
+      return d.data.name ? d.data.name : '';
     });
 
     // Transition nodes to their new position.

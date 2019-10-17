@@ -163,8 +163,8 @@ export default Vue.extend({
         }
       });
       this.results.warnings.forEach(warning => {
-        if(warning.rule === 'no-duplicate-selectors') {
-          dSelectors.push({ selector: warning.resolvedSelector, category: "duplication" })
+        if(warning.rule === 'no-duplicate-selectors' || warning.rule === 'scss/selector-no-redundant-nesting-selector' || warning.rule === 'declaration-block-no-duplicate-properties' || warning.rule === 'declaration-block-no-shorthand-property-overrides') {
+          dSelectors.push({ selector: warning.resolvedSelector, category: "duplication", rule: warning.rule })
         }
       })
       return dSelectors
@@ -180,8 +180,45 @@ export default Vue.extend({
       let sData = []
 
       this.results.warnings.forEach(warning => {
-        // TODO: hier müssen die Kategorien der Warnings gebildet werden
-        const category = 'Warning'
+        let category = ''
+        switch(warning.rule) {
+          case 'selector-type-no-unknown':
+          case 'selector-pseudo-element-no-unknown':
+          case 'selector-pseudo-class-no-unknown':
+          case 'no-unknown-animations':
+            category = 'syntax'
+            break;
+          case 'no-descending-specificity':
+          case 'max-nesting-depth':
+          case 'selector-max-id':
+          case 'selector-max-type':
+          case 'selector-max-class':
+          case 'selector-max-compound-selectors':
+          case 'selector-no-qualifying-type':
+          case 'shorthand-property-no-redundant-values':
+            category = 'specificity'
+            break;
+          case 'scss/at-extend-no-missing-placeholder':
+          case 'length-zero-no-unit':
+            category = 'style'
+            break;
+          case 'plugin/no-low-performance-animation-properties':
+          case 'plugin/declaration-block-no-ignored-properties':
+          case 'plugin/no-undoing-styles':
+          case 'selector-attribute-operator-blacklist':
+          case 'block-no-empty':
+            category = 'performance'
+            break;
+          case 'scss/selector-no-redundant-nesting-selector':
+          case 'no-duplicate-selectors':
+          case 'declaration-block-no-duplicate-properties':
+          case 'declaration-block-no-shorthand-property-overrides':
+            category = 'dupl'
+            break;
+          default:
+            // should not get here
+            category = ''
+        }
         if(warning.resolvedSelector !== '') sData.push({ selector: warning.resolvedSelector, category: category})
       })
 
@@ -197,10 +234,8 @@ export default Vue.extend({
       })
     },
     parseSelectors: function(selectorList, dType) {
-      // TODO: selectors ist jetzt ein Object - siehe oben
-      // TODO: immer beim letzten Selector Compount die Kategorie anhängen
-
-      // ! selectors ist ein Object wodurch der Fehler erzeugt wird
+      // TODO: Es muss für jeden Eintrag die category hinterlegt werden!!!
+      // dh Algorithmus anpassen
 
       const type = dType
       let sList = {"name":"root", "children": []}
@@ -210,14 +245,19 @@ export default Vue.extend({
         const parentSelector = seperatedSelectors[0]
         
         const children = seperatedSelectors.slice(1)
+        const parentEntry = sList.children.filter(e => e.name === parentSelector)
 
         // root level und kein pseudo element im selektor
-        if(sList.children.filter(e => e.name === parentSelector).length <= 0 && !seperatedSelectors[0].includes(':')) {
+        if(parentEntry.length <= 0 && !seperatedSelectors[0].includes(':')) {
           if(children.length) {
-            sList.children.push({ "name": seperatedSelectors[0], "children": [] })
+            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'category': [] })
           } else {
-            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'category': entry.category })
+            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'category': [entry.category] })
           }
+        // es gibt ein Treffer und keine Kinder
+        // füge die Kategorie hinzu
+        } else if (parentEntry.length > 0 && children.length < 1 && (entry.category !== 'duplication' && entry.category !== 'general')) {
+          parentEntry[0].category.push(entry.category)
         }
 
         // root level und pseudo element
@@ -230,14 +270,17 @@ export default Vue.extend({
             sList.children.push({ "name": pS[0], "children": [] })
             // packe pseudo element direkt als kind hinzu
             // es kann hier keine kinder geben
-            sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [], 'category': entry.category })
+            sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [], 'category': [entry.category] })
           } else {
-            // parent vorhanden, also finden und child hinzufügen
+            // parent vorhanden, also finden und child hinzufügen falls nicht vorhanden
             for(var i = 0; i < sList.children.length; i++) {
               if (sList.children[i].name === pS[0]) {
-                // todo: packe DATAINFOS hierhin - falls !children.length
-                // denn gibts keine children
-                sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [], 'category': entry.category })
+                const hit = sList.children[i].children.filter(e => e.name === `:${pS[1]}`)
+                if(hit.length <= 0 || entry.category === 'general') {
+                  sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [], 'category': [entry.category] })
+                } else {
+                  hit[0].category.push(entry.category)
+                }
                 break;
               }
             }
@@ -274,10 +317,10 @@ export default Vue.extend({
         // darf nicht passieren durchs cleaning im schritt vorher
       } else {
         // keine kinder oder kind nicht da
-        if(sList.children[parentIndex].children.length == 0 || subParentIndex <= 0) {
+        if(sList.children[parentIndex].children.length <= 0 || subParentIndex <= 0) {
           // bei einem Kind = puhse sofort
           if(children.length === 1) {
-            sList.children[parentIndex].children.push({ "name": children[0], children: [], 'category': cat })
+            sList.children[parentIndex].children.push({ "name": children[0], children: [], 'category': [cat] })
           } else {
             // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
             this.addToArray(children, sList.children[parentIndex].children, cat)
@@ -285,20 +328,23 @@ export default Vue.extend({
         } // wenn child[0] ein Treffer ist, dann suche weiter bis kein Treffer da ist 
         else if(subParentIndex > 0) {
           // remove first child = its the parent
+          // nur hier können Kategorien mehrfach auftreten
           this.recursiveAdd(sList.children[parentIndex], children, cat)
         }
       }
     },
     recursiveAdd(tree, selector, cat) {
       tree.children.forEach(subtree => {
-        if(selector[0] === subtree.name) {
-          parent = selector[0]
+        const parent = selector[0]
+        if(subtree.name === parent) {
           selector = selector.slice(1)
+          const selectorHit = subtree.children.filter(e => e.name === selector[0])
           if(subtree.children.length === 0) {
             return this.addToArray(selector, subtree.children, cat) 
-          } else if(subtree.children.filter(e => e.name === selector[0]).length <= 0) {
+          } else if(selectorHit.length <= 0) {
             return this.addToArray(selector, subtree.children, cat) 
-          } else if(subtree.children.filter(e => e.name === selector[0]).length > 0 && selector.length === 1) {
+          } else if(selectorHit.length > 0 && selector.length === 1) {
+            selectorHit[0].category.push(cat)
             return 
           }
           return this.recursiveAdd(subtree, selector, cat)
@@ -315,17 +361,16 @@ export default Vue.extend({
     },
     addToArray: function(children, array, cat) {
       if(children.length === 1) {
-        array.push({ "name": children[0], children: [], 'category': cat })
+        array.push({ "name": children[0], children: [], 'category': [cat] })
       } else {
         let struct = {}
         let tmpStruct = {}
         // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
         for(var i = children.length-1; i >= 0; i--) {
           if(i == children.length-1) {
-            // todo: packe DATAINFOS hierhin
-            tmpStruct = { "name": children[i], children: [], 'category': cat }
+            tmpStruct = { "name": children[i], children: [], 'category': [cat] }
           } else {
-            struct = { "name": children[i], children: [tmpStruct] }
+            struct = { "name": children[i], children: [tmpStruct], 'category': [] }
             tmpStruct = struct
           }
         }

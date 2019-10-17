@@ -110,6 +110,30 @@ export default Vue.extend({
   font: 14px sans-serif;
 }
 
+.selector-chart .node text.fa-icon {
+  font-family: "Font Awesome 5 Free";
+}
+
+.syntax {
+  fill: #d84930;
+}
+
+.specificity {
+  fill: #171ac0;
+}
+
+.style {
+  fill: #da1b60;  
+}
+
+.performance {
+  fill: #1a9fd4;
+}
+
+.dupl {
+  fill: #176bc0;
+}
+
 .selector-chart .link {
   fill: none;
   stroke: #ccc;
