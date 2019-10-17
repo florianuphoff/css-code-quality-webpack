@@ -41,15 +41,34 @@ export default class IntendedTree {
     // @ts-ignore
     this.specificityIcon = '\uf201';
     // @ts-ignore
-    this.performanceIcon = '\uf251';
+    this.performanceIcon = '\uf252';
     // @ts-ignore
     this.stylisticIcon = '\uf0d0';
     // @ts-ignore
     this.currCat = ''
-
-
+    // @ts-ignore
+    this.displayCat = ''
+    // @ts-ignore
+    this.toolTipContainer = d3.select(".tooltipContainer").style("opacity", 0)
     this.tree = tree().nodeSize([0, 30]);
-    this.root = this.tree(hierarchy(data));
+    this.root = this.tree(hierarchy(data))
+    // @ts-ignore    
+    this.getCategory = (cat: string) => {
+      switch(cat) {
+        case 'syntax':         
+          return 'Syntax'
+        case 'specificity':
+          return 'Spezifizität'
+        case 'style':
+          return 'Style'
+        case 'performance':
+          return 'Performance'
+        case 'dupl':
+          return 'Duplizierung'
+        default:
+          return '' 
+      }
+    }
     // @ts-ignore
     this.root.each((d)=> {
       d.name = d.id; //transferring name to a name variable
@@ -67,6 +86,8 @@ export default class IntendedTree {
     // this.root.children.forEach(this.collapse);
     this.update(this.root);
   }
+
+  
   
   connector = function(d:any) {
    //curved 
@@ -161,11 +182,12 @@ export default class IntendedTree {
       .text(function (d: any) {
         // add icons
         const node = that.svg.select(`.g${d.id ? d.id : 0}`)
-        if(d.data.category) {
+        if(d.data.data && d.data.data.length > 0) {
           // @ts-ignore
-          d.data.category.forEach((cat, index) => {
+          d.data.data.forEach((entry, index) => {
             // @ts-ignore
-            that.currCat = cat
+            that.currCat = entry.category
+
             node.append('text')
             .attr('x', function (d: any) {
               const length = d.data.name.length
@@ -203,17 +225,50 @@ export default class IntendedTree {
               return icon;
             })
             .attr('class', function(d: any) {
-               // @ts-ignore              
+               // @ts-ignore
+               if(that.currCat === 'specificity') return 'fa-icon spec'     
+               // @ts-ignore
               return 'fa-icon ' + that.currCat;
+            })
+            .attr("data-rule", function(d: any) {
+              return entry.rule
+            })
+            .attr("data-file", function(d: any) {
+              return entry.file
+            })
+            .attr("data-line", function(d: any) {
+              return entry.line
+            })
+            .attr("data-property", function(d: any) {
+              return entry.property
             })
             .attr('transform', function () {
               if(index === 0) {
-                return 'translate()';
+                return 'translate(0)';
               } else {
                 const value = 20 * index;
                 return `translate(${value})`;
               }
             })
+            .on("mouseover", function(d: any) {
+              const prop = `<b>Deklaration: </b>${entry.property}`
+               // @ts-ignore                            
+              that.toolTipContainer.transition()		
+                .duration(200)		
+                .style("opacity", .9);
+              // @ts-ignore
+              that.toolTipContainer.html(`
+                <b>Warnung: </b>${entry.rule}<br>
+                <b>Kategorie: </b>${that.getCategory(entry.category)}<br>
+                <b>Datei/Zeile: </b>${entry.file} / ${entry.line}<br>${entry.property ?  prop : ''}
+              `)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");	
+              })					
+            .on("mouseout", function(d: any) {
+              // @ts-ignore              
+              that.toolTipContainer.style("opacity", 0);	
+            });
           })
         }
         // continue as usual
@@ -224,14 +279,6 @@ export default class IntendedTree {
         }
       })
       .style('fill-opacity', 1e-6);
-
-    // return d.data.category ? d.data.category : '';
-    // TODO: hier müssen die Icons entsprechend der Kategorien hinzugefügt werden
-    // forearch d.data.category 
-
-    nodeEnter.append('svg:title').text(function (d: any) {
-      return d.data.name ? d.data.name : '';
-    });
 
     // Transition nodes to their new position.
     let nodeUpdate = node.merge(nodeEnter)

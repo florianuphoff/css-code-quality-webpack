@@ -9,7 +9,7 @@
       <Heatmap :heatMapData=heatMapData /> -->
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
     </div>
-
+    <div class="tooltipContainer"></div>
   </div>
 </template>
 
@@ -157,14 +157,14 @@ export default Vue.extend({
       let dSelectors = []
 
       this.results.duplications.forEach(duplicationObject => {
-        dSelectors.push({ selector: duplicationObject.origin.selector, category: "duplication" })
+        dSelectors.push({ selector: duplicationObject.origin.selector, category: "duplication", data: {} })
         if(duplicationObject.duplication) {
-          dSelectors.push({ selector: duplicationObject.duplication.selector, category: "duplication" })
+          dSelectors.push({ selector: duplicationObject.duplication.selector, category: "duplication", data: {} })
         }
       });
       this.results.warnings.forEach(warning => {
         if(warning.rule === 'no-duplicate-selectors' || warning.rule === 'scss/selector-no-redundant-nesting-selector' || warning.rule === 'declaration-block-no-duplicate-properties' || warning.rule === 'declaration-block-no-shorthand-property-overrides') {
-          dSelectors.push({ selector: warning.resolvedSelector, category: "duplication", rule: warning.rule })
+          dSelectors.push({ selector: warning.resolvedSelector, category: "duplication", data: {} })
         }
       })
       return dSelectors
@@ -172,7 +172,7 @@ export default Vue.extend({
     generalData() {
       let data = []
       this.results.stats[0].selectors.values.forEach(sel => {
-        data.push({ selector: sel, category: "general" })
+        data.push({ selector: sel, category: "general", data: {} })
       })
       return data
     },
@@ -219,7 +219,10 @@ export default Vue.extend({
             // should not get here
             category = ''
         }
-        if(warning.resolvedSelector !== '') sData.push({ selector: warning.resolvedSelector, category: category})
+        if(warning.resolvedSelector !== '') {
+          const file = warning.file.split('/')
+          sData.push({ selector: warning.resolvedSelector, data: { category: category, rule: warning.rule, file: file.slice(Math.max(file.length - 3, 0)).join('/'), line: warning.line, property: warning.word } })
+        }
       })
 
       return sData
@@ -250,14 +253,14 @@ export default Vue.extend({
         // root level und kein pseudo element im selektor
         if(parentEntry.length <= 0 && !seperatedSelectors[0].includes(':')) {
           if(children.length) {
-            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'category': [] })
+            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'data': [] })
           } else {
-            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'category': [entry.category] })
+            sList.children.push({ "name": seperatedSelectors[0], "children": [], 'data': [entry.data] })
           }
         // es gibt ein Treffer und keine Kinder
         // füge die Kategorie hinzu
         } else if (parentEntry.length > 0 && children.length < 1 && (entry.category !== 'duplication' && entry.category !== 'general')) {
-          parentEntry[0].category.push(entry.category)
+          parentEntry[0].data.push(entry.data)
         }
 
         // root level und pseudo element
@@ -270,16 +273,16 @@ export default Vue.extend({
             sList.children.push({ "name": pS[0], "children": [] })
             // packe pseudo element direkt als kind hinzu
             // es kann hier keine kinder geben
-            sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [], 'category': [entry.category] })
+            sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [], 'data': [entry.data] })
           } else {
             // parent vorhanden, also finden und child hinzufügen falls nicht vorhanden
             for(var i = 0; i < sList.children.length; i++) {
               if (sList.children[i].name === pS[0]) {
                 const hit = sList.children[i].children.filter(e => e.name === `:${pS[1]}`)
                 if(hit.length <= 0 || entry.category === 'general') {
-                  sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [], 'category': [entry.category] })
+                  sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [], 'data': [entry.data] })
                 } else {
-                  hit[0].category.push(entry.category)
+                  hit[0].data.push(entry.data)
                 }
                 break;
               }
@@ -296,14 +299,14 @@ export default Vue.extend({
         }
         // children vorhanden, also hinzufügen
         if(children.length) {
-          this.generateChildren(children, index, sList, entry.category)
+          this.generateChildren(children, index, sList, entry.data)
         }
         
       });
       
       return sList
     },
-    generateChildren(children, parentIndex, sList, cat) {
+    generateChildren(children, parentIndex, sList, data) {
       children = this.cleanArray(children, '+')
       children = this.cleanArray(children, '>')
       children = this.cleanArray(children, '~')
@@ -320,34 +323,34 @@ export default Vue.extend({
         if(sList.children[parentIndex].children.length <= 0 || subParentIndex <= 0) {
           // bei einem Kind = puhse sofort
           if(children.length === 1) {
-            sList.children[parentIndex].children.push({ "name": children[0], children: [], 'category': [cat] })
+            sList.children[parentIndex].children.push({ "name": children[0], children: [], 'data': [data] })
           } else {
             // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
-            this.addToArray(children, sList.children[parentIndex].children, cat)
+            this.addToArray(children, sList.children[parentIndex].children, data)
           }
         } // wenn child[0] ein Treffer ist, dann suche weiter bis kein Treffer da ist 
         else if(subParentIndex > 0) {
           // remove first child = its the parent
           // nur hier können Kategorien mehrfach auftreten
-          this.recursiveAdd(sList.children[parentIndex], children, cat)
+          this.recursiveAdd(sList.children[parentIndex], children, data)
         }
       }
     },
-    recursiveAdd(tree, selector, cat) {
+    recursiveAdd(tree, selector, data) {
       tree.children.forEach(subtree => {
         const parent = selector[0]
         if(subtree.name === parent) {
           selector = selector.slice(1)
           const selectorHit = subtree.children.filter(e => e.name === selector[0])
           if(subtree.children.length === 0) {
-            return this.addToArray(selector, subtree.children, cat) 
+            return this.addToArray(selector, subtree.children, data) 
           } else if(selectorHit.length <= 0) {
-            return this.addToArray(selector, subtree.children, cat) 
+            return this.addToArray(selector, subtree.children, data) 
           } else if(selectorHit.length > 0 && selector.length === 1) {
-            selectorHit[0].category.push(cat)
+            selectorHit[0].data.push(data)
             return 
           }
-          return this.recursiveAdd(subtree, selector, cat)
+          return this.recursiveAdd(subtree, selector, data)
         }
       })
     },
@@ -359,18 +362,18 @@ export default Vue.extend({
       }
       return array
     },
-    addToArray: function(children, array, cat) {
+    addToArray: function(children, array, data) {
       if(children.length === 1) {
-        array.push({ "name": children[0], children: [], 'category': [cat] })
+        array.push({ "name": children[0], children: [], 'data': [data] })
       } else {
         let struct = {}
         let tmpStruct = {}
         // mehrere Kinder = erstelle Konstrukt --- bottom-up Ansatz
         for(var i = children.length-1; i >= 0; i--) {
           if(i == children.length-1) {
-            tmpStruct = { "name": children[i], children: [], 'category': [cat] }
+            tmpStruct = { "name": children[i], children: [], 'data': [data] }
           } else {
-            struct = { "name": children[i], children: [tmpStruct], 'category': [] }
+            struct = { "name": children[i], children: [tmpStruct], 'data': [] }
             tmpStruct = struct
           }
         }
@@ -397,3 +400,18 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+.tooltipContainer {
+  position: absolute;
+  max-width: 250px;
+  padding: 5px 8px;
+  border: 1px solid black;		
+  pointer-events: none;
+
+  background-color: rgba(255, 255, 255, 0.92);
+
+  font-size: 12px;
+}
+</style>
+
