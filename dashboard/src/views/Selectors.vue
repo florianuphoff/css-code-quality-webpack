@@ -22,6 +22,7 @@ import SelectorHierarchy from '@/components/SelectorHierarchy.vue'; // @ is an a
 import { calculate } from 'specificity';
 // import json from '@/results/data.json'; // @ is an alias to /src
 
+
 export default Vue.extend({
   name: 'home',
   components: {
@@ -151,20 +152,38 @@ export default Vue.extend({
       this.chartData.general = this.parseSelectors(this.generalData(), "general")
       this.chartData.duplications = this.parseSelectors(this.duplicationData(), "duplication")
       this.chartData.smelly = this.parseSelectors(this.smellyData(), "smelly")
-
     },
     duplicationData() {
       let dSelectors = []
+      let uniqueRef = 0
 
       this.results.duplications.forEach(duplicationObject => {
-        dSelectors.push({ selector: duplicationObject.origin.selector, category: "duplication", data: {} })
+        dSelectors.push({ selector: duplicationObject.origin.selector, data: { 
+          category: "duplication", 
+          type: duplicationObject.type, 
+          ref: uniqueRef, 
+          oLine: duplicationObject.originLine, 
+          oFile: duplicationObject.originFile,
+          dLine: duplicationObject.duplLine, 
+          dFile: duplicationObject.duplFile
+        } })
         if(duplicationObject.duplication) {
-          dSelectors.push({ selector: duplicationObject.duplication.selector, category: "duplication", data: {} })
+          dSelectors.push({ 
+            selector: duplicationObject.duplication.selector, 
+            data: { category: "duplication", 
+            type: duplicationObject.type, 
+            ref: uniqueRef,
+            oLine: duplicationObject.originLine, 
+            oFile: duplicationObject.originFile,
+            dLine: duplicationObject.duplLine, 
+            dFile: duplicationObject.duplFile
+          } })
         }
+        uniqueRef++
       });
       this.results.warnings.forEach(warning => {
         if(warning.rule === 'no-duplicate-selectors' || warning.rule === 'scss/selector-no-redundant-nesting-selector' || warning.rule === 'declaration-block-no-duplicate-properties' || warning.rule === 'declaration-block-no-shorthand-property-overrides') {
-          dSelectors.push({ selector: warning.resolvedSelector, category: "duplication", data: {} })
+          dSelectors.push({ selector: warning.resolvedSelector, data: { category: "duplication" } })
         }
       })
       return dSelectors
@@ -230,11 +249,11 @@ export default Vue.extend({
     async fetchHierarchyChartData() {
       // return well formatted data
       fetch('/dashboard/results/data.json')
-      .then(response => response.json())
-      .then(data => {
-        this.results = data
-        this.cData()
-      })
+        .then(response => response.json())
+        .then(data => {
+          this.results = data
+          this.cData()
+        })
     },
     parseSelectors: function(selectorList, dType) {
       // TODO: Es muss für jeden Eintrag die category hinterlegt werden!!!
@@ -259,7 +278,7 @@ export default Vue.extend({
           }
         // es gibt ein Treffer und keine Kinder
         // füge die Kategorie hinzu
-        } else if (parentEntry.length > 0 && children.length < 1 && (entry.category !== 'duplication' && entry.category !== 'general')) {
+        } else if (parentEntry.length > 0 && children.length < 1 && (entry.category !== 'general')) {
           parentEntry[0].data.push(entry.data)
         }
 
@@ -270,7 +289,7 @@ export default Vue.extend({
           
           // falls parent nicht gefunden
           if(!sList.children.filter(e => e.name === pS[0]).length) {
-            sList.children.push({ "name": pS[0], "children": [] })
+            sList.children.push({ "name": pS[0], "children": [], 'data': [] })
             // packe pseudo element direkt als kind hinzu
             // es kann hier keine kinder geben
             sList.children[sList.children.length-1].children.push({ "name": `:${pS[1]}`, "children": [], 'data': [entry.data] })

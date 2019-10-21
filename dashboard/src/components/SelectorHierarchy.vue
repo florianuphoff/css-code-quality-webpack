@@ -1,6 +1,13 @@
 <template>
   <div :class="classList">
-    <div class="v-box__header">{{ heading }}</div>
+    <div class="v-box__header">
+      {{ heading }}
+      <div class="tooltip-icon" 
+        v-tooltip='{content: tooltipText, placement: "right", targetClasses: ["cq-tooltip"]}' 
+      >
+        <font-awesome-icon icon="question-circle" />
+      </div>
+    </div>
     <div v-if="type === 'warnings'" class="absolute legend">
       <h5 class="v-box__header legend-header">Legende</h5>
       <div class="legend-content">
@@ -21,6 +28,17 @@
         </div>
       </div>
     </div>
+    <div v-if="type === 'duplications'" class="absolute legend">
+      <h5 class="v-box__header legend-header">Details</h5>
+      <div class="legend-content d-legend">
+        <div class="placeholder">
+          Über ein Element hovern, um Informationen zu sehen.
+        </div>
+        <div class="d-content">
+
+        </div>
+      </div>
+    </div>
     <div class="v-box__chart selector-chart v-box__content" :id="type"></div>
   </div>
 </template>
@@ -30,11 +48,14 @@
 import Vue from 'vue';
 import IntendedTree from '@/assets/IntendedTree'
 
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHourglassHalf, faCode, faMagic, faChartLine, faCopy } from '@fortawesome/free-solid-svg-icons'
+import { faHourglassHalf, faCode, faMagic, faChartLine, faCopy, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faHourglassHalf, faCode, faMagic, faChartLine, faCopy)
+library.add(faHourglassHalf, faCode, faMagic, faChartLine, faCopy, faQuestionCircle)
 
 export default Vue.extend({
   name: 'SelectorHierarchy',
@@ -53,7 +74,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      dSet: 'g'    
+      dSet: 'g',   
     }
   },
   computed: {
@@ -71,6 +92,29 @@ export default Vue.extend({
         headline = 'Fehlerbehaftete Selektoren'
       }
       return headline
+    },
+    tooltipText() {
+      let tip = ''
+      if(this.type === 'general') {
+        tip = 'Bla bla bla'
+      } else if(this.type === 'duplications') {
+        tip = `
+        In diesem Graphen befinden sich duplizierte Selektoren oder Selektoren, deren Deklarationen dupliziert sind. 
+        <br/>Es gibt verschiedene Typen einer Duplizierung:
+        <br/>Vollständige Duplizierung: Alle Deklarationen eines Selektors sind dupliziert (rot)
+        <br/>Typ 1: Eine Deklaration ist vollständig dupliziert (orange)
+        <br/>Typ 3: Eine Deklaration existiert als shorthand-Property und ausgeschriebenen Properties (gelb)
+        <br/>Typ 4: Eine Deklaration ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (türkis)
+        <br/>Typ 5: Eine shorthand-Property ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (grün)
+        <br/><br/>Zu einem Selektor kann es verschiedene Typen geben. Es wird immer der allgemeinere Typ farblich markiert (Vollständig - Typ 5).
+        Es werden betroffene Selektoren hervorgehoben, wenn der Zeiger der Maus über einen Selektor steht.
+        <br/> Blau markierte Selektoren bedeuten, dass der Selektorname mehrfach genutzt wurde.
+        `
+      } else {
+        // warnings
+        tip = 'Fehlerbehaftete Selektoren'
+      }
+      return tip
     }
   },
   watch: {
@@ -113,6 +157,7 @@ export default Vue.extend({
 }
 
 .duplications {
+  position: relative;
   grid-column: 2 / 3;
   grid-row: 1 / span 3;
 }
@@ -124,8 +169,7 @@ export default Vue.extend({
 }
 
 .selector-chart .node circle {
-  fill: #fff;
-  stroke: steelblue;
+  stroke: #000000;
   stroke-width: 1px;
 }
 
@@ -238,6 +282,38 @@ h5 {
 
 .legend-icon {
   margin-right: 10px;
+}
+
+.d-legend {
+  font-size: 12px;
+}
+
+.type5 {
+  fill: #4cd118 !important;
+}
+
+.type4 {
+  fill: #1ee2d8 !important;
+}
+
+.type3 {
+  fill: #f5c423 !important;
+}
+
+.type0 {
+  fill: #f88f17 !important; 
+}
+
+.type1 {
+  fill: #ce1919 !important;
+}
+
+.duplHover {
+  fill: #45da37 !important;
+}
+
+.typeundefined {
+  fill: #153291 !important;
 }
 
 </style>

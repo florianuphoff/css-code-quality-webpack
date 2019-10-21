@@ -50,6 +50,8 @@ export default class IntendedTree {
     this.displayCat = ''
     // @ts-ignore
     this.toolTipContainer = d3.select(".tooltipContainer").style("opacity", 0)
+    // @ts-ignore    
+    this.detailContainer = d3.select(".d-content")
     this.tree = tree().nodeSize([0, 30]);
     this.root = this.tree(hierarchy(data))
     // @ts-ignore    
@@ -67,6 +69,25 @@ export default class IntendedTree {
           return 'Duplizierung'
         default:
           return '' 
+      }
+    }
+    // @ts-ignore        
+    this.getTypes = (type: string) => {
+      switch(type) {
+        case 'type0':         
+          return 'Typ 1'
+        case 'type1':
+          return 'Alle Deklarationen dupliziert'
+        case 'type2':
+          return 'Typ 2'
+        case 'type3':
+          return 'Typ 3'
+        case 'type4':
+          return 'Typ 4'
+        case 'type5':
+          return 'Typ 5'
+        default:
+          return 'Selektorname dupliziert' 
       }
     }
     // @ts-ignore
@@ -153,24 +174,138 @@ export default class IntendedTree {
         // @ts-ignore
         return d.id || (d.id = ++this.i);
       });
+    
+    // ! Add hover state for same nodes
 
     // Enter any new nodes at the parent's previous position.
     let nodeEnter = node.enter().append('g')
       .attr('class', function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          let ref = ''
+          // @ts-ignore          
+          d.data.data.forEach(entry => {
+            ref += `ref${entry.ref} `
+          })
+          return `node g${d.id ? d.id : 0} ${ref}`
+        }
         return `node g${d.id ? d.id : 0}`
+      })
+      .attr("data-type", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          let types = ''
+          // @ts-ignore          
+          d.data.data.forEach(entry => {
+            types += `type${entry.type} `
+          })
+          return `${types}`
+        }
+        return ''
+      })
+      .attr("data-oline", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          return `${d.data.data[0].oLine}`
+        }
+        return ''
+      })
+      .attr("data-ofile", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          return `${d.data.data[0].oFile}`
+        }
+        return ''
+      })
+      .attr("data-dLine", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          let line = ''
+          // @ts-ignore          
+          d.data.data.forEach(entry => {
+            line += `${entry.oLine} `
+          })
+          return `${line}`
+        }
+        return ''
+      })
+      .attr("data-dFile", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          let files = ''
+          // @ts-ignore          
+          d.data.data.forEach(entry => {
+            files += `${entry.oLine} `
+          })
+          return `${files}`
+        }
+        return ''
       })
       .attr('transform', function () {
         return 'translate(' + source.y0 + ',' + source.x0 + ')';
       })
       .on('click', this.click);
 
+    const that = this
+
+    nodeEnter.on("mouseover", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          // @ts-ignore
+          this.classList.forEach((element, index) => {
+            // erst hier steheh die refs zu anderen nodes
+            if(index > 1 && element !== 'refundefined' && !element.includes('type')) {
+              // @ts-ignore
+              that.svg.selectAll(`.${element}`).classed("duplHover", true)
+            } else if(element === 'refundefined') {
+              // @ts-ignore                        
+              d3.select(this).classed("duplHover", true)
+            }
+          })
+
+          let template = `Folgende Informationen wurden gefunden: <br/>`
+          const arr = d3.select(this)._groups[0][0].dataset.type.split(' ')
+          const types = [...new Set(arr.filter(Boolean))]
+          types.forEach(type => {
+            template += `- ${that.getTypes(type)}<br/>`
+          });
+          
+          const placeholder = document.querySelector('.placeholder')
+          placeholder.classList.toggle('hidden')
+          // @ts-ignore
+          that.detailContainer.html(`
+            ${template}
+            `).classed('hidden', false)
+        }
+      })		
+      .on("mouseout", function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          // @ts-ignore          
+          this.classList.forEach((element, index) => {
+            // erst hier steheh die refs zu anderen nodes
+            if(index > 1 && element !== 'refundefined' && !element.includes('type')) {
+              that.svg.selectAll(`.${element}`).classed("duplHover", false)
+            } else if(element === 'refundefined') {
+              // @ts-ignore                        
+              d3.select(this).classed("duplHover", false)
+            }
+          })
+
+          const placeholder = document.querySelector('.placeholder')
+          placeholder.classList.toggle('hidden')
+          // @ts-ignore          
+          that.detailContainer.classed('hidden', true)
+        }
+      });
+
     nodeEnter.append('circle')
       .attr('r', 1e-6)
-      .style('fill', function (d: any) {
+      .attr('class', function(d: any) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+          let color = ''
+          // @ts-ignore          
+          d.data.data.forEach(entry => {
+            color += `type${entry.type} `
+          })
+
+          return d._children ? 'lightsteelblue' : color
+        }
         return d._children ? 'lightsteelblue' : '#fff';
       });
 
-    const that = this;
     nodeEnter.append('text')
       .attr('x', function (d: any) {
         return d.children || d._children ? 10 : 10;
@@ -181,8 +316,8 @@ export default class IntendedTree {
       })
       .text(function (d: any) {
         // add icons
-        const node = that.svg.select(`.g${d.id ? d.id : 0}`)
-        if(d.data.data && d.data.data.length > 0) {
+        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category !== 'duplication') {
+          const node = that.svg.select(`.g${d.id ? d.id : 0}`)
           // @ts-ignore
           d.data.data.forEach((entry, index) => {
             // @ts-ignore
@@ -252,14 +387,15 @@ export default class IntendedTree {
             })
             .on("mouseover", function(d: any) {
               const prop = `<b>Deklaration: </b>${entry.property}`
+               // @ts-ignore
+              const cat = that.getCategory(entry.category)
                // @ts-ignore                            
-              that.toolTipContainer.transition()		
-                .duration(200)		
+              that.toolTipContainer
                 .style("opacity", .9);
               // @ts-ignore
               that.toolTipContainer.html(`
                 <b>Warnung: </b>${entry.rule}<br>
-                <b>Kategorie: </b>${that.getCategory(entry.category)}<br>
+                <b>Kategorie: </b>${cat}<br>
                 <b>Datei/Zeile: </b>${entry.file} / ${entry.line}<br>${entry.property ?  prop : ''}
               `)
                 .style("left", (d3.event.pageX + 10) + "px")
@@ -270,7 +406,32 @@ export default class IntendedTree {
               that.toolTipContainer.style("opacity", 0);	
             });
           })
-        }
+        } 
+        // else if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+        //   const node = that.svg.select(`.g${d.id ? d.id : 0}`)
+        //   // @ts-ignore
+        //   d.data.data.forEach((entry, index) => {
+        //     // @ts-ignore
+        //     node.append('text')
+        //       .attr('x', function (d: any) {
+        //         const length = d.data.name.length
+        //         return 25 + length*6;
+        //       })
+        //       .attr('dy', '.35em')
+        //       .style('font-size', '15px' )
+        //       .text(function(d: any) {
+        //         return entry.type
+        //       })
+        //       .attr('transform', function () {
+        //         if(index === 0) {
+        //           return 'translate(0)';
+        //         } else {
+        //           const value = 20 * index;
+        //           return `translate(${value})`;
+        //         }
+        //       });
+        //   })
+        // }
         // continue as usual
         if (d.data.name.length > 30) {
           return d.data.name.substring(0, 20) + '...';

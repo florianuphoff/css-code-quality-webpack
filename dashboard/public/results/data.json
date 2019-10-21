@@ -1028,18 +1028,7 @@
   ],
   "duplications": [
     {
-      "type": 1,
-      "origin": {
-        "hash": "485bdc20ec22c08679c81ccd17d90940",
-        "selector": ".non-placeholder, .hidden"
-      },
-      "duplication": {
-        "hash": "485bdc20ec22c08679c81ccd17d90940",
-        "selector": ".v-hidden"
-      }
-    },
-    {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
         "selector": ".button--filled"
@@ -1050,7 +1039,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
         "selector": ".v-block"
@@ -1061,7 +1050,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "ec41b83ff031fd764369195b6c798191",
         "selector": ".duplication-prop-1-1"
@@ -1072,7 +1061,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "be28a9cd180ec111e0e769117c72b268",
         "selector": ".duplication-prop-1-x"
@@ -1083,7 +1072,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "22d5701b45a5c0ab74a6f62a8ef09da7",
         "selector": ".glowing-button"
@@ -1094,7 +1083,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "c71a520351cc19f48a1bbe26505ff6bf",
         "selector": "unknown"
@@ -1105,7 +1094,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "8187d057aa348bf8544fee9d1775ae49",
         "selector": "a#id1"
@@ -1116,7 +1105,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "468d17a87a2ea269dcaff605ff1277a0",
         "selector": "#id4 .c4:before"
@@ -1127,7 +1116,7 @@
       }
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "8187d057aa348bf8544fee9d1775ae49",
         "selector": ".c10.c11.c12.c13.c14"
@@ -1135,6 +1124,28 @@
       "duplication": {
         "hash": "8187d057aa348bf8544fee9d1775ae49",
         "selector": ".f9"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": "#id4 .c4:before"
+      },
+      "duplication": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".f9"
+      }
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".red-border"
+      },
+      "duplication": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".duplication-type-3-a"
       }
     },
     {
