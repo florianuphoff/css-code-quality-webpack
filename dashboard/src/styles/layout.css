@@ -194,9 +194,8 @@ body {
   background: #ffffff;
   color: #2c3e50;
   border: 1px solid #2c3e50;
-  border-radius: 5px;
   padding: 5px 10px 4px;
-  max-width: 300px;
+  max-width: 350px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 15px;
 }
@@ -292,4 +291,8 @@ body {
   visibility: visible;
   opacity: 1;
   transition: opacity .15s;
+}
+
+.hidden {
+  display: none;
 }

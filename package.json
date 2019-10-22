@@ -40,7 +40,7 @@
     "npm-run": "^5.0.1",
     "path": "^0.12.7",
     "postcss": "^7.0.17",
-    "postcss-code-duplication": "^1.1.0",
+    "postcss-code-duplication": "^1.2.1",
     "postcss-resolve-nested-selector": "^0.1.1",
     "postcss-selector-stats": "^1.1.0",
     "stylelint": "^10.1.0",
