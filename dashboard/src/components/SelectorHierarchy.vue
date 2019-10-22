@@ -100,7 +100,7 @@ export default Vue.extend({
       } else if(this.type === 'duplications') {
         tip = `
         In diesem Graphen befinden sich duplizierte Selektoren oder Selektoren, deren Deklarationen dupliziert sind. 
-        <br/>Es gibt verschiedene Typen einer Duplizierung:
+        <br/><br/>Es gibt verschiedene Typen einer Duplizierung:
         <br/>Vollständige Duplizierung: Alle Deklarationen eines Selektors sind dupliziert (rot)
         <br/>Typ 1: Eine Deklaration ist vollständig dupliziert (orange)
         <br/>Typ 3: Eine Deklaration existiert als shorthand-Property und ausgeschriebenen Properties (gelb)
