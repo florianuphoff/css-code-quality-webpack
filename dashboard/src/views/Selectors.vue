@@ -5,6 +5,7 @@
       <SelectorHierarchy v-bind:chartData=chartData type='partialdupl' />
       <SelectorHierarchy v-bind:chartData=chartData type='warnings' />
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
+      <div class="tooltipContainer"></div>
     </div>
   </div>
 </template>

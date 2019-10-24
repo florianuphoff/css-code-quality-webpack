@@ -77,7 +77,11 @@ export default Vue.extend({
   },
   data() {
     return {
-      help: 'Alle SCSS Selektoren werden in der Heatmap gruppiert dargestellt. Die Kategorie "zu spezifisch" ergibt sich aus den übrigen möglichen Werten der Spezifizität. Selektoren aus dem Spezifizitätsgraphen werden hier hervorgehoben. Häufig entsteht eine hohe Spezifizität durch den intensiven Gebrauch der Verschachtelung in SCSS.',
+      help: `
+      Alle SCSS Selektoren werden in der Heatmap gruppiert dargestellt. Die Kategorie "zu spezifisch" ergibt sich aus den übrigen möglichen Werten der Spezifizität. 
+      <br/>
+      Selektoren aus dem Spezifizitätsgraphen werden hier hervorgehoben. Häufig entsteht eine hohe Spezifizität durch den intensiven Gebrauch der Verschachtelung in SCSS.
+      `,
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {
         series: [{

@@ -48,7 +48,9 @@ export default class IntendedTree {
     this.currCat = ''
     // @ts-ignore
     this.displayCat = ''
-    // @ts-ignore    
+    // @ts-ignore
+    this.toolTipContainer = d3.select(".tooltipContainer").style("opacity", 0)
+    // @ts-ignore
     this.detailContainer = d3.select(".d-content")
     this.tree = tree().nodeSize([0, 30]);
     this.root = this.tree(hierarchy(data))

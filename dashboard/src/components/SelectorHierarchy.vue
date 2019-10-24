@@ -95,23 +95,38 @@ export default Vue.extend({
     tooltipText() {
       let tip = ''
       if(this.type === 'fulldupl') {
-        tip = 'Bla bla bla'
+        tip = `
+        In diesem Graphen befinden Selektoren, die unabhängig des Selektornamens vollständig dupliziert sind. Die Reihenfolge der Deklarationen sind irrelevant.
+        <br/>Ein Selektor besteht aus mindestens einem compound selector. Ein compound-Selektor ist eine Verkettung von mindestens einem einfachen Selektor (Tag, Klasse, ID, Attribut, etc.).
+        <br/>Eine vollständige Duplizierung sollte aufgelöst werden, indem die unterschiedlichen Selektoren vereinheitlicht werden.
+        <br/>Es werden betroffene Selektoren hervorgehoben, wenn der Zeiger der Maus über einen Selektor steht.
+        <br/><br/>
+        <br/>Eine Duplizierung wird immer im letzten compound-Selektor angezeigt, sodass im Graphen manche Punkte weiß ausgefüllt sind.
+        Beispiel eines Duplikates: <code>.foo .bar</code><br/>
+        Es gibt zwei compound-Selektoren: <code>.foo</code> und <code>.bar</code> <br/>
+        <code>.bar</code> wird im Graphen als Kindelement von <code>.foo</code> dargestellt und ist mit rot hervorgehoben.
+        `
       } else if(this.type === 'partialdupl') {
         tip = `
-        In diesem Graphen befinden sich duplizierte Selektoren oder Selektoren, deren Deklarationen dupliziert sind. 
-        <br/><br/>Es gibt verschiedene Typen einer Duplizierung:
-        <br/>Vollständige Duplizierung: Alle Deklarationen eines Selektors sind dupliziert (rot)
+        In diesem Graphen befinden sich Selektoren, deren compound-Selektoren oder Deklarationen dupliziert sind. Die Duplikate müssen nicht aufgelöst werden, sondern erfordern eine genaue Betrachtung, ob sich eine Konsolidierung lohnt.
+        <br/><br/>
+        Es gibt verschiedene Typen einer Duplizierung:
         <br/>Typ 1: Eine Deklaration ist vollständig dupliziert (orange)
         <br/>Typ 3: Eine Deklaration existiert als shorthand-Property und ausgeschriebenen Properties (gelb)
         <br/>Typ 4: Eine Deklaration ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (türkis)
         <br/>Typ 5: Eine shorthand-Property ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (grün)
-        <br/><br/>Zu einem Selektor kann es verschiedene Typen geben. Es wird immer der allgemeinere Typ farblich markiert (Vollständig - Typ 5).
+        <br/>Blau markierte Selektoren bedeuten, dass der Selektorname mehrfach genutzt wurde.
+        <br/><br/>
+        Ein Selektor kann mehrere Duplikatstypen aufweisen. Es wird immer der allgemeinere Duplikatstyp farblich markiert (Typ1 - Typ 5).
         Es werden betroffene Selektoren hervorgehoben, wenn der Zeiger der Maus über einen Selektor steht.
-        <br/> Blau markierte Selektoren bedeuten, dass der Selektorname mehrfach genutzt wurde.
         `
       } else {
         // warnings
-        tip = 'Fehlerbehaftete Selektoren'
+        tip = `
+        In diesem Graph befinden sich Selektoren mit Warnungen. 
+        Die Warnungen sind zur schnellen Identifizerung in fünf Kategorien unterteilt.
+        Informationen zur Warnung erscheinen, wenn die Maus über ein Symbol fährt.
+        `
       }
       return tip
     }
@@ -182,27 +197,32 @@ export default Vue.extend({
 
 .syntax,
 .syntax path {
-  fill: #d84930;
+  /* fill: #858484; */
+  fill: #c03118;
 }
 
 .spec,
 .spec path {
-  fill: #171ac0;
+  /* fill: #858484; */
+  fill: #c03118;
 }
 
 .style,
 .style path {
-  fill: #da1b60;  
+  /* fill: #858484; */
+  fill: #c03118;  
 }
 
 .performance,
 .performance path {
-  fill: #1a9fd4;
+  /* fill: #858484; */
+  fill: #c03118;
 }
 
 .dupl,
 .dupl path {
-  fill: #176bc0;
+  /* fill: #858484; */
+  fill: #c03118;
 }
 
 .selector-chart .link {
@@ -300,6 +320,10 @@ h5 {
   font-size: 12px;
 }
 
+.typeundefined {
+  fill: #153291 !important;
+}
+
 .type5 {
   fill: #4cd118 !important;
 }
@@ -322,10 +346,6 @@ h5 {
 
 .duplHover {
   fill: #45da37 !important;
-}
-
-.typeundefined {
-  fill: #153291 !important;
 }
 
 </style>

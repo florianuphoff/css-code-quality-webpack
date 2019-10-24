@@ -158,7 +158,12 @@ export default Vue.extend({
   },
   data() {
     return {
-      cqHelp: "Die ermittelte Code Qualität ist in vier Kategorien aufgeteilt und bezieht sich auf alle SCSS Dateien. Dynamische und Inline-Styles werden nicht berücksichtigt. Weitere Details zu der Code Qualität befinden sich in den Tabs Selektoren und Spezifizität.",
+      cqHelp: `
+      Die ermittelte Code Qualität ist in vier Kategorien aufgeteilt und bezieht sich auf alle SCSS Dateien. 
+      <br/>
+      Dynamische und Inline-Styles werden nicht berücksichtigt. Je höher die Prozentzahl ist, desto höher fällt die Qualität in der Kategorie aus.
+      Weitere Details zu der Code Qualität befinden sich in den Tabs Selektoren und Spezifizität.
+      `,
       results: {},
       spiderChartData: [],
       barChartData: {},

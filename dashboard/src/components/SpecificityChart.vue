@@ -77,7 +77,14 @@ export default Vue.extend({
   },
   data() {
     return {
-      help: `Der Spezifizitätsgraph nach Harry Roberts zeigt den Verlauf der Spezifizität. Leichte Auf- und Abstiege sind normal. Dennoch sollte der Graph einen klaren aufwärtstrend haben, sodass sehr spezifische Selektoren möglichst spät auftauchen. Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten.`,
+      help: `
+      Der Spezifizitätsgraph nach Harry Roberts zeigt den Verlauf der Spezifizität zur Zeile im Quellcode. 
+      <br/><br/>
+      Leichte Auf- und Abstiege sind üblich. 
+      Dennoch sollte der Graph einen klaren Aufwärtstrend haben. Je weiter am Ende Selektoren mit hoher Spezifizität stehen, desto geringer können Seiteneffekte ausfallen.
+      <br/>
+      Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten und Seiteneffekte wie Überschattungen von Selektoren durch eine sehr hohe Spezifizität verursachen.
+      `,
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {
         series: [{
