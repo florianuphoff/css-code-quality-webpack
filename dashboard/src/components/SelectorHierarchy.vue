@@ -28,14 +28,14 @@
         </div>
       </div>
     </div>
-    <div v-if="type === 'duplications'" class="absolute legend">
-      <h5 class="v-box__header legend-header">Details</h5>
-      <div class="legend-content d-legend">
-        <div class="placeholder">
-          Über ein Element hovern, um Informationen zu sehen.
-        </div>
-        <div class="d-content">
-
+    <div v-if="type === 'partialdupl'" class="pdupl">
+      <div class="pdupl-legend legend">
+        <h5 class="v-box__header legend-header">Details</h5>
+        <div class="legend-content d-legend">
+          <div class="placeholder">
+            Über ein Element hovern, um Informationen zu sehen.
+          </div>
+          <div class="d-content"></div>
         </div>
       </div>
     </div>
@@ -83,21 +83,20 @@ export default Vue.extend({
     },
     heading() {
       let headline = ''
-      if(this.type === 'general') {
-        headline = 'CSS Selektorbaum'
-      } else if(this.type === 'duplications') {
-        headline = 'Duplizierte Selektoren'
+      if(this.type === 'fulldupl') {
+        headline = 'Vollständige Duplikationen'
+      } else if(this.type === 'partialdupl') {
+        headline = 'Teilduplizierte Selektoren'
       } else {
-        // warnings
         headline = 'Fehlerbehaftete Selektoren'
       }
       return headline
     },
     tooltipText() {
       let tip = ''
-      if(this.type === 'general') {
+      if(this.type === 'fulldupl') {
         tip = 'Bla bla bla'
-      } else if(this.type === 'duplications') {
+      } else if(this.type === 'partialdupl') {
         tip = `
         In diesem Graphen befinden sich duplizierte Selektoren oder Selektoren, deren Deklarationen dupliziert sind. 
         <br/><br/>Es gibt verschiedene Typen einer Duplizierung:
@@ -131,18 +130,18 @@ export default Vue.extend({
       let iTree = new IntendedTree();
       
       switch(this.type) {
-        case 'general':
-          iTree.$onInit(this.chartData.general, this.type)
+        case 'fulldupl':
+          iTree.$onInit(this.chartData.fulldupl, this.type)
           break;
-        case 'duplications':
+        case 'partialdupl':
           iTree.$onInit(this.chartData.duplications, this.type)
           break;
         case 'warnings':
           iTree.$onInit(this.chartData.smelly, this.type)
           break;
         default:
-          // general
-          iTree.$onInit(this.chartData.general, this.type)
+          // fulldupl
+          iTree.$onInit(this.chartData.fulldupl, this.type)
       }
     }
   },
@@ -151,12 +150,12 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.general {
+.fulldupl {
   grid-column: 1 / 2;
   grid-row: 1 / span 3;
 }
 
-.duplications {
+.partialdupl {
   position: relative;
   grid-column: 2 / 3;
   grid-row: 1 / span 3;
@@ -257,6 +256,19 @@ h5 {
   color: #ff8a00;
 }
 
+.pdupl {
+  position: absolute;
+  right: 2%;
+  top: 50px;
+  height: 100%;
+}
+
+.pdupl-legend {
+  position: sticky;
+  top: 30px !important;
+  left: 0 !important;
+}
+
 .legend {
   display: flex;
   flex-flow: column wrap;
@@ -301,11 +313,11 @@ h5 {
 }
 
 .type0 {
-  fill: #f88f17 !important; 
+  fill: #ce1919 !important;  
 }
 
 .type1 {
-  fill: #ce1919 !important;
+  fill: #f88f17 !important; 
 }
 
 .duplHover {

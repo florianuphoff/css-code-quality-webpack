@@ -1,15 +1,11 @@
 <template>
   <div class="selectors">
     <div class="hierarchy-container">
-      <SelectorHierarchy v-bind:chartData=chartData type='general' />
-      <SelectorHierarchy v-bind:chartData=chartData type='duplications' />
+      <SelectorHierarchy v-bind:chartData=chartData type='fulldupl' />
+      <SelectorHierarchy v-bind:chartData=chartData type='partialdupl' />
       <SelectorHierarchy v-bind:chartData=chartData type='warnings' />
-      <!-- <SelectorHierarchy v-bind:chartData=chartData /> -->
-      <!-- <SpecificityChart :dataseries=dataseries :yAxis=yAxis :xAxis=xAxis :specificityValues=specificityValues />
-      <Heatmap :heatMapData=heatMapData /> -->
       <!-- <ButterflyChortChart v-bind:chordData=chordData /> -->
     </div>
-    <div class="tooltipContainer"></div>
   </div>
 </template>
 
@@ -36,7 +32,7 @@ export default Vue.extend({
       results: {},
       chartData: {
         duplications: {},
-        general: {},
+        fulldupl: {},
         smelly: {}
       },
       // chordData: {
@@ -149,43 +145,54 @@ export default Vue.extend({
     //   log(eMatrix)
     // },
     cData() {
-      this.chartData.general = this.parseSelectors(this.generalData(), "general")
-      this.chartData.duplications = this.parseSelectors(this.duplicationData(), "duplication")
+      // this.chartData.general = this.parseSelectors(this.generalData(), "general")
+      this.chartData.fulldupl = this.parseSelectors(this.duplicationData('safe'), "fullDuplication")
+      this.chartData.duplications = this.parseSelectors(this.duplicationData('unsafe'), "duplication")
       this.chartData.smelly = this.parseSelectors(this.smellyData(), "smelly")
     },
-    duplicationData() {
+    duplicationData(filter) {
+      const mode = filter
       let dSelectors = []
       let uniqueRef = 0
 
       this.results.duplications.forEach(duplicationObject => {
-        dSelectors.push({ selector: duplicationObject.origin.selector, data: { 
-          category: "duplication", 
-          type: duplicationObject.type, 
-          ref: uniqueRef, 
-          oLine: duplicationObject.originLine, 
-          oFile: duplicationObject.originFile,
-          dLine: duplicationObject.duplLine, 
-          dFile: duplicationObject.duplFile
-        } })
-        if(duplicationObject.duplication) {
-          dSelectors.push({ 
-            selector: duplicationObject.duplication.selector, 
-            data: { category: "duplication", 
+        // safe == only full duplications
+        if((mode === 'safe' && duplicationObject.type === 0) || mode === 'unsafe') {
+          dSelectors.push({ selector: duplicationObject.origin.selector, 
+          data: {
+            category: "duplication", 
             type: duplicationObject.type, 
-            ref: uniqueRef,
+            ref: uniqueRef, 
             oLine: duplicationObject.originLine, 
             oFile: duplicationObject.originFile,
             dLine: duplicationObject.duplLine, 
             dFile: duplicationObject.duplFile
-          } })
+          } 
+        })
+        if(duplicationObject.duplication) {
+          dSelectors.push({
+            selector: duplicationObject.duplication.selector, 
+            data: {
+              category: "duplication", 
+              type: duplicationObject.type, 
+              ref: uniqueRef,
+              oLine: duplicationObject.originLine, 
+              oFile: duplicationObject.originFile,
+              dLine: duplicationObject.duplLine, 
+              dFile: duplicationObject.duplFile
+            } 
+          })
         }
         uniqueRef++
-      });
-      this.results.warnings.forEach(warning => {
-        if(warning.rule === 'no-duplicate-selectors' || warning.rule === 'scss/selector-no-redundant-nesting-selector' || warning.rule === 'declaration-block-no-duplicate-properties' || warning.rule === 'declaration-block-no-shorthand-property-overrides') {
-          dSelectors.push({ selector: warning.resolvedSelector, data: { category: "duplication" } })
         }
-      })
+      });
+      if(mode == 'unsafe') {
+        this.results.warnings.forEach(warning => {
+          if(warning.rule === 'no-duplicate-selectors' || warning.rule === 'scss/selector-no-redundant-nesting-selector' || warning.rule === 'declaration-block-no-duplicate-properties' || warning.rule === 'declaration-block-no-shorthand-property-overrides') {
+            dSelectors.push({ selector: warning.resolvedSelector, data: { category: "duplication" } })
+          }
+        })
+      }
       return dSelectors
     },
     generalData() {
@@ -277,7 +284,7 @@ export default Vue.extend({
             sList.children.push({ "name": seperatedSelectors[0], "children": [], 'data': [entry.data] })
           }
         // es gibt ein Treffer und keine Kinder
-        // füge die Kategorie hinzu
+        // füge data hinzu
         } else if (parentEntry.length > 0 && children.length < 1 && (entry.category !== 'general')) {
           parentEntry[0].data.push(entry.data)
         }
@@ -298,7 +305,7 @@ export default Vue.extend({
             for(var i = 0; i < sList.children.length; i++) {
               if (sList.children[i].name === pS[0]) {
                 const hit = sList.children[i].children.filter(e => e.name === `:${pS[1]}`)
-                if(hit.length <= 0 || entry.category === 'general') {
+                if(hit.length <= 0) {
                   sList.children[i].children.push({ "name": `:${pS[1]}`, "children": [], 'data': [entry.data] })
                 } else {
                   hit[0].data.push(entry.data)
@@ -361,13 +368,16 @@ export default Vue.extend({
         if(subtree.name === parent) {
           selector = selector.slice(1)
           const selectorHit = subtree.children.filter(e => e.name === selector[0])
-          if(subtree.children.length === 0) {
+          if(subtree.children.length === 0 && selector.length > 0) {
             return this.addToArray(selector, subtree.children, data) 
-          } else if(selectorHit.length <= 0) {
+          } else if(selectorHit.length <= 0 && selector.length > 0) {
             return this.addToArray(selector, subtree.children, data) 
           } else if(selectorHit.length > 0 && selector.length === 1) {
             selectorHit[0].data.push(data)
             return 
+          } else if(selectorHit.length <= 0 && selector.length <= 0) {
+            subtree.data.push(data)
+            return
           }
           return this.recursiveAdd(subtree, selector, data)
         }

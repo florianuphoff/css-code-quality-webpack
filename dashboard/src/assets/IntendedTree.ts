@@ -48,8 +48,6 @@ export default class IntendedTree {
     this.currCat = ''
     // @ts-ignore
     this.displayCat = ''
-    // @ts-ignore
-    this.toolTipContainer = d3.select(".tooltipContainer").style("opacity", 0)
     // @ts-ignore    
     this.detailContainer = d3.select(".d-content")
     this.tree = tree().nodeSize([0, 30]);
@@ -75,9 +73,9 @@ export default class IntendedTree {
     this.getTypes = (type: string) => {
       switch(type) {
         case 'type0':         
-          return 'Typ 1'
-        case 'type1':
           return 'Alle Deklarationen dupliziert'
+        case 'type1':
+          return 'Typ 1'
         case 'type2':
           return 'Typ 2'
         case 'type3':
@@ -90,7 +88,6 @@ export default class IntendedTree {
           return 'Selektorname dupliziert' 
       }
     }
-    // @ts-ignore
     this.root.each((d)=> {
       d.name = d.id; //transferring name to a name variable
       d.id = this.i; //Assigning numerical Ids
@@ -191,6 +188,7 @@ export default class IntendedTree {
         return `node g${d.id ? d.id : 0}`
       })
       .attr("data-type", function(d: any) {
+        if(!d.data.data) return ''
         if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           let types = ''
           // @ts-ignore          
@@ -199,21 +197,21 @@ export default class IntendedTree {
           })
           return `${types}`
         }
-        return ''
       })
       .attr("data-oline", function(d: any) {
+        if(!d.data.data) return ''
         if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           return `${d.data.data[0].oLine}`
         }
-        return ''
       })
       .attr("data-ofile", function(d: any) {
+        if(!d.data.data) return ''
         if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           return `${d.data.data[0].oFile}`
         }
-        return ''
       })
       .attr("data-dLine", function(d: any) {
+        if(!d.data.data) return ''
         if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           let line = ''
           // @ts-ignore          
@@ -222,9 +220,9 @@ export default class IntendedTree {
           })
           return `${line}`
         }
-        return ''
       })
       .attr("data-dFile", function(d: any) {
+        if(!d.data.data) return ''
         if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           let files = ''
           // @ts-ignore          
@@ -233,7 +231,6 @@ export default class IntendedTree {
           })
           return `${files}`
         }
-        return ''
       })
       .attr('transform', function () {
         return 'translate(' + source.y0 + ',' + source.x0 + ')';
@@ -243,7 +240,8 @@ export default class IntendedTree {
     const that = this
 
     nodeEnter.on("mouseover", function(d: any) {
-        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+        if(!d.data.data) return
+        if(d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           // @ts-ignore
           this.classList.forEach((element, index) => {
             // erst hier steheh die refs zu anderen nodes
@@ -254,25 +252,31 @@ export default class IntendedTree {
               // @ts-ignore                        
               d3.select(this).classed("duplHover", true)
             }
-          })
-
-          let template = `Folgende Informationen wurden gefunden: <br/>`
-          const arr = d3.select(this)._groups[0][0].dataset.type.split(' ')
-          const types = [...new Set(arr.filter(Boolean))]
-          types.forEach(type => {
-            template += `- ${that.getTypes(type)}<br/>`
-          });
-          
-          const placeholder = document.querySelector('.placeholder')
-          placeholder.classList.toggle('hidden')
+          })              
           // @ts-ignore
-          that.detailContainer.html(`
-            ${template}
-            `).classed('hidden', false)
+          if(that.sel === 'partialdupl') {
+            let template = `Folgende Informationen wurden gefunden: <br/>`
+            // @ts-ignore          
+            const arr = d3.select(this)._groups[0][0].dataset.type.split(' ')
+            const types = [...new Set(arr.filter(Boolean))]
+            types.forEach(type => {
+              // @ts-ignore            
+              template += `- ${that.getTypes(type)}<br/>`
+            });
+
+            const placeholder = document.querySelector('.placeholder')
+            placeholder.classList.toggle('hidden')
+            
+            // @ts-ignore
+            that.detailContainer.html(`
+              ${template}
+              `).classed('hidden', false)
+          }
         }
-      })		
+      })
       .on("mouseout", function(d: any) {
-        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+        if(!d.data.data) return
+        if(d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           // @ts-ignore          
           this.classList.forEach((element, index) => {
             // erst hier steheh die refs zu anderen nodes
@@ -283,25 +287,29 @@ export default class IntendedTree {
               d3.select(this).classed("duplHover", false)
             }
           })
-
-          const placeholder = document.querySelector('.placeholder')
-          placeholder.classList.toggle('hidden')
-          // @ts-ignore          
-          that.detailContainer.classed('hidden', true)
+          // @ts-ignore
+          if(that.sel === 'partialdupl') {
+            const placeholder = document.querySelector('.placeholder')
+            placeholder.classList.toggle('hidden')
+            // @ts-ignore          
+            that.detailContainer.classed('hidden', true)
+          }
         }
       });
 
     nodeEnter.append('circle')
       .attr('r', 1e-6)
       .attr('class', function(d: any) {
-        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
-          let color = ''
-          // @ts-ignore          
-          d.data.data.forEach(entry => {
-            color += `type${entry.type} `
-          })
-
-          return d._children ? 'lightsteelblue' : color
+        if(d.data.data) {
+          if(d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
+            let color = ''
+            // @ts-ignore          
+            d.data.data.forEach(entry => {
+              color += `type${entry.type} `
+            })
+  
+            return d._children ? 'lightsteelblue' : color
+          }
         }
         return d._children ? 'lightsteelblue' : '#fff';
       });
@@ -315,123 +323,99 @@ export default class IntendedTree {
         return d.children || d._children ? 'start' : 'start';
       })
       .text(function (d: any) {
-        // add icons
-        if(d.data.data && d.data.data.length > 0 && d.data.data[0].category !== 'duplication') {
-          const node = that.svg.select(`.g${d.id ? d.id : 0}`)
-          // @ts-ignore
-          d.data.data.forEach((entry, index) => {
+        if(d.data.data) {
+          if(d.data.data.length > 0 && d.data.data[0].category !== 'duplication') {
+            const node = that.svg.select(`.g${d.id ? d.id : 0}`)
             // @ts-ignore
-            that.currCat = entry.category
-
-            node.append('text')
-            .attr('x', function (d: any) {
-              const length = d.data.name.length
-              return 25 + length*6;
-            })
-            .attr('dy', '.35em')
-            .attr('font-family', 'Font Awesome 5 Free')
-            .style('font-weight', '900')
-            .style('font-size', '15px' )
-            .text(function(d: any) {
-              let icon = ''
-            // @ts-ignore
-              switch(that.currCat) {
-                case 'syntax':
-                // @ts-ignore
-                icon = that.syntaxIcon;
-                break;
-                case 'specificity':
-                // @ts-ignore
-                icon = that.specificityIcon;
-                break;                  
-                case 'style':
-                // @ts-ignore
-                icon = that.stylisticIcon;
-                break;                  
-                case 'performance':
-                // @ts-ignore
-                icon = that.performanceIcon;
-                break;
-                case 'dupl':
-               // @ts-ignore
-                icon = that.duplicationsIcon;
-                break;                  
-              }
-              return icon;
-            })
-            .attr('class', function(d: any) {
-               // @ts-ignore
-               if(that.currCat === 'specificity') return 'fa-icon spec'     
-               // @ts-ignore
-              return 'fa-icon ' + that.currCat;
-            })
-            .attr("data-rule", function(d: any) {
-              return entry.rule
-            })
-            .attr("data-file", function(d: any) {
-              return entry.file
-            })
-            .attr("data-line", function(d: any) {
-              return entry.line
-            })
-            .attr("data-property", function(d: any) {
-              return entry.property
-            })
-            .attr('transform', function () {
-              if(index === 0) {
-                return 'translate(0)';
-              } else {
-                const value = 20 * index;
-                return `translate(${value})`;
-              }
-            })
-            .on("mouseover", function(d: any) {
-              const prop = `<b>Deklaration: </b>${entry.property}`
-               // @ts-ignore
-              const cat = that.getCategory(entry.category)
-               // @ts-ignore                            
-              that.toolTipContainer
-                .style("opacity", .9);
+            d.data.data.forEach((entry, index) => {
               // @ts-ignore
-              that.toolTipContainer.html(`
-                <b>Warnung: </b>${entry.rule}<br>
-                <b>Kategorie: </b>${cat}<br>
-                <b>Datei/Zeile: </b>${entry.file} / ${entry.line}<br>${entry.property ?  prop : ''}
-              `)
-                .style("left", (d3.event.pageX + 10) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");	
-              })					
-            .on("mouseout", function(d: any) {
-              // @ts-ignore              
-              that.toolTipContainer.style("opacity", 0);	
-            });
-          })
-        } 
-        // else if(d.data.data && d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
-        //   const node = that.svg.select(`.g${d.id ? d.id : 0}`)
-        //   // @ts-ignore
-        //   d.data.data.forEach((entry, index) => {
-        //     // @ts-ignore
-        //     node.append('text')
-        //       .attr('x', function (d: any) {
-        //         const length = d.data.name.length
-        //         return 25 + length*6;
-        //       })
-        //       .attr('dy', '.35em')
-        //       .style('font-size', '15px' )
-        //       .text(function(d: any) {
-        //         return entry.type
-        //       })
-        //       .attr('transform', function () {
-        //         if(index === 0) {
-        //           return 'translate(0)';
-        //         } else {
-        //           const value = 20 * index;
-        //           return `translate(${value})`;
-        //         }
-        //       });
-        //   })
-        // }
+              that.currCat = entry.category
+
+              node.append('text')
+              .attr('x', function (d: any) {
+                const length = d.data.name.length
+                return 25 + length*6;
+              })
+              .attr('dy', '.35em')
+              .attr('font-family', 'Font Awesome 5 Free')
+              .style('font-weight', '900')
+              .style('font-size', '15px' )
+              .text(function(d: any) {
+                let icon = ''
+              // @ts-ignore
+                switch(that.currCat) {
+                  case 'syntax':
+                  // @ts-ignore
+                  icon = that.syntaxIcon;
+                  break;
+                  case 'specificity':
+                  // @ts-ignore
+                  icon = that.specificityIcon;
+                  break;                  
+                  case 'style':
+                  // @ts-ignore
+                  icon = that.stylisticIcon;
+                  break;                  
+                  case 'performance':
+                  // @ts-ignore
+                  icon = that.performanceIcon;
+                  break;
+                  case 'dupl':
+                // @ts-ignore
+                  icon = that.duplicationsIcon;
+                  break;                  
+                }
+                return icon;
+              })
+              .attr('class', function(d: any) {
+                // @ts-ignore
+                if(that.currCat === 'specificity') return 'fa-icon spec'     
+                // @ts-ignore
+                return 'fa-icon ' + that.currCat;
+              })
+              .attr("data-rule", function(d: any) {
+                return entry.rule
+              })
+              .attr("data-file", function(d: any) {
+                return entry.file
+              })
+              .attr("data-line", function(d: any) {
+                return entry.line
+              })
+              .attr("data-property", function(d: any) {
+                return entry.property
+              })
+              .attr('transform', function () {
+                if(index === 0) {
+                  return 'translate(0)';
+                } else {
+                  const value = 20 * index;
+                  return `translate(${value})`;
+                }
+              })
+              .on("mouseover", function(d: any) {
+                const prop = `<b>Deklaration: </b>${entry.property}`
+                // @ts-ignore
+                const cat = that.getCategory(entry.category)
+                // @ts-ignore                            
+                that.toolTipContainer
+                  .style("opacity", .9);
+                // @ts-ignore
+                that.toolTipContainer.html(`
+                  <b>Warnung: </b>${entry.rule}<br>
+                  <b>Kategorie: </b>${cat}<br>
+                  <b>Datei/Zeile: </b>${entry.file} / ${entry.line}<br>${entry.property ?  prop : ''}
+                `)
+                  .style("left", (d3.event.pageX + 10) + "px")
+                  .style("top", (d3.event.pageY - 28) + "px");	
+                })					
+              .on("mouseout", function(d: any) {
+                // @ts-ignore              
+                that.toolTipContainer.style("opacity", 0);	
+              });
+            })
+          } 
+        }
         // continue as usual
         if (d.data.name.length > 30) {
           return d.data.name.substring(0, 20) + '...';

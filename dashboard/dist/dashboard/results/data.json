@@ -1,26 +1,6 @@
 {
   "nesting": [
     {
-      "selector": ".button",
-      "depth": 0
-    },
-    {
-      "selector": ".button:hover",
-      "depth": 0
-    },
-    {
-      "selector": ".button--glowing",
-      "depth": 1
-    },
-    {
-      "selector": ".button--outline",
-      "depth": 1
-    },
-    {
-      "selector": ".button--filled",
-      "depth": 1
-    },
-    {
       "selector": ".alert",
       "depth": 0
     },
@@ -49,6 +29,26 @@
       "depth": 1
     },
     {
+      "selector": ".button",
+      "depth": 0
+    },
+    {
+      "selector": ".button:hover",
+      "depth": 0
+    },
+    {
+      "selector": ".button--glowing",
+      "depth": 1
+    },
+    {
+      "selector": ".button--outline",
+      "depth": 1
+    },
+    {
+      "selector": ".button--filled",
+      "depth": 1
+    },
+    {
       "selector": ".v-hidden",
       "depth": 0
     },
@@ -58,6 +58,18 @@
     },
     {
       "selector": ".v-block",
+      "depth": 0
+    },
+    {
+      "selector": "%tool",
+      "depth": 0
+    },
+    {
+      "selector": "%tap",
+      "depth": 0
+    },
+    {
+      "selector": ".non-placeholder",
       "depth": 0
     },
     {
@@ -125,6 +137,38 @@
       "depth": 0
     },
     {
+      "selector": ".wrong-value",
+      "depth": 0
+    },
+    {
+      "selector": ".slider",
+      "depth": 0
+    },
+    {
+      "selector": ".unknown-prop",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
+      "selector": "a:UNKNOWN",
+      "depth": 0
+    },
+    {
+      "selector": "a:hoverr",
+      "depth": 0
+    },
+    {
+      "selector": "unknown",
+      "depth": 0
+    },
+    {
+      "selector": "a",
+      "depth": 0
+    },
+    {
       "selector": ".fancy-table",
       "depth": 0
     },
@@ -170,50 +214,6 @@
     },
     {
       "selector": ".spread-selector",
-      "depth": 0
-    },
-    {
-      "selector": ".wrong-value",
-      "depth": 0
-    },
-    {
-      "selector": ".slider",
-      "depth": 0
-    },
-    {
-      "selector": ".unknown-prop",
-      "depth": 0
-    },
-    {
-      "selector": "a",
-      "depth": 0
-    },
-    {
-      "selector": "a:UNKNOWN",
-      "depth": 0
-    },
-    {
-      "selector": "a:hoverr",
-      "depth": 0
-    },
-    {
-      "selector": "unknown",
-      "depth": 0
-    },
-    {
-      "selector": "a",
-      "depth": 0
-    },
-    {
-      "selector": "%tool",
-      "depth": 0
-    },
-    {
-      "selector": "%tap",
-      "depth": 0
-    },
-    {
-      "selector": ".non-placeholder",
       "depth": 0
     },
     {
@@ -381,7 +381,7 @@
       "depth": 0
     },
     {
-      "selector": ".close:hover,\n  .close:focus",
+      "selector": ".close:focus",
       "depth": 0
     },
     {
@@ -496,93 +496,15 @@
       "line": 83,
       "column": 1,
       "rule": "no-duplicate-selectors",
-      "word": null
-    },
-    {
-      "selector": ".fancy-table",
-      "resolvedSelector": ".fancy-table",
-      "line": 6,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "width:100rem"
-    },
-    {
-      "selector": ".fancy-table",
-      "resolvedSelector": ".fancy-table",
-      "line": 7,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "margin-top:2rem"
-    },
-    {
-      "selector": ".fancy-item",
-      "resolvedSelector": ".fancy-item",
-      "line": 14,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "vertical-align:middle"
-    },
-    {
-      "selector": ".super-table-column",
-      "resolvedSelector": ".super-table-column",
-      "line": 20,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "margin:1px"
-    },
-    {
-      "selector": ".super-table-column",
-      "resolvedSelector": ".super-table-column",
-      "line": 21,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "padding:1px"
-    },
-    {
-      "selector": ".super-table-column",
-      "resolvedSelector": ".super-table-column",
-      "line": 19,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "vertical-align:middle"
-    },
-    {
-      "selector": ".super-table-column",
-      "resolvedSelector": ".super-table-column",
-      "line": 22,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "height:5rem"
-    },
-    {
-      "selector": ".floated-element",
-      "resolvedSelector": ".floated-element",
-      "line": 27,
-      "column": 3,
-      "rule": "plugin/declaration-block-no-ignored-properties",
-      "word": "vertical-align:top"
-    },
-    {
-      "selector": ".header",
-      "resolvedSelector": ".header",
-      "line": 54,
-      "column": 1,
-      "rule": "no-duplicate-selectors",
-      "word": null
-    },
-    {
-      "selector": ".gf-e",
-      "resolvedSelector": ".gf-e",
-      "line": 64,
-      "column": 1,
-      "rule": "no-duplicate-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_duplications.scss"
     },
     {
       "resolvedSelector": "",
       "line": 43,
       "column": 24,
-      "rule": "block-no-empty"
+      "rule": "block-no-empty",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "a",
@@ -590,7 +512,8 @@
       "line": 40,
       "column": 1,
       "rule": "no-descending-specificity",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "a",
@@ -598,7 +521,8 @@
       "line": 40,
       "column": 1,
       "rule": "no-descending-specificity",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "a",
@@ -606,7 +530,8 @@
       "line": 40,
       "column": 1,
       "rule": "no-duplicate-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "a",
@@ -614,7 +539,8 @@
       "line": 41,
       "column": 19,
       "rule": "no-unknown-animations",
-      "word": "animation-name:fancccy-slide"
+      "word": "animation-name:fancccy-slide",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "a:UNKNOWN",
@@ -622,7 +548,8 @@
       "line": 25,
       "column": 2,
       "rule": "selector-pseudo-class-no-unknown",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "a:hoverr",
@@ -630,7 +557,8 @@
       "line": 29,
       "column": 2,
       "rule": "selector-pseudo-class-no-unknown",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
     },
     {
       "selector": "unknown",
@@ -638,7 +566,98 @@
       "line": 35,
       "column": 1,
       "rule": "selector-type-no-unknown",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_errors.scss"
+    },
+    {
+      "selector": ".fancy-table",
+      "resolvedSelector": ".fancy-table",
+      "line": 6,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "width:100rem",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".fancy-table",
+      "resolvedSelector": ".fancy-table",
+      "line": 7,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "margin-top:2rem",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".fancy-item",
+      "resolvedSelector": ".fancy-item",
+      "line": 14,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "vertical-align:middle",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 20,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "margin:1px",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 21,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "padding:1px",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 19,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "vertical-align:middle",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".super-table-column",
+      "resolvedSelector": ".super-table-column",
+      "line": 22,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "height:5rem",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".floated-element",
+      "resolvedSelector": ".floated-element",
+      "line": 27,
+      "column": 3,
+      "rule": "plugin/declaration-block-no-ignored-properties",
+      "word": "vertical-align:top",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".header",
+      "resolvedSelector": ".header",
+      "line": 54,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
+    },
+    {
+      "selector": ".gf-e",
+      "resolvedSelector": ".gf-e",
+      "line": 64,
+      "column": 1,
+      "rule": "no-duplicate-selectors",
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_ignored_props.scss"
     },
     {
       "selector": ".paint-animation",
@@ -646,7 +665,8 @@
       "line": 9,
       "column": 24,
       "rule": "plugin/no-low-performance-animation-properties",
-      "word": "transition-property:color, margin"
+      "word": "transition-property:color, margin",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_performance.scss"
     },
     {
       "selector": ".paint-animation",
@@ -654,7 +674,8 @@
       "line": 9,
       "column": 31,
       "rule": "plugin/no-low-performance-animation-properties",
-      "word": "transition-property:color, margin"
+      "word": "transition-property:color, margin",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_performance.scss"
     },
     {
       "selector": ".layout-animation",
@@ -662,14 +683,16 @@
       "line": 5,
       "column": 15,
       "rule": "plugin/no-low-performance-animation-properties",
-      "word": "transition:margin 350ms ease-in"
+      "word": "transition:margin 350ms ease-in",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_performance.scss"
     },
     {
       "selector": ".hidden",
       "resolvedSelector": ".hidden",
-      "line": 179,
+      "line": 178,
       "column": 3,
-      "rule": "scss/at-extend-no-missing-placeholder"
+      "rule": "scss/at-extend-no-missing-placeholder",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": ".c5",
@@ -677,7 +700,8 @@
       "line": 52,
       "column": 5,
       "rule": "plugin/no-undoing-styles",
-      "word": "border:0"
+      "word": "border:0",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&:after",
@@ -685,7 +709,8 @@
       "line": 62,
       "column": 11,
       "rule": "plugin/no-undoing-styles",
-      "word": "margin:0"
+      "word": "margin:0",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "kbd",
@@ -693,15 +718,17 @@
       "line": 113,
       "column": 1,
       "rule": "plugin/no-undoing-styles",
-      "word": "box-shadow:none"
+      "word": "box-shadow:none",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
-      "selector": "&:hover,\n  &:focus",
-      "resolvedSelector": ".close:hover,\n  .close:focus",
+      "selector": "&:focus",
+      "resolvedSelector": ".close:focus",
       "line": 145,
       "column": 3,
       "rule": "plugin/no-undoing-styles",
-      "word": "text-decoration:none"
+      "word": "text-decoration:none",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": ".list__link",
@@ -709,7 +736,8 @@
       "line": 59,
       "column": 9,
       "rule": "max-nesting-depth",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&:after",
@@ -717,7 +745,8 @@
       "line": 62,
       "column": 11,
       "rule": "max-nesting-depth",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&:focus",
@@ -725,7 +754,8 @@
       "line": 66,
       "column": 11,
       "rule": "max-nesting-depth",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&:hover",
@@ -733,7 +763,8 @@
       "line": 83,
       "column": 9,
       "rule": "max-nesting-depth",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&.c14",
@@ -741,7 +772,8 @@
       "line": 87,
       "column": 9,
       "rule": "max-nesting-depth",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "~ .list__item",
@@ -749,7 +781,8 @@
       "line": 56,
       "column": 7,
       "rule": "selector-max-compound-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": ".list__link",
@@ -757,7 +790,8 @@
       "line": 59,
       "column": 9,
       "rule": "selector-max-compound-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&:after",
@@ -765,7 +799,8 @@
       "line": 62,
       "column": 11,
       "rule": "selector-max-compound-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&:focus",
@@ -773,7 +808,8 @@
       "line": 66,
       "column": 11,
       "rule": "selector-max-compound-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "#id2#id3",
@@ -781,7 +817,8 @@
       "line": 13,
       "column": 1,
       "rule": "selector-max-id",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": "&#id5",
@@ -789,7 +826,8 @@
       "line": 32,
       "column": 3,
       "rule": "selector-max-id",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_specifity.scss"
     },
     {
       "selector": ".undoing-styles-1",
@@ -797,7 +835,8 @@
       "line": 10,
       "column": 1,
       "rule": "plugin/no-undoing-styles",
-      "word": "padding-bottom:0"
+      "word": "padding-bottom:0",
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_stylistics.scss"
     },
     {
       "selector": ".undoing-styles-1",
@@ -805,7 +844,8 @@
       "line": 10,
       "column": 1,
       "rule": "no-duplicate-selectors",
-      "word": null
+      "word": null,
+      "file": "/Users/florianuphoff/Development/rails-testproject/app/frontend/css/rule_coverage/_stylistics.scss"
     }
   ],
   "mixins": [
@@ -933,49 +973,49 @@
     },
     {
       "type": "include",
-      "line": 149,
+      "line": 148,
       "column": 14,
-      "resolvedSelector": ".close:hover,\n  .close:focus",
+      "resolvedSelector": ".close:focus",
       "value": "opacity(.5)"
     },
     {
       "type": "include",
-      "line": 159,
+      "line": 158,
       "column": 12,
       "resolvedSelector": ".outline-button",
       "value": "outline-button()"
     },
     {
       "type": "include",
-      "line": 160,
+      "line": 159,
       "column": 12,
       "resolvedSelector": ".outline-button",
       "value": "dimensions(5,2)"
     },
     {
       "type": "extend",
-      "line": 166,
+      "line": 165,
       "column": 11,
       "resolvedSelector": ".bubble",
       "value": "%tool"
     },
     {
       "type": "extend",
-      "line": 171,
+      "line": 170,
       "column": 11,
       "resolvedSelector": ".main-nav",
       "value": "%tap"
     },
     {
       "type": "extend",
-      "line": 175,
+      "line": 174,
       "column": 11,
       "resolvedSelector": ".side-nav",
       "value": "%tap"
     },
     {
       "type": "extend",
-      "line": 179,
+      "line": 178,
       "column": 11,
       "resolvedSelector": ".hidden",
       "value": ".non-placeholder"
@@ -997,288 +1037,1597 @@
   ],
   "duplications": [
     {
-      "type": 1,
-      "origin": {
-        "hash": "485bdc20ec22c08679c81ccd17d90940",
-        "selector": ".non-placeholder, .hidden"
-      },
-      "duplication": {
-        "hash": "485bdc20ec22c08679c81ccd17d90940",
-        "selector": ".v-hidden"
-      }
-    },
-    {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
-        "selector": ".button--filled"
+        "selector": ".button--filled",
+        "line": 49,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
-        "selector": ".v-block"
-      }
+        "selector": ".v-block",
+        "line": 58,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 49,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 58,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
-        "selector": ".v-block"
+        "selector": ".v-block",
+        "line": 58,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "02b583bfbb000d820790dd72be32a72e",
-        "selector": "#id4#id5"
-      }
-    },
-    {
-      "type": 1,
-      "origin": {
-        "hash": "d0c0350c4ceb56bff9287f52fd5e04d9",
-        "selector": ".duplication-type-1"
+        "selector": "#id4#id5",
+        "line": 273,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
-      "duplication": {
-        "hash": "d0c0350c4ceb56bff9287f52fd5e04d9",
-        "selector": ".duplication-type-1-dup"
-      }
+      "originLine": 58,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 273,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "ec41b83ff031fd764369195b6c798191",
-        "selector": ".duplication-prop-1-1"
+        "selector": ".duplication-prop-1-1",
+        "line": 69,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "ec41b83ff031fd764369195b6c798191",
-        "selector": ".duplication-prop-1-2"
-      }
+        "selector": ".duplication-prop-1-2",
+        "line": 74,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 69,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 74,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "be28a9cd180ec111e0e769117c72b268",
-        "selector": ".duplication-prop-1-x"
+        "selector": ".duplication-prop-1-x",
+        "line": 79,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "be28a9cd180ec111e0e769117c72b268",
-        "selector": ".duplication-prop-1-y"
-      }
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 79,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 84,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "22d5701b45a5c0ab74a6f62a8ef09da7",
-        "selector": ".glowing-button"
+        "selector": ".glowing-button",
+        "line": 121,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "22d5701b45a5c0ab74a6f62a8ef09da7",
-        "selector": ".glowing-button"
-      }
+        "selector": ".glowing-button",
+        "line": 364,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 121,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 364,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "c71a520351cc19f48a1bbe26505ff6bf",
-        "selector": "unknown"
+        "selector": "unknown",
+        "line": 153,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "c71a520351cc19f48a1bbe26505ff6bf",
-        "selector": ".c10.c11.c12 .c15"
-      }
+        "selector": ".c10.c11.c12 .c15",
+        "line": 305,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 153,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 305,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "8187d057aa348bf8544fee9d1775ae49",
-        "selector": "a#id1"
+        "selector": "a#id1",
+        "line": 257,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "8187d057aa348bf8544fee9d1775ae49",
-        "selector": ".c10.c11.c12.c13.c14"
-      }
+        "selector": ".c10.c11.c12.c13.c14",
+        "line": 302,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 257,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 302,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
-      "type": 1,
+      "type": 0,
       "origin": {
         "hash": "468d17a87a2ea269dcaff605ff1277a0",
-        "selector": "#id4 .c4:before"
+        "selector": "#id4 .c4:before",
+        "line": 279,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "468d17a87a2ea269dcaff605ff1277a0",
-        "selector": ".red-border:after"
-      }
+        "selector": ".red-border:after",
+        "line": 375,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 279,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 375,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 0,
+      "origin": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".c10.c11.c12.c13.c14",
+        "line": 302,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "8187d057aa348bf8544fee9d1775ae49",
+        "selector": ".f9",
+        "line": 452,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 302,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 452,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 1,
       "origin": {
-        "hash": "8187d057aa348bf8544fee9d1775ae49",
-        "selector": ".c10.c11.c12.c13.c14"
+        "hash": "width: 100%",
+        "selector": ".bubble",
+        "line": 1,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
-        "hash": "8187d057aa348bf8544fee9d1775ae49",
-        "selector": ".f9"
-      }
+        "hash": "width: 100%",
+        "selector": ".alert",
+        "line": 14,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 1,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 14,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "position: relative",
+        "selector": ".main-nav, .side-nav",
+        "line": 7,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "position: relative",
+        "selector": ".magic-fix",
+        "line": 420,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 7,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 420,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: block",
+        "selector": ".main-nav, .side-nav",
+        "line": 7,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: block",
+        "selector": ".button--filled",
+        "line": 49,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 7,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 49,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "width: 100%",
+        "selector": ".alert",
+        "line": 14,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "width: 100%",
+        "selector": ".header",
+        "line": 196,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 14,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 196,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: inline-block",
+        "selector": ".alert",
+        "line": 14,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: inline-block",
+        "selector": ".alert:before",
+        "line": 19,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 14,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 19,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: inline-block",
+        "selector": ".alert:before",
+        "line": 19,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: inline-block",
+        "selector": ".badge",
+        "line": 331,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 19,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 331,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "background-position: -47px 7px",
+        "selector": ".alert--warning:before",
+        "line": 30,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "background-position: -47px 7px",
+        "selector": ".alert--info:before",
+        "line": 35,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 30,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 35,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: bold",
+        "selector": ".button:hover",
+        "line": 42,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: bold",
+        "selector": ".undoing-styles-1",
+        "line": 382,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 42,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 382,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: block",
+        "selector": ".button--filled",
+        "line": 49,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: block",
+        "selector": ".v-block",
+        "line": 58,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 49,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 58,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: block",
+        "selector": ".v-block",
+        "line": 58,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: block",
+        "selector": ".gf-e",
+        "line": 207,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 58,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 207,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "border: 1px solid #a23",
+        "selector": ".duplication-type-1",
+        "line": 61,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "border: 1px solid #a23",
+        "selector": ".duplication-type-1-dup",
+        "line": 65,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 61,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 65,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 1px",
+        "selector": ".duplication-prop-1-1",
+        "line": 69,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 1px",
+        "selector": ".duplication-prop-1-2",
+        "line": 74,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 69,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 74,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-1",
+        "line": 69,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-2",
+        "line": 74,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 69,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 74,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-1",
+        "line": 69,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-2",
+        "line": 74,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 69,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 74,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-2",
+        "line": 74,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-x",
+        "line": 79,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 74,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 79,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-2",
+        "line": 74,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-x",
+        "line": 79,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 74,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 79,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".duplication-prop-1-x",
+        "line": 79,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 79,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 84,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-x",
+        "line": 79,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 79,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 84,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-x",
+        "line": 79,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 79,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 84,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-decoration: underline",
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-decoration: underline",
+        "selector": "a.special-link:hover",
+        "line": 188,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 84,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 188,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: 700",
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: 700",
+        "selector": ".wrong-value",
+        "line": 128,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 84,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 128,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".duplication-prop-1-y",
+        "line": 84,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-1",
+        "line": 224,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 84,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 224,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "margin-top: 1px",
+        "selector": ".duplication-type-3-a",
+        "line": 98,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "margin-top: 1px",
+        "selector": ".wrong-value",
+        "line": 128,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 98,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 128,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "border-width: 1px",
+        "selector": ".duplication-type-3-c",
+        "line": 110,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "border-width: 1px",
+        "selector": ".red-border",
+        "line": 368,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 110,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 368,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "border-style: solid",
+        "selector": ".duplication-type-3-c",
+        "line": 110,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "border-style: solid",
+        "selector": ".red-border",
+        "line": 368,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 110,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 368,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "widows: 24rem",
+        "selector": ".glowing-button",
+        "line": 121,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "widows: 24rem",
+        "selector": ".glowing-button",
+        "line": 364,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 121,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 364,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "background-color: #F00",
+        "selector": ".glowing-button",
+        "line": 121,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "background-color: #F00",
+        "selector": ".glowing-button",
+        "line": 364,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 121,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 364,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 12px",
+        "selector": ".wrong-value",
+        "line": 128,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 12px",
+        "selector": ".spread-selector",
+        "line": 378,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 128,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 378,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: 700",
+        "selector": ".wrong-value",
+        "line": 128,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: 700",
+        "selector": "a:hoverr",
+        "line": 148,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 128,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 148,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-align: center",
+        "selector": ".unknown-prop",
+        "line": 137,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-align: center",
+        "selector": ".badge",
+        "line": 331,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 137,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 331,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: 700",
+        "selector": "a:hoverr",
+        "line": 148,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: 700",
+        "selector": "kbd",
+        "line": 315,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 148,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 315,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "height: 5rem",
+        "selector": "unknown",
+        "line": 153,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "height: 5rem",
+        "selector": ".super-table-column",
+        "line": 174,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 153,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 174,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "width: 5rem",
+        "selector": "unknown",
+        "line": 153,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "width: 5rem",
+        "selector": ".special-link",
+        "line": 192,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 153,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 192,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "filter: alpha(opacity=20)",
+        "selector": ".fancy-item",
+        "line": 168,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "filter: alpha(opacity=20)",
+        "selector": ".close",
+        "line": 339,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 168,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 339,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "opacity: 0.2",
+        "selector": ".fancy-item",
+        "line": 168,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "opacity: 0.2",
+        "selector": ".close",
+        "line": 339,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 168,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 339,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "vertical-align: middle",
+        "selector": ".fancy-item",
+        "line": 168,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "vertical-align: middle",
+        "selector": ".super-table-column",
+        "line": 174,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 168,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 174,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "vertical-align: middle",
+        "selector": ".super-table-column",
+        "line": 174,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "vertical-align: middle",
+        "selector": ".badge",
+        "line": 331,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 174,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 331,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "height: 5rem",
+        "selector": ".super-table-column",
+        "line": 174,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "height: 5rem",
+        "selector": ".c10.c11.c12.c13:hover",
+        "line": 299,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 174,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 299,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 18px",
+        "selector": "a.special-link",
+        "line": 185,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 18px",
+        "selector": "a#id1",
+        "line": 257,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 185,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 257,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "color: #337ab7",
+        "selector": "a.special-link",
+        "line": 185,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "color: #337ab7",
+        "selector": ".bubble",
+        "line": 361,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 185,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 361,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: flex",
+        "selector": ".header",
+        "line": 196,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: flex",
+        "selector": "#id4 .c4__element",
+        "line": 281,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 196,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 281,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: block",
+        "selector": ".gf-e",
+        "line": 207,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: block",
+        "selector": "#id4#id5",
+        "line": 273,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 207,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 273,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-1",
+        "line": 224,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-2",
+        "line": 228,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 224,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 228,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+        "selector": ".font-type-2",
+        "line": 228,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+        "selector": ".too-long-selector",
+        "line": 390,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 228,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 390,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-2",
+        "line": 228,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-3",
+        "line": 232,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 228,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 232,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-3",
+        "line": 232,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-4",
+        "line": 236,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 232,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 236,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-4",
+        "line": 236,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-5",
+        "line": 240,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 236,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 240,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-5",
+        "line": 240,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-6",
+        "line": 244,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 240,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 244,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".font-type-6",
+        "line": 244,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".too-long-selector",
+        "line": 390,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 244,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 390,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 18px",
+        "selector": "a#id1",
+        "line": 257,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 18px",
+        "selector": ".c10.c11.c12.c13.c14",
+        "line": 302,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 257,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 302,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "clear: both",
+        "selector": "#id4 .c4:before",
+        "line": 279,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "clear: both",
+        "selector": ".red-border:after",
+        "line": 375,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 279,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 375,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "display: flex",
+        "selector": "#id4 .c4__element",
+        "line": 281,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "display: flex",
+        "selector": ".too-long-selector",
+        "line": 390,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 281,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 390,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "cursor: pointer",
+        "selector": "#id4 .c4 .c5",
+        "line": 284,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "cursor: pointer",
+        "selector": ".close:focus",
+        "line": 344,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 284,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 344,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "height: 5rem",
+        "selector": ".c10.c11.c12.c13:hover",
+        "line": 299,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "height: 5rem",
+        "selector": ".c10.c11.c12 .c15",
+        "line": 305,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 299,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 305,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 18px",
+        "selector": ".c10.c11.c12.c13.c14",
+        "line": 302,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 18px",
+        "selector": ".f9",
+        "line": 452,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 302,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 452,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "padding: 0",
+        "selector": "kbd",
+        "line": 315,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "padding: 0",
+        "selector": "code",
+        "line": 323,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 315,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 323,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-align: center",
+        "selector": ".badge",
+        "line": 331,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-align: center",
+        "selector": ".outline-button",
+        "line": 353,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 331,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 353,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "text-align: center",
+        "selector": ".outline-button",
+        "line": 353,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "text-align: center",
+        "selector": ".too-long-selector",
+        "line": 390,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 353,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 390,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 12px",
+        "selector": ".spread-selector",
+        "line": 378,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 12px",
+        "selector": ".f8",
+        "line": 449,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 378,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 449,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-weight: bold",
+        "selector": ".undoing-styles-1",
+        "line": 382,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-weight: bold",
+        "selector": ".too-long-selector",
+        "line": 390,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 382,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 390,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+    },
+    {
+      "type": 1,
+      "origin": {
+        "hash": "font-size: 14px",
+        "selector": ".too-long-selector",
+        "line": 390,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "duplication": {
+        "hash": "font-size: 14px",
+        "selector": ".f7",
+        "line": 446,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 390,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 446,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 3,
       "origin": {
         "hash": "ddedf8a99830f1dd8e38efa629b96c27",
-        "selector": ".duplication-type-1"
+        "selector": ".duplication-type-1",
+        "line": 61,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "ddedf8a99830f1dd8e38efa629b96c27",
-        "selector": ".duplication-type-1-dup"
-      }
+        "selector": ".duplication-type-1-dup",
+        "line": 65,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 61,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 65,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 3,
       "origin": {
         "hash": "10c77a5dbe34c0ed3736665e2a9055e4",
-        "selector": ".duplication-type-3-c"
+        "selector": ".duplication-type-3-c",
+        "line": 110,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "10c77a5dbe34c0ed3736665e2a9055e4",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 368,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 110,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 368,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 3,
       "origin": {
         "hash": "a5a72ce63ca917f95a625a64e7e3e534",
-        "selector": ".duplication-type-3-c"
+        "selector": ".duplication-type-3-c",
+        "line": 110,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "a5a72ce63ca917f95a625a64e7e3e534",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 368,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 110,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 368,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 3,
       "origin": {
         "hash": "dc4c510fd17986ef72bfd81f90ae88b5",
-        "selector": "kbd"
+        "selector": "kbd",
+        "line": 315,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "dc4c510fd17986ef72bfd81f90ae88b5",
-        "selector": "code"
-      }
+        "selector": "code",
+        "line": 323,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 315,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 323,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 3,
       "origin": {
         "hash": "ab8cbae00acc1bb7bebfe744310ee26d",
-        "selector": ".duplication-prop-3-1"
+        "selector": ".duplication-prop-3-1",
+        "line": 89,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "ab8cbae00acc1bb7bebfe744310ee26d",
-        "selector": ".duplication-prop-3-1-htr"
-      }
+        "selector": ".duplication-prop-3-1-htr",
+        "line": 92,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 89,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 92,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 3,
       "origin": {
         "hash": "67b32a1641b7c217e617c3c8d9f32380",
-        "selector": ".duplication-type-3-awd"
+        "selector": ".duplication-type-3-awd",
+        "line": 104,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
       },
       "duplication": {
         "hash": "67b32a1641b7c217e617c3c8d9f32380",
-        "selector": ".duplication-type-3-a"
-      }
+        "selector": ".duplication-type-3-a",
+        "line": 98,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 104,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css",
+      "duplLine": 98,
+      "duplFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 4,
       "origin": {
         "hash": "bf80a5deb3c0eededf0bc59ca1acb2c9",
-        "selector": ".duplication-type-4"
-      }
+        "selector": ".duplication-type-4",
+        "line": 118,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 118,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "dec3a6f5485ecb64d10cda619453b24f",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "aaa52db54b38da8193ebd1f5f2b9709f",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "49ca3d9eaabb50832b56e1426b1ace2c",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "2b0a7bbd17b9dc669a3a01b528b7e562",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "2d8414756d667b29f22196645ad6fe62",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "0e2ceeab179604f5c6c840fe52a2c99b",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "e93c0059b3eb10487aec17b51a38ffca",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "1718d01c35fdef68739545c7cdd407fa",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "0c3f5290c6fb21ce435424e05a190de0",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "924c24c9020b9a2509b41f8b8fa1ec0c",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "41ecef5f478d83f40f9f7bba26ad04f6",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     },
     {
       "type": 5,
       "origin": {
         "hash": "75c2d4da2a19a591086ffccaf140572e",
-        "selector": ".red-border"
-      }
+        "selector": ".red-border",
+        "line": 125,
+        "file": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
+      },
+      "originLine": 125,
+      "originFile": "/Users/florianuphoff/Development/rails-testproject/node_modules/stylesheet-code-quality-webpack-plugin/data/frontend-3fad8f86.css"
     }
   ],
   "stats": [
     {
-      "size": 8275,
-      "gzip": 2421,
+      "size": 8260,
+      "gzip": 2420,
       "rules": {
         "total": 117,
         "size": {
@@ -1442,7 +2791,7 @@
             "declarations": 4
           },
           {
-            "selector": ".close:hover, .close:focus",
+            "selector": ".close:focus",
             "declarations": 4
           },
           {
@@ -1876,11 +3225,11 @@
         ]
       },
       "selectors": {
-        "total": 122,
+        "total": 121,
         "type": 14,
-        "class": 108,
+        "class": 107,
         "id": 17,
-        "pseudoClass": 8,
+        "pseudoClass": 7,
         "pseudoElement": 10,
         "values": [
           ".bubble",
@@ -1976,7 +3325,6 @@
           "code",
           ".badge",
           ".close",
-          ".close:hover",
           ".close:focus",
           ".close .pok",
           ".close .pokawdf",
@@ -2008,7 +3356,7 @@
         ],
         "specificity": {
           "max": 200,
-          "average": 27.81967213114754
+          "average": 27.884297520661157
         },
         "getSpecificityGraph": [
           10,
@@ -2104,7 +3452,6 @@
           1,
           10,
           10,
-          20,
           20,
           20,
           20,
@@ -2508,10 +3855,6 @@
             "specificity": 10
           },
           {
-            "selector": ".close:hover",
-            "specificity": 20
-          },
-          {
             "selector": ".close:focus",
             "specificity": 20
           },
@@ -2715,10 +4058,6 @@
           },
           {
             "selector": ".button:hover",
-            "specificity": 20
-          },
-          {
-            "selector": ".close:hover",
             "specificity": 20
           },
           {
@@ -3129,7 +4468,7 @@
       },
       "declarations": {
         "total": 246,
-        "unique": 180,
+        "unique": 181,
         "properties": {
           "box-sizing": [
             "border-box"
@@ -3223,7 +4562,7 @@
             "#fff",
             "#ffffff",
             "#F00",
-            "#F00",
+            "red",
             "#FFF",
             "#337ab7",
             "#23527c",
@@ -4029,11 +5368,6 @@
         {
           "selector": ".close",
           "startsAt": 339,
-          "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
-        },
-        {
-          "selector": ".close:hover",
-          "startsAt": 344,
           "origin": "webpack:///frontend/css/rule_coverage/_specifity.scss"
         },
         {
