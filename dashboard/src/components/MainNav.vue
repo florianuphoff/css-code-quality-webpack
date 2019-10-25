@@ -2,7 +2,7 @@
   <div class="main-nav">
     <div class="main-nav__host"><router-link class="main-nav__home" to="/">(S)CSS Code Quality Dashboard</router-link></div>
     <div class="main-nav__link-box"><router-link class="main-nav__link overview" to="/"><font-awesome-icon icon="tachometer-alt" class="nav-icon" /> Dashboard</router-link></div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/selectors"><font-awesome-icon icon="sitemap" class="nav-icon" /> Selektoren</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/warnings"><font-awesome-icon icon="exclamation-triangle" class="nav-icon" /> Warnungen</router-link></div>
     <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/specificity"><font-awesome-icon icon="chart-line" class="nav-icon" /> Spezifizität</router-link></div>
   </div>
 </template>
@@ -10,10 +10,10 @@
 <script>
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram, faTachometerAlt, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram, faTachometerAlt)
+library.add(faHome, faSitemap, faSlidersH, faChartLine, faProjectDiagram, faTachometerAlt, faExclamationTriangle)
 
 export default Vue.extend({
   name: 'MainNav',
@@ -50,7 +50,7 @@ export default Vue.extend({
 
 .main-nav__link-box {
   min-height: 80px;
-  min-width: 90px;
+  min-width: 110px;
 }
 
 .main-nav__link {
