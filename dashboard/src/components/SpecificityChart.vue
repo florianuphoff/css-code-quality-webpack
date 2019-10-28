@@ -84,6 +84,8 @@ export default Vue.extend({
       Dennoch sollte der Graph einen klaren Aufwärtstrend haben. Je weiter am Ende Selektoren mit hoher Spezifizität stehen, desto geringer können Seiteneffekte ausfallen.
       <br/>
       Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten und Seiteneffekte wie Überschattungen von Selektoren durch eine sehr hohe Spezifizität verursachen.
+      <br/><br/>
+      Selektoren sind zu spezifisch, wenn die Spezifizität zwischen 2 und 10, 11 und 20, 31 und 100 oder über 101 liegt.
       `,
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {

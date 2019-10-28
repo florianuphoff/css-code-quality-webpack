@@ -158,7 +158,7 @@ export default Vue.extend({
 
       this.results.duplications.forEach(duplicationObject => {
         // safe == only full duplications
-        if((mode === 'safe' && duplicationObject.type === 0) || mode === 'unsafe') {
+        if((mode === 'safe' && duplicationObject.type === 0) || (mode === 'unsafe' && duplicationObject.type !== 0)) {
           dSelectors.push({ selector: duplicationObject.origin.selector, 
           data: {
             category: "duplication", 

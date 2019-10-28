@@ -25,8 +25,8 @@
           <div class="cp-box">
             <div class="cp-box__header">Spezifizität</div>
             <apexchart type=radialBar height=250 :options="chartOptions" :series="unspecificSelectors" />
-            <div class="cp-box__description">Prozentualer Anteil an Selektoren, deren Spezifizität zwischen 1-3, 10-11, 20-21, 30-31 oder 100-101 liegt.</div>
-          </div>  
+            <div class="cp-box__description">Prozentualer Anteil an Selektoren, deren Spezifizität zwischen 1-2, 10-11, 20-21, 30-31 oder 100-101 liegt.</div>
+          </div>
           <div class="cp-box">
             <div class="cp-box__header">Verschachtelung</div>
             <apexchart type=radialBar height=250 :options="chartOptions" :series="vn" />
