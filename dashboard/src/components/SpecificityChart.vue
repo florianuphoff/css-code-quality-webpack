@@ -86,6 +86,8 @@ export default Vue.extend({
       Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten und Seiteneffekte wie Überschattungen von Selektoren durch eine sehr hohe Spezifizität verursachen.
       <br/><br/>
       Selektoren sind zu spezifisch, wenn die Spezifizität zwischen 2 und 10, 11 und 20, 31 und 100 oder über 101 liegt.
+      <br/><br/>
+      Maus gedrückt halten und über Zeilen ziehen, um die Auswahl zu vergrößern. (Zooming)
       `,
       updateArgs: [true, true, {duration: 500}],
       chartOptions: {
