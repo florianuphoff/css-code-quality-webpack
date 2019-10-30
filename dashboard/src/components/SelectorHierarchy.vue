@@ -105,20 +105,25 @@ export default Vue.extend({
         Beispiel eines Duplikates: <code>.foo .bar</code><br/>
         Es gibt zwei compound-Selektoren: <code>.foo</code> und <code>.bar</code> <br/>
         <code>.bar</code> wird im Graphen als Kindelement von <code>.foo</code> dargestellt und ist mit rot hervorgehoben.
+        <br/><br/>
+        Die Reihenfolge der Selektoren basiert auf den generierten Warnungen.
         `
       } else if(this.type === 'partialdupl') {
         tip = `
         In diesem Graphen befinden sich Selektoren, deren compound-Selektoren oder Deklarationen dupliziert sind. Die Duplikate müssen nicht aufgelöst werden, sondern erfordern eine genaue Betrachtung, ob sich eine Konsolidierung lohnt.
         <br/><br/>
         Es gibt verschiedene Typen einer Duplizierung:
-        <br/>Typ 1: Eine Deklaration ist vollständig dupliziert (orange)
-        <br/>Typ 3: Eine Deklaration existiert als shorthand-Property und ausgeschriebenen Properties (gelb)
-        <br/>Typ 4: Eine Deklaration ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (türkis)
-        <br/>Typ 5: Eine shorthand-Property ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (grün)
-        <br/>Blau markierte Selektoren bedeuten, dass der Selektorname mehrfach genutzt wurde.
+        <br/><span style="color:#f88f17">Typ 1</span>: Eine Deklaration ist vollständig dupliziert (orange)
+        <br/>Typ 2: Dieser Typ wird derzeitig nicht unterstützt.
+        <br/><span style="color:#f5c423">Typ 3</span>: Eine Deklaration existiert als shorthand-Property und ausgeschriebenen Properties (gelb)
+        <br/><span style="color:#1ee2d8">Typ 4</span>: Eine Deklaration ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (türkis)
+        <br/><span style="color:#4cd118">Typ 5</span>: Eine shorthand-Property ist gleich einem Teil einer shorthand-Property. Gültig nur im selben Selektor, um false-positives zu vermeiden (grün)
+        <br/><span style="color:#153291">Blau</span> markierte Selektoren bedeuten, dass der Selektorname mehrfach genutzt wurde.
         <br/><br/>
         Ein Selektor kann mehrere Duplikatstypen aufweisen. Es wird immer der allgemeinere Duplikatstyp farblich markiert (Typ1 - Typ 5).
         Es werden betroffene Selektoren hervorgehoben, wenn der Zeiger der Maus über einen Selektor steht.
+        <br/><br/>
+        Die Reihenfolge der Selektoren basiert auf den generierten Warnungen.
         `
       } else {
         // warnings
@@ -126,6 +131,8 @@ export default Vue.extend({
         In diesem Graph befinden sich Selektoren mit Warnungen. 
         Die Warnungen sind zur schnellen Identifizerung in fünf Kategorien unterteilt.
         Informationen zur Warnung erscheinen, wenn die Maus über ein Symbol fährt.
+        <br/><br/>
+        Die Reihenfolge der Selektoren basiert auf den generierten Warnungen.
         `
       }
       return tip
@@ -344,8 +351,20 @@ h5 {
   fill: #f88f17 !important; 
 }
 
+.darken {
+  fill-opacity: 0.1;
+}
+
+.darken text {
+  fill-opacity: 0.4 !important;
+}
+
 .duplHover {
-  fill: #45da37 !important;
+  fill-opacity: 1 !important;
+}
+
+.duplHover text {
+  fill-opacity: 1 !important;
 }
 
 </style>

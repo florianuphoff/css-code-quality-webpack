@@ -248,10 +248,12 @@ export default class IntendedTree {
           this.classList.forEach((element, index) => {
             // erst hier steheh die refs zu anderen nodes
             if(index > 1 && element !== 'refundefined' && !element.includes('type')) {
+              that.svg.selectAll(`.node`).classed("darken", true)
               // @ts-ignore
               that.svg.selectAll(`.${element}`).classed("duplHover", true)
             } else if(element === 'refundefined') {
-              // @ts-ignore                        
+              that.svg.selectAll(`.node`).classed("darken", true)
+              // @ts-ignore
               d3.select(this).classed("duplHover", true)
             }
           })              
@@ -281,11 +283,13 @@ export default class IntendedTree {
         if(d.data.data.length > 0 && d.data.data[0].category === 'duplication') {
           // @ts-ignore          
           this.classList.forEach((element, index) => {
-            // erst hier steheh die refs zu anderen nodes
+            // erst hier stehen die refs zu anderen nodes
             if(index > 1 && element !== 'refundefined' && !element.includes('type')) {
+              that.svg.selectAll(`.node`).classed("darken", false)
               that.svg.selectAll(`.${element}`).classed("duplHover", false)
             } else if(element === 'refundefined') {
-              // @ts-ignore                        
+              that.svg.selectAll(`.node`).classed("darken", false)
+              // @ts-ignore
               d3.select(this).classed("duplHover", false)
             }
           })

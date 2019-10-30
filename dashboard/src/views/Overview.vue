@@ -25,7 +25,13 @@
           <div class="cp-box">
             <div class="cp-box__header">Spezifizität</div>
             <apexchart type=radialBar height=250 :options="chartOptions" :series="unspecificSelectors" />
-            <div class="cp-box__description">Prozentualer Anteil an Selektoren, deren Spezifizität zwischen 1-2, 10-11, 20-21, 30-31 oder 100-101 liegt.</div>
+            <div class="cp-box__description">Prozentualer Anteil an Selektoren, deren Spezifizität zwischen 1-2, 10-11, 20-21, 30-31 oder 100-101 liegt.
+              <div class="tooltip-icon" 
+                v-tooltip='{content: sHelp, placement: "right", targetClasses: ["cq-tooltip"],}' 
+              >
+                <font-awesome-icon icon="question-circle" />
+              </div>
+            </div>
           </div>
           <div class="cp-box">
             <div class="cp-box__header">Verschachtelung</div>
@@ -42,7 +48,7 @@
           <div class="fact">
             <div class="fact__header">
               <div class="fact__title">
-                Dateien
+                SCSS Dateien
               </div>
               <div class="fact__content">
                 {{columnCategories.length}} 
@@ -94,32 +100,36 @@
               <font-awesome-icon icon="chart-pie" />
             </div>
           </div>
-          <div class="fact">
-            <div class="fact__header">
-              <div class="fact__title">
-                Max. Spezifizität
+          <router-link class="fact-link" to="/specificity">
+            <div class="fact">
+              <div class="fact__header">
+                <div class="fact__title">
+                  Max. Spezifizität
+                </div>
+                <div class="fact__content">
+                  {{textualData.hS}} 
+                </div>
               </div>
-              <div class="fact__content">
-                {{textualData.hS}} 
-              </div>
-            </div>
-            <div class="fact__icon">
-              <font-awesome-icon icon="chart-line" />
-            </div>
-          </div>
-          <div class="fact">
-            <div class="fact__header">
-              <div class="fact__title">
-                Warnungen
-              </div>
-              <div class="fact__content">
-                {{textualData.warnings}} 
+              <div class="fact__icon">
+                <font-awesome-icon icon="chart-line" class="chart-line" />
               </div>
             </div>
-            <div class="fact__icon">
-              <font-awesome-icon icon="exclamation-triangle" />
+          </router-link>
+          <router-link class="fact-link" to="/warnings">
+            <div class="fact">
+              <div class="fact__header">
+                <div class="fact__title">
+                  Warnungen
+                </div>
+                <div class="fact__content">
+                  {{textualData.warnings}} 
+                </div>
+              </div>
+              <div class="fact__icon">
+                <font-awesome-icon icon="exclamation-triangle" class="exclamation-triangle"/>
+              </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -163,6 +173,15 @@ export default Vue.extend({
       <br/>
       Dynamische und Inline-Styles werden nicht berücksichtigt. Je höher die Prozentzahl ist, desto höher fällt die Qualität in der Kategorie aus.
       Weitere Details zu der Code Qualität befinden sich in den Tabs Selektoren und Spezifizität.
+      `,
+      sHelp: `
+      Jede ID, jede Klasse und jedes HTML-Element (Tag) hat ein festgelegtes Gewicht, das nicht verändert werden kann. 
+      Das Gewicht des gesamten CSS-Selektors bestimmt sich durch die Summe der einzelnen Bestandteile.
+      <br/><br/>
+      HTML/Pseudo-Elemente (h1, :hover ) = 1 Punkt<br/>
+      CSS-Klassen (.alert, .js) = 10 Punkte<br/>
+      Pseudo-Klassen (:nth-of-type) = 10 Punkte<br/>
+      CSS-IDs (#header) = 100 Punkte<br/>
       `,
       results: {},
       spiderChartData: [],
@@ -421,5 +440,10 @@ export default Vue.extend({
   font-size: 1.7em;
   color: #c4c4c4;
 }
+
+.fact-link {
+  text-decoration: none;
+}
+
 </style>
 
