@@ -39,7 +39,7 @@ class StylesheetCodeQualityWebpackPlugin {
     const sLinter = styleLinter.bind(this, stylelintOptions)
     const saver = new Saver()
 
-    compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', (compilation, callback) => {
+    compiler.hooks.shouldEmit.tap('StylesheetCodeQualityWebpackPlugin', (compilation) => {
       Object.entries(compilation.assets).forEach((entry, index) => {
         let targetFile = entry[0]
         
@@ -72,10 +72,11 @@ class StylesheetCodeQualityWebpackPlugin {
       
       const timestamp = + new Date()      
 
-      sLinter(compilation, saver, timestamp)
-      postcssLinter(stylelintOptions.copyTo, compilation, saver, timestamp)
+      sLinter(compilation, saver)
+      postcssLinter(stylelintOptions.copyTo, compilation, saver)
 
-      
+      // emit
+      return true
     })
   }
 }
