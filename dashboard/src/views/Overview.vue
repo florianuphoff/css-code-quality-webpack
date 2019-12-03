@@ -23,9 +23,9 @@
             <div class="cp-box__description">Prozentualer Anteil an Deklarationen, die nicht dupliziert, ignoriert oder zurückgesetzt wurden.</div>
           </div>  
           <div class="cp-box">
-            <div class="cp-box__header">Spezifizität</div>
+            <div class="cp-box__header">Spezifität</div>
             <apexchart type=radialBar height=250 :options="chartOptions" :series="unspecificSelectors" />
-            <div class="cp-box__description">Prozentualer Anteil an Selektoren, deren Spezifizität zwischen 1-2, 10-11, 20-21, 30-31 oder 100-101 liegt.
+            <div class="cp-box__description">Prozentualer Anteil an Selektoren, deren Spezifität zwischen 1-2, 10-11, 20-21, 30-31 oder 100-101 liegt.
               <div class="tooltip-icon" 
                 v-tooltip='{content: sHelp, placement: "right", targetClasses: ["cq-tooltip"],}' 
               >
@@ -104,7 +104,7 @@
             <div class="fact">
               <div class="fact__header">
                 <div class="fact__title">
-                  Max. Spezifizität
+                  Max. Spezifität
                 </div>
                 <div class="fact__content">
                   {{textualData.hS}} 
@@ -172,7 +172,7 @@ export default Vue.extend({
       Die ermittelte Code Qualität ist in vier Kategorien aufgeteilt und bezieht sich auf alle SCSS Dateien. 
       <br/>
       Dynamische und Inline-Styles werden nicht berücksichtigt. Je höher die Prozentzahl ist, desto höher fällt die Qualität in der Kategorie aus.
-      Weitere Details zu der Code Qualität befinden sich in den Tabs Selektoren und Spezifizität.
+      Weitere Details zu der Code Qualität befinden sich in den Tabs Selektoren und Spezifität.
       `,
       sHelp: `
       Jede ID, jede Klasse und jedes HTML-Element (Tag) hat ein festgelegtes Gewicht, das nicht verändert werden kann. 

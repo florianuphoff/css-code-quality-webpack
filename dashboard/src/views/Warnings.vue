@@ -219,7 +219,7 @@ export default Vue.extend({
           rule = 'Unbekannte Animation'
           break;
         case 'no-descending-specificity':
-          rule = 'Keine absteigende Spezifizität'
+          rule = 'Keine absteigende Spezifität'
           break;
         case 'max-nesting-depth':
           rule = 'Maximale Verschachtelungstiefe überschritten'

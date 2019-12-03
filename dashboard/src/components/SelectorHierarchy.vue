@@ -18,7 +18,7 @@
           <font-awesome-icon icon="code" class="syntax legend-icon" /> : Syntax
         </div>
         <div class="legend-box">      
-          <font-awesome-icon icon="chart-line" class="spec legend-icon" /> : Spezifizität
+          <font-awesome-icon icon="chart-line" class="spec legend-icon" /> : Spezifität
         </div>
         <div class="legend-box">
           <font-awesome-icon icon="magic" class="style legend-icon" /> : Style

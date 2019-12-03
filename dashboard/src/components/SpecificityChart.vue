@@ -1,6 +1,6 @@
 <template>
   <div class="v-box w-2-3 specificity">
-    <div class="v-box__header">CSS Spezifizitätsgraph
+    <div class="v-box__header">CSS Spezifitätsgraph
       <div class="tooltip-icon" 
         v-tooltip='{content: help, placement: "right", targetClasses: ["cq-tooltip"],}' 
       >
@@ -78,14 +78,14 @@ export default Vue.extend({
   data() {
     return {
       help: `
-      Der Spezifizitätsgraph nach Harry Roberts zeigt den Verlauf der Spezifizität zur Zeile im Quellcode. 
+      Der Spezifitätsgraph nach Harry Roberts zeigt den Verlauf der Spezifität zur Zeile im Quellcode. 
       <br/><br/>
       Leichte Auf- und Abstiege sind üblich. 
-      Dennoch sollte der Graph einen klaren Aufwärtstrend haben. Je weiter am Ende Selektoren mit hoher Spezifizität stehen, desto geringer können Seiteneffekte ausfallen.
+      Dennoch sollte der Graph einen klaren Aufwärtstrend haben. Je weiter am Ende Selektoren mit hoher Spezifität stehen, desto geringer können Seiteneffekte ausfallen.
       <br/>
-      Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten und Seiteneffekte wie Überschattungen von Selektoren durch eine sehr hohe Spezifizität verursachen.
+      Frühe Spitzen im Graph können auf eine Fehlkonzeption im CSS Code deuten und Seiteneffekte wie Überschattungen von Selektoren durch eine sehr hohe Spezifität verursachen.
       <br/><br/>
-      Selektoren sind zu spezifisch, wenn die Spezifizität zwischen 2 und 10, 11 und 20, 31 und 100 oder über 101 liegt.
+      Selektoren sind zu spezifisch, wenn die Spezifität zwischen 2 und 10, 11 und 20, 31 und 100 oder über 101 liegt.
       <br/><br/>
       Maus gedrückt halten und über Zeilen ziehen, um die Auswahl zu vergrößern. (Zooming)
       `,
@@ -120,7 +120,7 @@ export default Vue.extend({
         },
         yAxis: {
           title: {
-            text: 'Spezifizität'
+            text: 'Spezifität'
           },
           categories: [1,2,10,11,20,21,40,41,200],
           labels: {
@@ -209,14 +209,14 @@ export default Vue.extend({
           return `${template}<br>
                   <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
                   <b>Zeile: </b>${hits[0].startsAt}<br>
-                  <b>Spezifizität: </b>${yAxis[this.y]}<br>
+                  <b>Spezifität: </b>${yAxis[this.y]}<br>
                   <b>Verschachtelung: </b>${hits[0].depth}`;
         }
 
         return `<b>Selektor: </b>${hits[0].selector}<br>
                 <b>Datei: </b>${hits[0].origin.replace('webpack:///', '')}<br>
                 <b>Zeile: </b>${hits[0].startsAt}<br>
-                <b>Spezifizität: </b>${yAxis[this.y]}<br>
+                <b>Spezifität: </b>${yAxis[this.y]}<br>
                 <b>Verschachtelung: </b>${hits[0].depth}`;
       }
     },

@@ -3,7 +3,7 @@
     <div class="main-nav__host"><router-link class="main-nav__home" to="/">(S)CSS Code Quality Dashboard</router-link></div>
     <div class="main-nav__link-box"><router-link class="main-nav__link overview" to="/"><font-awesome-icon icon="tachometer-alt" class="nav-icon" /> Dashboard</router-link></div>
     <div class="main-nav__link-box"><router-link class="main-nav__link selectors" to="/warnings"><font-awesome-icon icon="exclamation-triangle" class="nav-icon" /> Warnungen</router-link></div>
-    <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/specificity"><font-awesome-icon icon="chart-line" class="nav-icon" /> Spezifizität</router-link></div>
+    <div class="main-nav__link-box"><router-link class="main-nav__link props" to="/specificity"><font-awesome-icon icon="chart-line" class="nav-icon" /> Spezifität</router-link></div>
   </div>
 </template>
 
